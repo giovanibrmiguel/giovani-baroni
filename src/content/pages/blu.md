@@ -1,7 +1,7 @@
 ---
 title: "bLU"
 excerpt: "bLU is Giovani Baroni's debut solo album — an immersive psychedelic journey through water and memory."
-ogImage: "/images/blu/og-blu.jpg"
+ogImage: "/images/blu/og-blu.jpeg"
 ---
 
 <!-- ═══════════════════════════════════════════════════════

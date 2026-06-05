@@ -51,39 +51,45 @@ export const releases: Release[] = [
     project: "blu",
     projectDisplayName: "bLU",
     type: "album",
-    year: 2025, // UPDATE: actual release year
+    year: 2026,
     coverImage: "/images/blu/cover-placeholder.jpg",
     shortDescription:
-      "An upcoming debut album exploring psychedelia, water, and memory. Sonic landscapes drifting between the unconscious and the surface.",
-    longDescription: `bLU is Giovani Baroni's debut solo album — a psychedelic journey through water, memory, and transformation.
+      "Debut solo album — progressive indie rock with ocean imagery, conceptual narrative, and psychedelic soundscapes.",
+    longDescription: `bLU is Giovani Baroni's debut solo album — a conceptual, narrative record designed to be listened to as a single continuous journey, from beginning to end.
 
-The album draws from Brazilian musical roots, alternative rock, shoegaze, and experimental songwriting. It is an attempt to map the internal — dreams, grief, love, and the perpetual motion of water.
+The album began taking shape after Baroni moved to Mexico City, where daily life in a new language and a new continent pushed him toward a deeper introspection. Drawing from psychedelic rock, shoegaze, Brazilian indie, prog, and emo, bLU uses the ocean as both metaphor and sonic texture — fish, water, waves, and the abyss running throughout its lyrics and production.
 
-Recorded and produced independently in São Paulo, bLU is a deeply personal document and an invitation to submerge.
+Each track flows into the next. Themes of internal transformation, generational trauma, love, ego, eastern philosophy, and the persistence of the inner child connect the ten pieces into one immersive whole.
 
-[UPDATE: Replace this with actual album description and context]`,
+Produced independently — vocals, guitars, and keys recorded in Mexico City; bass and mixing by Pedro Serapicos in Berlin; drums by Bianca Predieri in São Paulo. The album also features guest vocals from Jorge Sultzer (Mexico City) and co-writing from Ricardo Baroni and Mardem Humberto.`,
     links: {
-      spotify: "", // UPDATE: Spotify album link
-      bandcamp: "", // UPDATE: Bandcamp album link
-      youtube: "", // UPDATE: YouTube album playlist or release video
-      appleMusic: "", // UPDATE: Apple Music link
+      spotify: "", // UPDATE: add Spotify album link when released
+      bandcamp: "",
+      youtube: "",
+      appleMusic: "",
     },
     featured: true,
-    // UPDATE: Replace with actual embed code from Spotify
-    // Go to Spotify → Album → Share → Embed
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/PLACEHOLDER" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     credits: [
       "Written and produced by Giovani Baroni",
-      "Mixed by [UPDATE: mixer name]",
-      "Mastered by [UPDATE: mastering engineer]",
-      "Artwork by [UPDATE: artist name]",
+      "Bass and mixing by Pedro Serapicos (Berlin)",
+      "Drums by Bianca Predieri (São Paulo)",
+      "Guest vocals on Efervescente: Jorge Sultzer",
+      "Fishy Boy co-written with Ricardo Baroni and Mardem Humberto",
+      "Piano developed with Eduardo [UPDATE: last name]",
+      "Video production: Léo Lopes, Luca Tornato",
     ],
     tracklist: [
-      "1. [Track title] — UPDATE",
-      "2. [Track title] — UPDATE",
-      "3. [Track title] — UPDATE",
-      "4. [Track title] — UPDATE",
-      "5. [Track title] — UPDATE",
+      "1. Ambiência Aquática No 5",
+      "2. Peixes Estranhos",
+      "3. Norte",
+      "4. O Mundo dos Sonhos",
+      "5. Mecânica dos Fluidos",
+      "6. Efervescente",
+      "7. O Bicho que Sabia Demais",
+      "8. Fishy Boy",
+      "9. Paseo Largo",
+      "10. O Rio",
     ],
   },
 
@@ -94,7 +100,7 @@ Recorded and produced independently in São Paulo, bLU is a deeply personal docu
     project: "stop-and-go-station",
     projectDisplayName: "Stop & Go Station",
     type: "ep",
-    year: 2022, // UPDATE: actual release year
+    year: 2022,
     coverImage: "/images/projects/stop-and-go-cover-placeholder.jpg",
     shortDescription:
       "A solo EP from an earlier chapter — transient, searching, and quietly intimate.",
@@ -104,12 +110,12 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
 
 [UPDATE: Replace with actual EP description]`,
     links: {
-      spotify: "", // UPDATE: Spotify EP link
-      bandcamp: "", // UPDATE: Bandcamp EP link
-      youtube: "", // UPDATE: YouTube link
+      spotify: "https://open.spotify.com/album/5le5q8tskih5LXdnAmK8cC",
+      bandcamp: "",
+      youtube: "",
     },
     featured: false,
-    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/PLACEHOLDER_STOP_GO" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5le5q8tskih5LXdnAmK8cC" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     credits: [
       "Written and produced by Giovani Baroni",
       "[UPDATE: additional credits]",
@@ -121,15 +127,51 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
     ],
   },
 
-  // ── sukya || porno — EP #1 ───────────────────────────────────────────────
+  // ── Ruído Branco — Single ────────────────────────────────────────────────
+  {
+    id: "ruido-branco-single",
+    title: "Ruído Branco",
+    project: "stop-and-go-station",
+    projectDisplayName: "Giovani Baroni",
+    type: "single",
+    year: 2022,
+    coverImage: "/images/projects/placeholder.jpg",
+    shortDescription: "Solo single by Giovani Baroni.",
+    longDescription: `[UPDATE: Add description for Ruído Branco]`,
+    links: {
+      spotify: "https://open.spotify.com/album/5yBS1vVVYiVACkOwDZ8pv1",
+    },
+    featured: false,
+    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5yBS1vVVYiVACkOwDZ8pv1" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+  },
+
+  // ── Sleep — Single ───────────────────────────────────────────────────────
+  {
+    id: "sleep-single",
+    title: "Sleep",
+    project: "stop-and-go-station",
+    projectDisplayName: "Giovani Baroni",
+    type: "single",
+    year: 2022,
+    coverImage: "/images/projects/placeholder.jpg",
+    shortDescription: "Solo single by Giovani Baroni.",
+    longDescription: `[UPDATE: Add description for Sleep]`,
+    links: {
+      spotify: "https://open.spotify.com/album/4ZRBXxx4bHWWcou1cHR1Zi",
+    },
+    featured: false,
+    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4ZRBXxx4bHWWcou1cHR1Zi" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+  },
+
+  // ── sukya || porno — TALASSOFOBIA ────────────────────────────────────────
   {
     id: "sukya-porno-ep1",
-    title: "EP I", // UPDATE: actual EP title if it has one
+    title: "TALASSOFOBIA",
     project: "sukya-porno",
     projectDisplayName: "sukya || porno",
     type: "ep",
-    year: 2021, // UPDATE: actual release year
-    coverImage: "/images/projects/sukya-ep1-cover-placeholder.jpg",
+    year: 2021,
+    coverImage: "/images/projects/sukya-ep1-cover-placeholder.png",
     shortDescription:
       "The debut EP from sukya || porno — noisy, experimental, and visceral.",
     longDescription: `The first EP from sukya || porno, the collaborative project between Giovani Baroni and [UPDATE: bandmate name].
@@ -138,12 +180,12 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
 
 [UPDATE: Replace with actual EP description]`,
     links: {
-      spotify: "", // UPDATE
-      bandcamp: "", // UPDATE
-      youtube: "", // UPDATE
+      spotify: "https://open.spotify.com/album/1FIytwlVndlrmYbITk0Ibt",
+      bandcamp: "",
+      youtube: "",
     },
     featured: false,
-    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/PLACEHOLDER_SUKYA_EP1" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1FIytwlVndlrmYbITk0Ibt" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     credits: [
       "sukya || porno is Giovani Baroni and [UPDATE: bandmate name]",
       "[UPDATE: additional credits]",
@@ -155,14 +197,14 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
     ],
   },
 
-  // ── sukya || porno — EP #2 ───────────────────────────────────────────────
+  // ── sukya || porno — Quando a Urbe Vira Mange e Nosso Sangue, Lama ──────
   {
     id: "sukya-porno-ep2",
-    title: "EP II", // UPDATE: actual EP title if it has one
+    title: "Quando a Urbe Vira Mange e Nosso Sangue, Lama",
     project: "sukya-porno",
     projectDisplayName: "sukya || porno",
     type: "ep",
-    year: 2023, // UPDATE: actual release year
+    year: 2023,
     coverImage: "/images/projects/sukya-ep2-cover-placeholder.jpg",
     shortDescription:
       "The second EP from sukya || porno — more expansive, weirder, and more precise.",
@@ -170,12 +212,12 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
 
 [UPDATE: Replace with actual EP description]`,
     links: {
-      spotify: "", // UPDATE
-      bandcamp: "", // UPDATE
-      youtube: "", // UPDATE
+      spotify: "https://open.spotify.com/album/3gsi2BJoBKdhXobj89XuYq",
+      bandcamp: "",
+      youtube: "",
     },
     featured: false,
-    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/PLACEHOLDER_SUKYA_EP2" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3gsi2BJoBKdhXobj89XuYq" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     credits: [
       "sukya || porno is Giovani Baroni and [UPDATE: bandmate name]",
       "[UPDATE: additional credits]",

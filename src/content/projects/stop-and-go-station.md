@@ -6,7 +6,7 @@ status: "released"
 order: 3
 label: "Solo · EP"
 links:
-  spotify: ""
+  spotify: "https://open.spotify.com/album/5le5q8tskih5LXdnAmK8cC"
   bandcamp: ""
 seoDescription: "Stop & Go Station is a solo EP by Giovani Baroni — introspective songs from a period of transit."
 featured: true

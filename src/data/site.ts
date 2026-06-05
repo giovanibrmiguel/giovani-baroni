@@ -15,9 +15,9 @@
 export const site = {
   // ── Artist Identity ──────────────────────────────────────────────────────
   name: "Giovani Baroni",
-  tagline: "Musician · Songwriter · Producer",
+  // tagline: "Musician · Songwriter · Producer",
   description:
-    "Giovani Baroni is a Brazilian musician, songwriter, vocalist, and producer. Exploring psychedelia, water, and the vast territories between dream and memory.",
+    "Giovani Baroni is a Brazilian musician based in Mexico City.",
 
   // ── Domain ───────────────────────────────────────────────────────────────
   // UPDATE THIS when you have a real domain.
@@ -32,10 +32,10 @@ export const site = {
   // ── Social Links ─────────────────────────────────────────────────────────
   // Leave empty string "" for links you don't have yet.
   social: {
-    instagram: "https://instagram.com/giovanibaroni", // UPDATE: your Instagram handle
-    spotify: "https://open.spotify.com/artist/PLACEHOLDER", // UPDATE: your Spotify artist ID
-    youtube: "https://youtube.com/@giovanibaroni", // UPDATE: your YouTube channel
-    bandcamp: "https://giovanibaroni.bandcamp.com", // UPDATE: your Bandcamp URL
+    instagram: "https://www.instagram.com/giovanibaroni/",
+    spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+    youtube: "https://www.youtube.com/@sukyarecords",
+    bandcamp: "https://giovanibaroni.bandcamp.com",
     soundcloud: "",
     tiktok: "",
     twitter: "",
@@ -47,7 +47,7 @@ export const site = {
   // ── Press Kit ────────────────────────────────────────────────────────────
   // Link to a Google Drive folder with your press kit.
   // Update this link whenever you update your press kit.
-  pressKitUrl: "https://drive.google.com/PLACEHOLDER", // UPDATE: your Google Drive link
+  pressKitUrl: "https://drive.google.com/drive/u/2/folders/1wdE8OCj8gry5UlX25IxuXEJXubEP0IjX",
 
   // ── SEO Defaults ─────────────────────────────────────────────────────────
   // Used when a page doesn't provide its own OG image.

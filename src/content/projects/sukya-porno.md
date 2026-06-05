@@ -9,9 +9,9 @@ members:
   - "Giovani Baroni"
   - "[UPDATE: bandmate name]"
 links:
-  spotify: ""
-  bandcamp: ""
-  instagram: ""
+  spotify: "https://open.spotify.com/artist/7ndXsfZrZViNKKJB2LWXz5"
+  instagram: "https://www.instagram.com/sukyap/"
+  youtube: "https://www.youtube.com/@sukyarecords"
 seoDescription: "sukya || porno is a Brazilian experimental rock band with two released EPs."
 featured: true
 ---
@@ -26,8 +26,8 @@ The name is a provocation. The music is the contradiction — noisy and tender, 
 
 ## Releases
 
-- **EP I** — [UPDATE: year] — [UPDATE: short description]
-- **EP II** — [UPDATE: year] — [UPDATE: short description]
+- **TALASSOFOBIA** — [UPDATE: year] — [UPDATE: short description]
+- **Quando a Urbe Vira Mange e Nosso Sangue, Lama** — [UPDATE: year] — [UPDATE: short description]
 
 ## Sound
 
