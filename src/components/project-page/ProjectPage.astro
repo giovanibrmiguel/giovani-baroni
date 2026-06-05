@@ -27,6 +27,30 @@ const { projectKey, config, releases, description } = Astro.props;
   description={description ?? `${config.displayName} — official page.`}
   project={projectKey}
 >
+  <!-- ── bLU CTA banner (GIOVANI BARONI page only) ───────────────── -->
+  {projectKey === "giovani-baroni" && (
+    <a
+      href="/blu"
+      class="group flex items-center justify-between gap-4 w-full px-6 py-3
+             bg-crimson-700 hover:bg-crimson-500
+             border-b border-crimson-500 hover:border-crimson-400
+             transition-all duration-300"
+      aria-label="Explore bLU — debut album"
+    >
+      <div class="flex items-center gap-3 min-w-0">
+        <span
+          class="label-mono text-xs text-gold tracking-widest shrink-0"
+        >NEW ALBUM</span>
+        <span class="text-foam text-sm font-semibold tracking-wide truncate">
+          bLU — debut solo album · 2026
+        </span>
+      </div>
+      <span
+        class="label-mono text-xs text-gold group-hover:text-foam shrink-0 transition-colors duration-200"
+      >Explore →</span>
+    </a>
+  )}
+
   <!-- ── Bio section ─────────────────────────────────────────────── -->
   <section id="bio" class="pt-12 pb-0" aria-labelledby="bio-heading">
     <div class="max-w-4xl mx-auto px-6">
@@ -64,8 +88,11 @@ const { projectKey, config, releases, description } = Astro.props;
       </div>
 
       <!-- Bio content (injected by parent page) -->
-      <div class="prose prose-ocean prose-base md:prose-lg max-w-none mb-12">
-        <slot name="bio" />
+      <div class="border-t border-ocean-900 pt-10 mb-12">
+        <p class="label-mono text-lg text-ocean-500 mb-5">Bio</p>
+        <div class="prose prose-ocean prose-base md:prose-lg max-w-none">
+          <slot name="bio" />
+        </div>
       </div>
 
       <!-- Press Kit -->
