@@ -1,0 +1,99 @@
+---
+/**
+ * ProjectPage
+ * Shared layout component for GIOVANI BARONI and sukya || porno pages.
+ * Renders all sections: bio, press kit, discography, videos.
+ *
+ * The bio content is injected via the "bio" named slot from each project page.
+ */
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import DiscographySection from "@/components/project-page/DiscographySection.astro";
+import VideosSection from "@/components/project-page/VideosSection.astro";
+import type { ProjectConfig, ProjectKey } from "@/data/site";
+import type { Release } from "@/data/releases";
+
+interface Props {
+  projectKey: ProjectKey;
+  config: ProjectConfig;
+  releases: Release[];
+  description?: string;
+}
+
+const { projectKey, config, releases, description } = Astro.props;
+---
+
+<BaseLayout
+  title={config.displayName}
+  description={description ?? `${config.displayName} — official page.`}
+  project={projectKey}
+>
+  <!-- ── Bio section ─────────────────────────────────────────────── -->
+  <section id="bio" class="pt-12 pb-0" aria-labelledby="bio-heading">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- Project title + portrait row -->
+      <div class="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start mb-12">
+        <!-- Left: title, contact -->
+        <div>
+          <h1
+            id="bio-heading"
+            class="font-display text-foam text-4xl md:text-6xl leading-none tracking-tight mb-4"
+          >
+            {config.displayName}
+          </h1>
+          <a
+            href={`mailto:${config.email}`}
+            class="label-mono text-lg text-ocean-400 hover:text-ocean-200 transition-colors duration-200"
+          >
+            {config.email}
+          </a>
+        </div>
+
+        <!-- Right: portrait -->
+        <div class="w-32 h-32 md:w-44 md:h-44 flex-shrink-0 rounded-sm overflow-hidden bg-ocean-900 border border-ocean-800 justify-self-end md:justify-self-auto">
+          <img
+            src={config.portrait}
+            alt={`${config.displayName} portrait`}
+            class="w-full h-full object-cover opacity-85"
+            loading="eager"
+            width="176"
+            height="176"
+            onerror="this.style.display='none'; this.parentElement.style.background='#0c1e30';"
+          />
+        </div>
+      </div>
+
+      <!-- Bio content (injected by parent page) -->
+      <div class="prose prose-ocean prose-base md:prose-lg max-w-none mb-12">
+        <slot name="bio" />
+      </div>
+
+      <!-- Press Kit -->
+      <div id="presskit" class="py-10 border-t border-ocean-900">
+        <p class="label-mono text-lg text-ocean-500 mb-5">Press Kit</p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+          <p class="text-ocean-400 text-base">
+            Hi-resolution photos, bio, and release info.
+          </p>
+          <a
+            href={config.pressKitUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 label-mono text-lg text-foam bg-ocean-800 hover:bg-ocean-700 border border-ocean-700 hover:border-ocean-500 px-5 py-2.5 rounded-sm transition-all duration-200 whitespace-nowrap"
+            aria-label="Download press kit (opens Google Drive)"
+          >
+            Download Press Kit ↓
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Discography ─────────────────────────────────────────────── -->
+  <DiscographySection releases={releases} />
+
+  <!-- ── Videos ─────────────────────────────────────────────────── -->
+  <VideosSection />
+
+</BaseLayout>

@@ -1,69 +1,11 @@
 ---
 title: "About"
-excerpt: "Giovani Baroni is a Brazilian musician, songwriter, vocalist, and producer."
-updatedAt: "2025"
+excerpt: "Giovani Baroni is a Brazilian musician, songwriter, and producer based in Mexico City."
+updatedAt: "2026"
 ---
 
-<!-- ═══════════════════════════════════════════════════════
-     SHORT BIO (used in press, EPK, social bios)
-     UPDATE: Replace with your actual short bio (2–3 sentences max)
-     ═══════════════════════════════════════════════════════ -->
+After more than a decade in the São Paulo independent scene, most notably anchoring the erratic alt-rock of sukya || porno, multi-instrumentalist and producer Giovani Baroni has engineered a massive creative pivot from his new base in Mexico City. His solo work is a deliberate rebellion against today's single-driven streaming landscape. Now 30, Baroni builds dense, long-form musical narratives that prioritize unpredictable structures and emotional grit over viral hooks. Operating as an uncompromising auteur, he bridges the gap between the meticulous complexity of progressive rock and the raw vulnerability of Brazilian indie, creating what he calls "music by nerds, for nerds."
 
-## Short Bio
+This solo identity took shape after his relocation to CDMX, a move that forced him to abandon old projects and rebuild his artistic process from scratch. Today, Baroni acts as the nucleus of a network of collaborators stretching from Brazil to Berlin, resulting in a trilingual sound that shifts fluidly between Portuguese, English, and Spanish. Heavily influenced by cinematic textures, literature, and oceanic imagery, his music uses aquatic synths, phasers, and heavy delays to mirror themes of internal transformation. 
 
-Giovani Baroni is a Brazilian musician, songwriter, vocalist, and producer. Working across multiple projects and musical identities, he explores psychedelia, intimacy, and the strange territories between memory and sound.
-
-[UPDATE: Replace this with your actual short bio.]
-
----
-
-<!-- ═══════════════════════════════════════════════════════
-     LONG BIO (for about page and press)
-     UPDATE: Replace with your full bio
-     ═══════════════════════════════════════════════════════ -->
-
-## Full Bio
-
-Giovani Baroni is a musician, songwriter, vocalist, and producer based in [UPDATE: city, country].
-
-He began writing songs at [UPDATE: age/context] and has since developed a practice that moves fluidly between solo work, collaborative projects, and experimental sound.
-
-His projects — bLU, sukya || porno, and Stop & Go Station — represent different aspects of a singular creative vision: music that is emotionally direct, sonically exploratory, and deeply influenced by water, nature, and the unconscious.
-
-bLU, his upcoming debut solo album, marks a new chapter: an immersive psychedelic record made entirely on his own terms.
-
-[UPDATE: Continue with your actual story. Where are you from? How did you start making music? What experiences shaped you? What are you working toward?]
-
----
-
-<!-- ═══════════════════════════════════════════════════════
-     INFLUENCES
-     UPDATE: Add your actual influences
-     ═══════════════════════════════════════════════════════ -->
-
-## Influences
-
-**Music:** Radiohead, Caetano Veloso, Sigur Rós, Björk, Portishead, My Bloody Valentine, Nick Drake, Hermeto Pascoal, Arthur Verocai, Talk Talk, Cocteau Twins
-
-[UPDATE: Add or replace with your actual influences — music, visual art, film, literature, or anything else that shapes your work.]
-
-**Visual and Conceptual:** [UPDATE: visual artists, photographers, filmmakers, writers that influence you]
-
----
-
-<!-- ═══════════════════════════════════════════════════════
-     ARTISTIC VISION
-     UPDATE: Write this in your own voice
-     ═══════════════════════════════════════════════════════ -->
-
-## Artistic Vision
-
-I make music to understand things I can't understand any other way.
-
-[UPDATE: Write your own statement about what drives your work, what you're searching for, and what you want your music to do in the world. This should be personal and specific to you.]
-
-Music, to me, is [UPDATE: finish this sentence in your own words].
-
-Water appears in almost everything I do — not as a symbol, exactly, but as a state. A way of moving. A resistance that is also a support.
-
-[UPDATE: Expand on any recurring themes, images, or concerns in your work.]
+This culminates in his debut conceptual album, bLU, arriving in September 2026: a patient, interconnected 10-track journey designed to be heard from front to back.

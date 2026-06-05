@@ -19,7 +19,7 @@ const { Content } = await aboutPage!.render();
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
     <!-- Page header -->
     <header class="mb-16">
-      <p class="label-mono text-[11px] text-ocean-500 mb-4">The Artist</p>
+      <p class="label-mono text-lg text-ocean-500 mb-4">The Artist</p>
       <h1 class="font-display text-foam text-4xl md:text-6xl leading-tight">
         About
       </h1>
@@ -38,7 +38,7 @@ const { Content } = await aboutPage!.render();
         <!-- Artist photo placeholder -->
         <div class="aspect-square rounded-sm overflow-hidden bg-ocean-900">
           <img
-            src="/images/artist/portrait-placeholder.jpg"
+            src="/images/artist/giovani-portrait-placeholder.jpg"
             alt={`${site.name} portrait`}
             class="w-full h-full object-cover opacity-80"
             loading="lazy"
@@ -50,26 +50,26 @@ const { Content } = await aboutPage!.render();
 
         <!-- Quick links -->
         <div class="space-y-3">
-          <p class="label-mono text-[10px] text-ocean-500">Explore</p>
+          <p class="label-mono text-base text-ocean-500">Explore</p>
           <nav aria-label="About page navigation">
             <ul class="space-y-2 list-none">
               <li>
-                <a href="/music" class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors">
+                <a href="/music" class="label-mono text-lg text-ocean-400 hover:text-ocean-200 transition-colors">
                   Music →
                 </a>
               </li>
               <li>
-                <a href="/projects" class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors">
+                <a href="/projects" class="label-mono text-lg text-ocean-400 hover:text-ocean-200 transition-colors">
                   Projects →
                 </a>
               </li>
               <li>
-                <a href="/press" class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors">
+                <a href="/press" class="label-mono text-lg text-ocean-400 hover:text-ocean-200 transition-colors">
                   Press →
                 </a>
               </li>
               <li>
-                <a href="/contact" class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors">
+                <a href="/contact" class="label-mono text-lg text-ocean-400 hover:text-ocean-200 transition-colors">
                   Contact →
                 </a>
               </li>
@@ -79,7 +79,7 @@ const { Content } = await aboutPage!.render();
 
         <!-- Social links -->
         <div class="space-y-3">
-          <p class="label-mono text-[10px] text-ocean-500">Links</p>
+          <p class="label-mono text-base text-ocean-500">Links</p>
           <nav aria-label="Social links">
             <ul class="space-y-2 list-none">
               {
@@ -90,7 +90,7 @@ const { Content } = await aboutPage!.render();
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors"
+                        class="label-mono text-lg text-ocean-400 hover:text-ocean-200 transition-colors"
                       >
                         {platform.charAt(0).toUpperCase() + platform.slice(1)} ↗
                       </a>

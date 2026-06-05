@@ -16,24 +16,8 @@ seoDescription: "sukya || porno is a Brazilian experimental rock band with two r
 featured: true
 ---
 
-sukya || porno is a band formed by Giovani Baroni and [UPDATE: bandmate name].
+sukya || porno is an alternative rock band from São Paulo that channels the claustrophobia, grey skies, and friction of the São Paulo megalopolis (s || p) into sharp crooked noise. Founded by Giovani Baroni (vocals, guitar), Luca Tornato (bass), Walter Gonçalves (bass), and Mardem Humberto (drums), the band draws together musicians from across Brazil to build a sound that is intentionally unstable.
 
-Two EPs released. More to come.
+Their 2017 independent debut EP, Quando a Urbe Vira Mangue, e Nosso Sangue, Lama, served as a raw introduction to their world. The record subverts traditional indie rock by bleeding it into regional Brazilian rhythms and experimental prog, trading predictable hooks for uncomfortable, urban melancholy and sharp lyrical turns.
 
-The name is a provocation. The music is the contradiction — noisy and tender, heavy and dissolving, strange and honest.
-
-[UPDATE: Replace with your actual band description, history, and context.]
-
-## Releases
-
-- **TALASSOFOBIA** — [UPDATE: year] — [UPDATE: short description]
-- **Quando a Urbe Vira Mange e Nosso Sangue, Lama** — [UPDATE: year] — [UPDATE: short description]
-
-## Sound
-
-[UPDATE: Describe the band's sound, influences, and what distinguishes sukya || porno from your solo work.]
-
-## Members
-
-- **Giovani Baroni** — vocals, guitar, production
-- **[UPDATE: bandmate name]** — [UPDATE: instruments/role]
+Following Tornato's departure, Walter Gonçales took over on bass, shifting the band toward a tighter, more confrontational sound. That evolution defined 2019’s TALASSOFOBIA—a heavier, suffocating record where themes of love unravel into claustrophobia. Pulling from the slack grit of Pavement, the complex angularity of King Crimson, and the unironic drama of romantic brega, sukya || porno avoids easy categorization, delivering music that is messy, sincere, and entirely its own.

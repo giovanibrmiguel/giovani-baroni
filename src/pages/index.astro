@@ -1,64 +1,131 @@
 ---
 /**
- * HOME PAGE
- * The main entry point for the site.
- * Showcases the artist, the featured project (bLU), and recent releases.
+ * LANDING PAGE
+ * Minimal portal: choose between GIOVANI BARONI and sukya || porno.
  */
 import BaseLayout from "@/components/layout/BaseLayout.astro";
-import Hero from "@/components/home/Hero.astro";
-import FeaturedProject from "@/components/home/FeaturedProject.astro";
-import ArtistIntro from "@/components/home/ArtistIntro.astro";
-import LatestRelease from "@/components/home/LatestRelease.astro";
-import ProjectCard from "@/components/projects/ProjectCard.astro";
-import { getCollection } from "astro:content";
-import { site } from "@/data/site";
+import { projects } from "@/data/site";
 
-const allProjects = await getCollection("projects");
-const sortedProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
-// Don't show the featured project again in the "other projects" section
-const otherProjects = sortedProjects.filter((p) => p.slug !== site.featuredProject);
+const gb = projects["giovani-baroni"];
+const sukya = projects["sukya-porno"];
 ---
 
 <BaseLayout
-  title="Home"
-  description="Official website of Giovani Baroni — Brazilian musician, songwriter, vocalist, and producer."
+  title="Giovani Baroni"
+  description="Official website of Giovani Baroni — musician, songwriter, and producer."
 >
-  <!-- 1. Full-viewport hero -->
-  <Hero />
+  <div class="min-h-[calc(100vh-65px)] flex flex-col md:flex-row">
 
-  <!-- 2. Featured project spotlight (bLU) -->
-  <FeaturedProject />
+    <!-- GIOVANI BARONI card -->
+    <a
+      href="/giovani-baroni"
+      class="group relative flex-1 flex flex-col items-center justify-center overflow-hidden
+             border-b md:border-b-0 md:border-r border-ocean-900
+             py-20 md:py-0 cursor-pointer transition-all duration-500
+             hover:bg-ocean-900/30"
+      aria-label="Enter GIOVANI BARONI"
+    >
+      <!-- Background portrait -->
+      <div
+        class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+        aria-hidden="true"
+      >
+        <img
+          src={gb.portrait}
+          alt=""
+          class="w-full h-full object-cover object-center"
+          loading="eager"
+          onerror="this.parentElement.style.display='none';"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-ocean-950 via-transparent to-ocean-950/60" />
+      </div>
 
-  <!-- 3. Short artist introduction -->
-  <ArtistIntro />
-
-  <!-- 4. Latest release -->
-  <LatestRelease />
-
-  <!-- 5. Other projects -->
-  {
-    otherProjects.length > 0 && (
-      <section class="py-16 md:py-24 px-6 border-t border-ocean-900" aria-labelledby="projects-heading">
-        <div class="max-w-6xl mx-auto">
-          <div class="flex items-end justify-between mb-10">
-            <p class="label-mono text-[11px] text-ocean-500">Projects</p>
-            <a
-              href="/projects"
-              class="label-mono text-[10px] text-ocean-400 hover:text-ocean-200 transition-colors"
-            >
-              All projects →
-            </a>
-          </div>
-
-          <h2 id="projects-heading" class="sr-only">Musical Projects</h2>
-
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project) => (
-              <ProjectCard project={project} />
-            ))}
-          </div>
+      <!-- Foreground content -->
+      <div class="relative z-10 flex flex-col items-center gap-8 text-center px-8">
+        <!-- Portrait circle -->
+        <div
+          class="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border border-ocean-700
+                 group-hover:border-ocean-400 transition-colors duration-500"
+        >
+          <img
+            src={gb.portrait}
+            alt="GIOVANI BARONI"
+            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+            loading="eager"
+            width="144"
+            height="144"
+            onerror="this.style.display='none'; this.parentElement.style.background='#0c1e30';"
+          />
         </div>
-      </section>
-    )
-  }
+
+        <div>
+          <h2
+            class="font-display text-foam text-2xl md:text-3xl lg:text-4xl font-semibold tracking-widest
+                   group-hover:text-white transition-colors duration-300"
+          >
+            GIOVANI BARONI
+          </h2>
+          <p class="label-mono text-base text-ocean-500 mt-3 group-hover:text-ocean-400 transition-colors duration-300">
+            enter →
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- sukya || porno card -->
+    <a
+      href="/sukya"
+      class="group relative flex-1 flex flex-col items-center justify-center overflow-hidden
+             py-20 md:py-0 cursor-pointer transition-all duration-500
+             hover:bg-ocean-900/30"
+      aria-label="Enter sukya || porno"
+    >
+      <!-- Background portrait -->
+      <div
+        class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+        aria-hidden="true"
+      >
+        <img
+          src={sukya.portrait}
+          alt=""
+          class="w-full h-full object-cover object-center"
+          loading="eager"
+          onerror="this.parentElement.style.display='none';"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-ocean-950 via-transparent to-ocean-950/60" />
+      </div>
+
+      <!-- Foreground content -->
+      <div class="relative z-10 flex flex-col items-center gap-8 text-center px-8">
+        <!-- Portrait circle -->
+        <div
+          class="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border border-ocean-700
+                 group-hover:border-ocean-400 transition-colors duration-500"
+        >
+          <img
+            src={sukya.portrait}
+            alt="sukya || porno"
+            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+            loading="eager"
+            width="144"
+            height="144"
+            onerror="this.style.display='none'; this.parentElement.style.background='#0c1e30';"
+          />
+        </div>
+
+        <div>
+          <h2
+            class="font-display text-foam text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide
+                   group-hover:text-white transition-colors duration-300"
+          >
+            sukya || porno
+          </h2>
+          <p class="label-mono text-base text-ocean-500 mt-3 group-hover:text-ocean-400 transition-colors duration-300">
+            enter →
+          </p>
+        </div>
+      </div>
+    </a>
+
+  </div>
 </BaseLayout>

@@ -48,7 +48,7 @@ const { title, tagline, coverImage, label, links, members, seoDescription } = pr
     <nav class="mb-12" aria-label="Breadcrumb">
       <a
         href="/projects"
-        class="label-mono text-[10px] text-ocean-500 hover:text-ocean-200 transition-colors"
+        class="label-mono text-base text-ocean-500 hover:text-ocean-200 transition-colors"
       >
         ← All Projects
       </a>
@@ -58,7 +58,7 @@ const { title, tagline, coverImage, label, links, members, seoDescription } = pr
     <header class="grid md:grid-cols-2 gap-12 md:gap-20 items-start mb-20">
       <!-- Text side -->
       <div class="space-y-4">
-        {label && <p class="label-mono text-[10px] text-ocean-400">{label}</p>}
+        {label && <p class="label-mono text-base text-ocean-400">{label}</p>}
 
         <h1 class="font-display text-foam text-4xl md:text-6xl leading-none">
           {title}
@@ -69,7 +69,7 @@ const { title, tagline, coverImage, label, links, members, seoDescription } = pr
         {
           members && members.length > 0 && (
             <div>
-              <p class="label-mono text-[10px] text-ocean-500 mb-2">Members</p>
+              <p class="label-mono text-base text-ocean-500 mb-2">Members</p>
               <ul class="space-y-1">
                 {members.map((m) => (
                   <li class="text-ocean-300 text-sm">{m}</li>
@@ -88,7 +88,7 @@ const { title, tagline, coverImage, label, links, members, seoDescription } = pr
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="label-mono text-[10px] text-ocean-400 hover:text-ocean-200 border border-ocean-700 hover:border-ocean-500 px-3 py-1.5 rounded-sm transition-all duration-200"
+                    class="label-mono text-base text-ocean-400 hover:text-ocean-200 border border-ocean-700 hover:border-ocean-500 px-3 py-1.5 rounded-sm transition-all duration-200"
                   >
                     {platform.charAt(0).toUpperCase() + platform.slice(1)} →
                   </a>
@@ -123,7 +123,7 @@ const { title, tagline, coverImage, label, links, members, seoDescription } = pr
       projectReleases.length > 0 && (
         <section aria-labelledby="releases-heading">
           <div class="flex items-center gap-4 mb-8">
-            <p class="label-mono text-[11px] text-ocean-500" id="releases-heading">
+            <p class="label-mono text-lg text-ocean-500" id="releases-heading">
               Releases
             </p>
             <div class="flex-1 h-px bg-ocean-800" />

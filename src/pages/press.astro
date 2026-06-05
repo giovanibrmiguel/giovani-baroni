@@ -20,7 +20,7 @@ const { Content } = await pressPage!.render();
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
     <!-- Page header -->
     <header class="mb-16">
-      <p class="label-mono text-[11px] text-ocean-500 mb-4">Media</p>
+      <p class="label-mono text-lg text-ocean-500 mb-4">Media</p>
       <h1 class="font-display text-foam text-4xl md:text-6xl leading-tight">
         Press
       </h1>
@@ -43,7 +43,7 @@ const { Content } = await pressPage!.render();
         {
           site.pressKitUrl && !site.pressKitUrl.includes("PLACEHOLDER") ? (
             <div class="card-ocean p-5 space-y-3">
-              <p class="label-mono text-[10px] text-ocean-500">Press Kit</p>
+              <p class="label-mono text-base text-ocean-500">Press Kit</p>
               <p class="text-ocean-300 text-sm leading-relaxed">
                 Hi-resolution photos, logos, and full biography.
               </p>
@@ -51,7 +51,7 @@ const { Content } = await pressPage!.render();
                 href={site.pressKitUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 label-mono text-[11px] text-foam bg-ocean-800 hover:bg-ocean-700 px-4 py-2 rounded-sm transition-colors duration-200 w-full justify-center"
+                class="inline-flex items-center gap-2 label-mono text-lg text-foam bg-ocean-800 hover:bg-ocean-700 px-4 py-2 rounded-sm transition-colors duration-200 w-full justify-center"
                 aria-label="Download press kit (opens Google Drive)"
               >
                 Download Press Kit ↓
@@ -59,7 +59,7 @@ const { Content } = await pressPage!.render();
             </div>
           ) : (
             <div class="card-ocean p-5 space-y-3 border-dashed">
-              <p class="label-mono text-[10px] text-ocean-600">Press Kit</p>
+              <p class="label-mono text-base text-ocean-600">Press Kit</p>
               <p class="text-ocean-600 text-xs leading-relaxed">
                 Press kit coming soon. Update <code class="text-ocean-500">pressKitUrl</code> in <code class="text-ocean-500">src/data/site.ts</code> to add your Google Drive link.
               </p>
@@ -69,10 +69,10 @@ const { Content } = await pressPage!.render();
 
         <!-- Contact -->
         <div class="space-y-3">
-          <p class="label-mono text-[10px] text-ocean-500">Contact</p>
+          <p class="label-mono text-base text-ocean-500">Contact</p>
           <a
             href={`mailto:${site.email}`}
-            class="block label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors"
+            class="block label-mono text-lg text-ocean-400 hover:text-ocean-200 transition-colors"
           >
             {site.email} →
           </a>
@@ -80,10 +80,10 @@ const { Content } = await pressPage!.render();
 
         <!-- Artist photos preview -->
         <div class="space-y-3">
-          <p class="label-mono text-[10px] text-ocean-500">Artist Photos</p>
+          <p class="label-mono text-base text-ocean-500">Artist Photos</p>
           <div class="grid grid-cols-2 gap-2">
             {
-              [1, 2, 3, 4].map((i) => (
+              [1, 2, 3, 4, 5].map((i) => (
                 <div class="aspect-square rounded-sm overflow-hidden bg-ocean-900">
                   <img
                     src={`/images/press/photo-${i}-placeholder.jpg`}
@@ -105,7 +105,7 @@ const { Content } = await pressPage!.render();
 
         <!-- Streaming links -->
         <div class="space-y-3">
-          <p class="label-mono text-[10px] text-ocean-500">Streaming</p>
+          <p class="label-mono text-base text-ocean-500">Streaming</p>
           <nav aria-label="Streaming platforms">
             <ul class="space-y-2 list-none">
               {
@@ -117,7 +117,7 @@ const { Content } = await pressPage!.render();
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors"
+                        class="label-mono text-lg text-ocean-400 hover:text-ocean-200 transition-colors"
                       >
                         {platform.charAt(0).toUpperCase() + platform.slice(1)} ↗
                       </a>

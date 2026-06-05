@@ -1,0 +1,133 @@
+---
+/**
+ * DiscographySection
+ * Full-width vertical list of releases. One release per row.
+ * Each row: square cover (left) + metadata/description/link (right).
+ */
+import type { Release } from "@/data/releases";
+
+interface Props {
+  releases: Release[];
+}
+
+const { releases } = Astro.props;
+
+const typeLabel: Record<Release["type"], string> = {
+  album: "Album",
+  ep: "EP",
+  single: "Single",
+  live: "Live",
+  compilation: "Compilation",
+};
+---
+
+<section id="discography" class="py-16 md:py-24 border-t border-ocean-900" aria-labelledby="discography-heading">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="label-mono text-lg text-ocean-500 mb-12" id="discography-heading">
+      Discography
+    </p>
+
+    <div class="space-y-12 md:space-y-16">
+      {
+        releases.map((release) => (
+          <article class="grid grid-cols-[auto_1fr] gap-6 md:gap-10 items-start">
+            <!-- Cover image -->
+            <div class="w-28 h-28 md:w-40 md:h-40 flex-shrink-0 rounded-sm overflow-hidden bg-ocean-900 border border-ocean-800">
+              {release.project === "blu" ? (
+                <a href="/blu" aria-label={`View ${release.title} page`}>
+                  <img
+                    src={release.coverImage}
+                    alt={`${release.title} cover`}
+                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                    loading="lazy"
+                    width="160"
+                    height="160"
+                    onerror="this.style.display='none'; this.parentElement.style.background='#0c1e30';"
+                  />
+                </a>
+              ) : (
+                <img
+                  src={release.coverImage}
+                  alt={`${release.title} cover`}
+                  class="w-full h-full object-cover opacity-90"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                  onerror="this.style.display='none'; this.parentElement.style.background='#0c1e30';"
+                />
+              )}
+            </div>
+
+            <!-- Info -->
+            <div class="space-y-3 min-w-0 pt-1">
+              <!-- Title -->
+              <div>
+                <h3 class="font-display text-foam text-lg md:text-xl leading-tight">
+                  {release.project === "blu" ? (
+                    <a href="/blu" class="hover:text-ocean-200 transition-colors duration-200">
+                      {release.title}
+                    </a>
+                  ) : (
+                    release.title
+                  )}
+                </h3>
+                <p class="label-mono text-base text-ocean-500 mt-1">
+                  {release.projectDisplayName}
+                </p>
+              </div>
+
+              <!-- Meta row -->
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="label-mono text-base text-ocean-400 border border-ocean-800 px-2 py-0.5 rounded-sm">
+                  {typeLabel[release.type]}
+                </span>
+                <span class="label-mono text-base text-ocean-600">
+                  {release.year}
+                </span>
+              </div>
+
+              <!-- Short description -->
+              {release.shortDescription && (
+                <p class="text-ocean-300 text-base leading-relaxed max-w-lg">
+                  {release.shortDescription}
+                </p>
+              )}
+
+              <!-- Links -->
+              <div class="flex flex-wrap gap-3 pt-1">
+                {release.project === "blu" && (
+                  <a
+                    href="/blu"
+                    class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
+                  >
+                    View bLU page →
+                  </a>
+                )}
+                {release.links?.spotify && (
+                  <a
+                    href={release.links.spotify}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
+                  >
+                    Spotify →
+                  </a>
+                )}
+                {release.links?.youtube && (
+                  <a
+                    href={release.links.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
+                  >
+                    YouTube →
+                  </a>
+                )}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

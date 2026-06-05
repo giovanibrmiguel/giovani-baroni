@@ -1,0 +1,27 @@
+---
+/**
+ * GIOVANI BARONI — /giovani-baroni
+ * Project page: bio, press kit, discography (bLU + solo releases), videos.
+ */
+import ProjectPage from "@/components/project-page/ProjectPage.astro";
+import { projects } from "@/data/site";
+import { getGiovaniBaroniReleases } from "@/data/releases";
+import { getEntry } from "astro:content";
+
+const config = projects["giovani-baroni"];
+const releases = getGiovaniBaroniReleases();
+
+const aboutPage = await getEntry("pages", "about");
+const { Content } = await aboutPage!.render();
+---
+
+<ProjectPage
+  projectKey="giovani-baroni"
+  config={config}
+  releases={releases}
+  description="Official page of GIOVANI BARONI — Brazilian musician, songwriter, and producer based in Mexico City."
+>
+  <div slot="bio">
+    <Content />
+  </div>
+</ProjectPage>

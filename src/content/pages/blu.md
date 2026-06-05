@@ -1,114 +1,19 @@
 ---
 title: "bLU"
-excerpt: "bLU is Giovani Baroni's debut solo album — an immersive psychedelic journey through water and memory."
+excerpt: "bLU is Giovani Baroni's debut solo album — ten tracks built as a single continuous journey through water, transformation, and the strange distance between who you were and who you're becoming."
 ogImage: "/images/blu/og-blu.jpeg"
 ---
 
-<!-- ═══════════════════════════════════════════════════════
-     bLU FLAGSHIP PAGE CONTENT
-     Edit each section below to fill in real content.
-     Sections marked [UPDATE] need your attention.
-     ═══════════════════════════════════════════════════════ -->
+bLU is Giovani Baroni's debut solo album — ten tracks designed to be heard in order, beginning to end, each one bleeding into the next. It is not a collection of songs. It is a single piece.
 
-## The Concept
+The album took shape after Baroni moved from São Paulo to Mexico City in 2023. Around the same time he started learning piano and Spanish, and began thinking seriously about making a record that was the opposite of everything getting released around him — long, patient, immersive, uninterested in viral potential. He wanted to make something ambitious and conceptual, the kind of album you put on and disappear into.
 
-Water doesn't know where it's going.
+The ocean runs through all of it. Fish, water, waves, submersion — as imagery, as sound design, as a way of thinking about inner transformation. Lyrically the album moves through themes of not abandoning your essential self, generational trauma, ego, eastern philosophy, love, and the strange process of changing while staying recognizably you. The words work across Portuguese, English, and Spanish.
 
-[UPDATE: Write the central concept or premise of bLU in your own words. What is this album about at its core? What drove you to make it?]
+Musically, bLU pulls from progressive rock, emo, psychedelia, and Brazilian indie — Radiohead, Mars Volta, Terno Rei, Boogarins, among others — without landing comfortably in any single genre. The tracks are structured strangely: leitmotifs repeat and mutate across the full ten pieces, melodies from one song reappear in altered form in another, time signatures shift, songs accelerate and decelerate. Many have no chorus. The end of each track connects directly to the beginning of the next. Piano, phaser guitars, aquatic synthesizers, ambient textures, and a lot of delay.
 
-bLU began with a question: [UPDATE: what was the founding question or impulse?]
+The album was recorded across three cities. Baroni produced it and tracked vocals, guitars, and keys in Mexico City. Pedro Serapicos handled bass and mixing in Berlin. Bianca Predieri recorded drums in São Paulo. Jorge Sultzer sings on Efervescente. Fishy Boy was co-written with Ricardo Baroni and Mardem Humberto — a track that started years earlier in São Paulo, written after a swim, inspired by Radiohead and Modest Mouse, and finally finished here. Paseo Largo mixes indie rock with jazz and has a section in Spanish referencing the legendary Argentine band Pescado Rabioso. O Bicho que Sabia Demais is based on a poem Baroni found written by his father at age seventeen.
 
----
+The album opens with Ambiência Aquática No 5, a fully instrumental intro inspired by the album openings of Brazilian metal band Angra. It closes with O Rio, a track shaped in part by Hermann Hesse's Siddhartha. The first song with vocals, Peixes Estranhos, was remade three times before it was right — it's the first impression, the thing that sets every expectation that follows.
 
-## The Story
-
-[UPDATE: Tell the story of how this album came to be. Where were you? What were you going through? How long did it take? What changed along the way?]
-
-Recording started in [UPDATE: year, location]. The process was [UPDATE: describe the recording process, collaborators, approach].
-
----
-
-## Themes
-
-**Water** — [UPDATE: what does water mean in this album?]
-
-**Memory** — [UPDATE: how does memory function in these songs?]
-
-**Transformation** — [UPDATE: what kind of transformation are we talking about?]
-
-**Dreams** — [UPDATE: how do dreams influence the record?]
-
-[UPDATE: Add or remove themes. Make them specific to your actual album.]
-
----
-
-## The Sound
-
-[UPDATE: Describe the sonic world of bLU. What instruments? What textures? What production approach? What does it feel like to listen to?]
-
-bLU borrows from [UPDATE: genre or influence] without belonging to any of it. It is [UPDATE: describe the sound in your own words].
-
----
-
-## Tracklist
-
-*Tracklist to be announced.*
-
-[UPDATE: Replace with actual tracklist when ready. Format:
-1. Track Title
-2. Track Title
-etc.]
-
----
-
-## Credits
-
-[UPDATE: Full credits when ready]
-
-- Written and produced by Giovani Baroni
-- Recorded at [UPDATE: studio/location]
-- Mixed by [UPDATE: name]
-- Mastered by [UPDATE: name]
-- Artwork by [UPDATE: name]
-- Photography by [UPDATE: name]
-
----
-
-## Artwork
-
-[UPDATE: Add description or story about the album artwork when ready.]
-
----
-
-## Videos
-
-[UPDATE: Add YouTube embed links or descriptions of music videos when they exist.]
-
----
-
-## Press Quotes
-
-*Press coverage to be added.*
-
-[UPDATE: Paste press quotes here as they come in. Format:
-> "Quote text here."
-> — Publication Name
-]
-
----
-
-## Release Information
-
-**Artist:** Giovani Baroni  
-**Project:** bLU  
-**Format:** [UPDATE: format — digital, vinyl, CD, cassette?]  
-**Release Date:** [UPDATE: date or "Coming Soon"]  
-**Label:** [UPDATE: label name, or "Independent"]  
-
-[UPDATE: Add any additional release information — pre-save links, tour dates, events.]
-
----
-
-## Notes & Lyrics
-
-[UPDATE: Add liner notes, lyrics excerpts, or artist notes on individual songs here.]
+bLU comes out in 2026. Singles precede the full release.

@@ -24,8 +24,8 @@ export type StreamingLinks = {
 export type Release = {
   id: string;
   title: string;
-  // Must match a project slug in src/content/projects/
-  project: "blu" | "sukya-porno" | "stop-and-go-station";
+  // "blu" → featured sub-page; "giovani-baroni" → GB page; "sukya-porno" → sukya page
+  project: "blu" | "sukya-porno" | "giovani-baroni";
   projectDisplayName: string;
   type: "album" | "ep" | "single" | "live" | "compilation";
   year: number;
@@ -49,12 +49,12 @@ export const releases: Release[] = [
     id: "blu-album",
     title: "bLU",
     project: "blu",
-    projectDisplayName: "bLU",
+    projectDisplayName: "GIOVANI BARONI",
     type: "album",
     year: 2026,
-    coverImage: "/images/blu/cover-placeholder.jpg",
+    coverImage: "/images/blu/cover-placeholder.png",
     shortDescription:
-      "Debut solo album — progressive indie rock with ocean imagery, conceptual narrative, and psychedelic soundscapes.",
+      "Upcoming debut solo album — TBD.",
     longDescription: `bLU is Giovani Baroni's debut solo album — a conceptual, narrative record designed to be listened to as a single continuous journey, from beginning to end.
 
 The album began taking shape after Baroni moved to Mexico City, where daily life in a new language and a new continent pushed him toward a deeper introspection. Drawing from psychedelic rock, shoegaze, Brazilian indie, prog, and emo, bLU uses the ocean as both metaphor and sonic texture — fish, water, waves, and the abyss running throughout its lyrics and production.
@@ -76,7 +76,6 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
       "Drums by Bianca Predieri (São Paulo)",
       "Guest vocals on Efervescente: Jorge Sultzer",
       "Fishy Boy co-written with Ricardo Baroni and Mardem Humberto",
-      "Piano developed with Eduardo [UPDATE: last name]",
       "Video production: Léo Lopes, Luca Tornato",
     ],
     tracklist: [
@@ -97,13 +96,13 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
   {
     id: "stop-and-go-ep",
     title: "Stop & Go Station",
-    project: "stop-and-go-station",
-    projectDisplayName: "Stop & Go Station",
+    project: "giovani-baroni",
+    projectDisplayName: "giovani-baroni",
     type: "ep",
-    year: 2022,
+    year: 2023,
     coverImage: "/images/projects/stop-and-go-cover-placeholder.jpg",
     shortDescription:
-      "A solo EP from an earlier chapter — transient, searching, and quietly intimate.",
+      "Stop & Go Station is an intimate, lo-fi and dreamy EP consisting of 4 tracks, shaped by home-recorded textures, and references to 90s video games. Blending Brazilian influences, indie rock, and nostalgia, Giovani Baroni builds a playful yet intricate sound world with echoes of Super Mario 64, Alceu Valença, and The Strokes.",
     longDescription: `Stop & Go Station is an early solo EP by Giovani Baroni. A collection of songs written during a period of transit and uncertainty.
 
 The EP is sparse and introspective, shaped by acoustic textures, layered vocals, and the ambience of in-between places.
@@ -131,12 +130,12 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
   {
     id: "ruido-branco-single",
     title: "Ruído Branco",
-    project: "stop-and-go-station",
+    project: "giovani-baroni",
     projectDisplayName: "Giovani Baroni",
     type: "single",
-    year: 2022,
-    coverImage: "/images/projects/placeholder.jpg",
-    shortDescription: "Solo single by Giovani Baroni.",
+    year: 2024,
+    coverImage: "/images/projects/ruido-branco-placeholder.png",
+    shortDescription: "Ruído Branco is about wanting everything at once: every dream, every place, every possible version of everything. The idea comes from white noise itself, all frequencies sounding together, and turns it into a digital nostalgic metaphor like the loud static of an old tube TV.",
     longDescription: `[UPDATE: Add description for Ruído Branco]`,
     links: {
       spotify: "https://open.spotify.com/album/5yBS1vVVYiVACkOwDZ8pv1",
@@ -149,13 +148,13 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
   {
     id: "sleep-single",
     title: "Sleep",
-    project: "stop-and-go-station",
+    project: "giovani-baroni",
     projectDisplayName: "Giovani Baroni",
     type: "single",
-    year: 2022,
-    coverImage: "/images/projects/placeholder.jpg",
-    shortDescription: "Solo single by Giovani Baroni.",
-    longDescription: `[UPDATE: Add description for Sleep]`,
+    year: 2024,
+    coverImage: "/images/projects/sleep-placeholder.png",
+    shortDescription: "Sleep is a downer single wrapped in a dreamlike haze between emo, shoegaze, and lo-fi Rock Triste. Washed-out guitars, lethargic vocals, half-awake vocals, and jungle-inspired beats.",
+    longDescription: ` `,
     links: {
       spotify: "https://open.spotify.com/album/4ZRBXxx4bHWWcou1cHR1Zi",
     },
@@ -170,11 +169,11 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
     project: "sukya-porno",
     projectDisplayName: "sukya || porno",
     type: "ep",
-    year: 2021,
-    coverImage: "/images/projects/sukya-ep1-cover-placeholder.png",
+    year: 2019,
+    coverImage: "/images/projects/talassofobia-placeholder.jpg",
     shortDescription:
       "The debut EP from sukya || porno — noisy, experimental, and visceral.",
-    longDescription: `The first EP from sukya || porno, the collaborative project between Giovani Baroni and [UPDATE: bandmate name].
+    longDescription: ` .
 
 Raw and immediate, the debut EP established the band's sonic identity: distorted guitars, fractured rhythms, and an emotional directness that resists easy categorization.
 
@@ -204,10 +203,10 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
     project: "sukya-porno",
     projectDisplayName: "sukya || porno",
     type: "ep",
-    year: 2023,
-    coverImage: "/images/projects/sukya-ep2-cover-placeholder.jpg",
+    year: 2017,
+    coverImage: "/images/projects/urbe-placeholder.png",
     shortDescription:
-      "The second EP from sukya || porno — more expansive, weirder, and more precise.",
+      "Born out of São Paulo’s concrete, rain, crowds and quiet frustration, the record sounds like a dialogue between city life and inner turbulence. The band mixes regional Brazilian influences, progressive rock and experimental ideas without trying to fit neatly into one place.",
     longDescription: `The second EP from sukya || porno. More expansive than the first, the band pushes further into texture, atmosphere, and the complicated space between noise and melody.
 
 [UPDATE: Replace with actual EP description]`,
@@ -236,11 +235,21 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
 /** Get all featured releases */
 export const featuredReleases = releases.filter((r) => r.featured);
 
-/** Get releases grouped by project */
+/** Get releases for a project slug */
 export function getReleasesByProject(
   projectSlug: Release["project"]
 ): Release[] {
   return releases.filter((r) => r.project === projectSlug);
+}
+
+/**
+ * Get all GIOVANI BARONI releases: includes both the "giovani-baroni"
+ * releases and the "blu" album (which lives on its own featured sub-page).
+ */
+export function getGiovaniBaroniReleases(): Release[] {
+  return releases
+    .filter((r) => r.project === "giovani-baroni" || r.project === "blu")
+    .sort((a, b) => b.year - a.year);
 }
 
 /** Get the most recent release (by year) */

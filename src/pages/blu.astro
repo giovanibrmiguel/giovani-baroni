@@ -10,13 +10,22 @@
  */
 import BaseLayout from "@/components/layout/BaseLayout.astro";
 import EmbedPlayer from "@/components/music/EmbedPlayer.astro";
+import VideosSection from "@/components/project-page/VideosSection.astro";
 import { getEntry } from "astro:content";
 import { releases } from "@/data/releases";
+import { projects } from "@/data/site";
 
 const bluPage = await getEntry("pages", "blu");
 const { Content } = await bluPage!.render();
 
 const bluRelease = releases.find((r) => r.project === "blu");
+const gbConfig = projects["giovani-baroni"];
+
+const hasListenEmbed =
+  bluRelease?.embedCode &&
+  !bluRelease.embedCode.includes("PLACEHOLDER");
+
+const heroBackgroundImage = "/images/press/photo-4-placeholder.jpg";
 ---
 
 <BaseLayout
@@ -24,6 +33,7 @@ const bluRelease = releases.find((r) => r.project === "blu");
   description="bLU is Giovani Baroni's debut solo album — a psychedelic journey through water and memory."
   image="/images/blu/og-blu.jpeg"
   type="music.album"
+  project="blu"
 >
   <!-- ── Hero section ─────────────────────────────────────────────── -->
   <section
@@ -45,28 +55,24 @@ const bluRelease = releases.find((r) => r.project === "blu");
       ></div>
     </div>
 
-    <!-- Cover art (if available) -->
-    {
-      bluRelease?.coverImage && (
-        <div
-          class="absolute inset-0 opacity-20"
-          aria-hidden="true"
-        >
-          <img
-            src={bluRelease.coverImage}
-            alt=""
-            class="w-full h-full object-cover object-center"
-            loading="eager"
-            onerror="this.parentElement.style.display='none';"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-ocean-950 via-ocean-950/80 to-ocean-950/30" />
-        </div>
-      )
-    }
+    <!-- Hero background photo -->
+    <div
+      class="absolute inset-0 opacity-20"
+      aria-hidden="true"
+    >
+      <img
+        src={heroBackgroundImage}
+        alt=""
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+        onerror="this.parentElement.style.display='none';"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-ocean-950 via-ocean-950/80 to-ocean-950/30" />
+    </div>
 
     <!-- Hero text -->
     <div class="relative z-10 max-w-6xl mx-auto px-6 pb-16 md:pb-24 w-full">
-      <p class="label-mono text-[11px] text-ocean-400 mb-6">
+      <p class="label-mono text-lg text-ocean-400 mb-6">
         Giovani Baroni
       </p>
       <h1
@@ -76,11 +82,11 @@ const bluRelease = releases.find((r) => r.project === "blu");
         bLU
       </h1>
       <p class="text-ocean-300 text-base md:text-xl font-light mt-4 max-w-lg">
-        A psychedelic journey through water and memory.
+        A prog journey through water and memory.
       </p>
       {
         bluRelease?.year && (
-          <p class="label-mono text-[10px] text-ocean-500 mt-3">
+          <p class="label-mono text-base text-ocean-500 mt-3">
             {bluRelease.type.toUpperCase()} · {bluRelease.year}
           </p>
         )
@@ -91,12 +97,12 @@ const bluRelease = releases.find((r) => r.project === "blu");
   <!-- ── Main content area ────────────────────────────────────────── -->
   <div class="max-w-6xl mx-auto px-6 pb-24">
 
-    <!-- Music embed -->
+    <!-- Listen — hidden until embedCode is set in releases.ts -->
     {
-      bluRelease && (
+      hasListenEmbed && bluRelease && (
         <section class="py-12 md:py-16 border-b border-ocean-900" aria-label="Listen">
           <div class="max-w-2xl">
-            <p class="label-mono text-[11px] text-ocean-500 mb-6">Listen</p>
+            <p class="label-mono text-lg text-ocean-500 mb-6">Listen</p>
             <EmbedPlayer
               embedCode={bluRelease.embedCode}
               title="bLU"
@@ -110,7 +116,7 @@ const bluRelease = releases.find((r) => r.project === "blu");
     {
       bluRelease?.links && Object.values(bluRelease.links).some((v) => v) && (
         <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
-          <p class="label-mono text-[11px] text-ocean-500 mb-5">Stream & Download</p>
+          <p class="label-mono text-lg text-ocean-500 mb-5">Stream & Download</p>
           <div class="flex flex-wrap gap-3">
             {Object.entries(bluRelease.links).map(([platform, url]) =>
               url ? (
@@ -118,7 +124,7 @@ const bluRelease = releases.find((r) => r.project === "blu");
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="label-mono text-[11px] text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
+                  class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
                 >
                   {platform === "appleMusic" ? "Apple Music" : platform.charAt(0).toUpperCase() + platform.slice(1)} →
                 </a>
@@ -133,17 +139,33 @@ const bluRelease = releases.find((r) => r.project === "blu");
     <div class="grid md:grid-cols-3 gap-12 md:gap-20 py-16 md:py-24">
       <!-- Main text -->
       <div class="md:col-span-2">
-        <div class="prose prose-ocean prose-sm md:prose-base max-w-none">
+        <div class="prose prose-ocean prose-base md:prose-lg max-w-none">
           <Content />
         </div>
       </div>
 
-      <!-- Sidebar: tracklist & credits -->
+      <!-- Sidebar: cover, tracklist & credits -->
       <aside class="space-y-10">
+        {
+          bluRelease?.coverImage && (
+            <div class="aspect-square rounded-sm overflow-hidden bg-ocean-900 border border-ocean-800">
+              <img
+                src={bluRelease.coverImage}
+                alt="bLU album cover"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="400"
+                onerror="this.style.display='none'; this.parentElement.style.background='#0c1e30';"
+              />
+            </div>
+          )
+        }
+
         {
           bluRelease?.tracklist && bluRelease.tracklist.length > 0 && (
             <div>
-              <p class="label-mono text-[10px] text-ocean-500 mb-4">Tracklist</p>
+              <p class="label-mono text-base text-ocean-500 mb-4">Tracklist</p>
               <ol class="space-y-2">
                 {bluRelease.tracklist.map((track) => (
                   <li class="text-ocean-300 text-xs font-mono border-b border-ocean-900 pb-2 last:border-0">
@@ -158,7 +180,7 @@ const bluRelease = releases.find((r) => r.project === "blu");
         {
           bluRelease?.credits && bluRelease.credits.length > 0 && (
             <div>
-              <p class="label-mono text-[10px] text-ocean-500 mb-4">Credits</p>
+              <p class="label-mono text-base text-ocean-500 mb-4">Credits</p>
               <ul class="space-y-2">
                 {bluRelease.credits.map((credit) => (
                   <li class="text-ocean-400 text-xs leading-relaxed">{credit}</li>
@@ -172,7 +194,7 @@ const bluRelease = releases.find((r) => r.project === "blu");
         {
           bluRelease && (
             <div class="card-ocean p-4 space-y-2">
-              <p class="label-mono text-[10px] text-ocean-500 mb-3">Release Info</p>
+              <p class="label-mono text-base text-ocean-500 mb-3">Release Info</p>
               <p class="text-ocean-300 text-xs">
                 <span class="text-ocean-500">Artist</span><br />
                 Giovani Baroni
@@ -191,36 +213,27 @@ const bluRelease = releases.find((r) => r.project === "blu");
       </aside>
     </div>
 
-    <!-- Press quotes placeholder -->
-    <section class="py-12 border-t border-ocean-900" aria-labelledby="press-heading">
-      <p class="label-mono text-[11px] text-ocean-500 mb-8" id="press-heading">Press</p>
-      <div class="max-w-2xl">
-        <blockquote class="border-l-2 border-ocean-700 pl-6">
-          <p class="text-ocean-400 text-base italic font-light leading-relaxed">
-            "Press quotes appear here as they come in."
-          </p>
-          <footer class="mt-3">
-            <p class="label-mono text-[10px] text-ocean-600">— Publication Name</p>
-          </footer>
-        </blockquote>
-        <p class="label-mono text-[10px] text-ocean-600 mt-6">
-          For press inquiries: <a href="/press" class="link-ocean">Press page →</a>
-        </p>
+    <!-- Press Kit + Contact -->
+    <section class="py-12 border-t border-ocean-900" aria-label="Press Kit">
+      <p class="label-mono text-lg text-ocean-500 mb-6">Press Kit</p>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+        <p class="text-ocean-400 text-base">Hi-resolution photos, bio, and release info.</p>
+        <a
+          href={gbConfig.pressKitUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 label-mono text-lg text-foam bg-ocean-800 hover:bg-ocean-700 border border-ocean-700 hover:border-ocean-500 px-5 py-2.5 rounded-sm transition-all duration-200 whitespace-nowrap"
+          aria-label="Download press kit (opens Google Drive)"
+        >
+          Download Press Kit ↓
+        </a>
       </div>
-    </section>
-
-    <!-- Videos placeholder -->
-    <section class="py-12 border-t border-ocean-900" aria-labelledby="videos-heading">
-      <p class="label-mono text-[11px] text-ocean-500 mb-8" id="videos-heading">Videos</p>
-      <div class="card-ocean p-8 text-center max-w-xl">
-        <p class="text-ocean-500 label-mono text-[10px]">
-          Music videos and live sessions coming soon.
-        </p>
-        <p class="text-ocean-700 text-xs mt-2">
-          Add YouTube embed codes to <code class="text-ocean-500">src/data/releases.ts</code>
-        </p>
-      </div>
+      <p class="label-mono text-base text-ocean-600">
+        Contact: <a href={`mailto:${gbConfig.email}`} class="link-ocean">{gbConfig.email}</a>
+      </p>
     </section>
 
   </div>
+
+  <VideosSection />
 </BaseLayout>

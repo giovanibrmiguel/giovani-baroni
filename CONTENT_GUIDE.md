@@ -218,7 +218,7 @@ Images live in `public/images/`. Replace the placeholder files with real ones.
 | `public/images/press/` | Hi-resolution press photos |
 
 **Rules:**
-- Keep the same filename as the placeholder if you want the simplest swap (e.g. replace `portrait-placeholder.jpg` with your photo, renamed to `portrait-placeholder.jpg`)
+- Keep the same filename as the placeholder if you want the simplest swap (e.g. replace `giovani-portrait-placeholder.jpg` with your photo, renamed to `giovani-portrait-placeholder.jpg`)
 - Or use a new filename and update the path in the relevant data file
 
 **For cover art:** Update the `coverImage` path in `src/data/releases.ts` or the project's `.md` frontmatter.

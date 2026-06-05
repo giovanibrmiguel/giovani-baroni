@@ -1,0 +1,27 @@
+---
+/**
+ * sukya || porno — /sukya
+ * Project page: bio, press kit, discography, videos.
+ */
+import ProjectPage from "@/components/project-page/ProjectPage.astro";
+import { projects } from "@/data/site";
+import { getReleasesByProject } from "@/data/releases";
+import { getEntry } from "astro:content";
+
+const config = projects["sukya-porno"];
+const releases = getReleasesByProject("sukya-porno").sort((a, b) => b.year - a.year);
+
+const sukyaProject = await getEntry("projects", "sukya-porno");
+const { Content } = await sukyaProject!.render();
+---
+
+<ProjectPage
+  projectKey="sukya-porno"
+  config={config}
+  releases={releases}
+  description="Official page of sukya || porno — Brazilian experimental rock duo."
+>
+  <div slot="bio">
+    <Content />
+  </div>
+</ProjectPage>

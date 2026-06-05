@@ -53,7 +53,7 @@ const links = [
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
     <!-- Page header -->
     <header class="mb-16">
-      <p class="label-mono text-[11px] text-ocean-500 mb-4">Get in Touch</p>
+      <p class="label-mono text-lg text-ocean-500 mb-4">Get in Touch</p>
       <h1 class="font-display text-foam text-4xl md:text-6xl leading-tight">
         Contact
       </h1>
@@ -90,7 +90,7 @@ const links = [
                   aria-label={`${platform}: ${display}`}
                 >
                   <div>
-                    <p class="label-mono text-[10px] text-ocean-500 mb-1">
+                    <p class="label-mono text-base text-ocean-500 mb-1">
                       {platform}
                     </p>
                     <p class="text-foam text-sm group-hover:text-ocean-200 transition-colors duration-200">
@@ -113,7 +113,7 @@ const links = [
         <!-- Placeholder links (shown when no real links set) -->
         {
           links.length === 0 && (
-            <p class="text-ocean-600 label-mono text-[10px]">
+            <p class="text-ocean-600 label-mono text-base">
               Add your social links in <code class="text-ocean-500">src/data/site.ts</code>
             </p>
           )

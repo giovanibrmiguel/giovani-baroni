@@ -39,7 +39,7 @@ const socialLinks = [
       <!-- Left: Name + tagline -->
       <div class="text-center md:text-left">
         <p class="font-display text-foam text-sm">{site.name}</p>
-        <p class="label-mono text-[10px] mt-1">{site.tagline}</p>
+        <p class="label-mono text-base mt-1">{site.tagline}</p>
       </div>
 
       <!-- Center: Social links -->
@@ -53,7 +53,7 @@ const socialLinks = [
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-ocean-500 hover:text-ocean-200 transition-colors duration-200"
+                    class="text-ocean-500 hover:text-ocean-400 transition-colors duration-200"
                     aria-label={`${site.name} on ${label}`}
                     set:html={icon}
                   />
@@ -65,7 +65,7 @@ const socialLinks = [
       }
 
       <!-- Right: Copyright -->
-      <p class="label-mono text-[10px] text-ocean-600">
+      <p class="label-mono text-base text-ocean-600">
         &copy; {year} {site.name}
       </p>
     </div>

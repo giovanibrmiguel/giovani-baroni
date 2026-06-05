@@ -16,11 +16,12 @@ interface Props {
   image?: string;
   type?: "website" | "article" | "music.album";
   noindex?: boolean;
-  // Pass true on special pages (e.g. bLU) to suppress standard padding
   fullWidth?: boolean;
+  /** Which project context — forwarded to Header for per-project nav/social. */
+  project?: "giovani-baroni" | "sukya-porno" | "blu";
 }
 
-const { title, description, image, type, noindex, fullWidth = false } = Astro.props;
+const { title, description, image, type, noindex, fullWidth = false, project } = Astro.props;
 ---
 
 <!doctype html>
@@ -37,12 +38,12 @@ const { title, description, image, type, noindex, fullWidth = false } = Astro.pr
     <SEO {title} {description} {image} {type} {noindex} />
   </head>
 
-  <body class="bg-ocean-950 text-ocean-200 font-body min-h-screen flex flex-col">
+  <body class="bg-ocean-950 text-ocean-200 text-lg font-body min-h-screen flex flex-col">
     <!-- Grain texture overlay (decorative, no interaction) -->
     <GrainOverlay />
 
     <!-- Navigation header -->
-    <Header />
+    <Header project={project} />
 
     <!-- Page content -->
     <main

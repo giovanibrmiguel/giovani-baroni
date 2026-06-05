@@ -22,7 +22,7 @@ const others = sorted.filter((p) => p.slug !== site.featuredProject);
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
     <!-- Page header -->
     <header class="mb-16">
-      <p class="label-mono text-[11px] text-ocean-500 mb-4">Work</p>
+      <p class="label-mono text-lg text-ocean-500 mb-4">Work</p>
       <h1 class="font-display text-foam text-4xl md:text-6xl leading-tight">
         Projects
       </h1>
@@ -35,7 +35,7 @@ const others = sorted.filter((p) => p.slug !== site.featuredProject);
     {
       featured && (
         <div class="mb-12">
-          <p class="label-mono text-[10px] text-ocean-500 mb-4">Featured</p>
+          <p class="label-mono text-base text-ocean-500 mb-4">Featured</p>
           <ProjectCard project={featured} featured />
         </div>
       )
