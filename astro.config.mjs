@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 
 // Update this to your actual domain when deploying
 // Also update src/data/site.ts with the same domain
-const SITE_URL = "https://giovanibaroni.com";
+const SITE_URL = "https://www.giovanibaroni.com";
 
 export default defineConfig({
   site: SITE_URL,

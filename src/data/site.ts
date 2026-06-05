@@ -11,7 +11,7 @@
 export const site = {
   name: "Giovani Baroni",
   description: "Giovani Baroni is a Brazilian musician based in Mexico City.",
-  domain: "https://giovanibaroni.com",
+  domain: "https://www.giovanibaroni.com",
   featuredProject: "blu",
   email: "press@giovanibaroni.com",
   pressKitUrl:

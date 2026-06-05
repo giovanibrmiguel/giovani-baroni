@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   SITEMAP
-  UPDATE: Replace all instances of https://giovanibaroni.com with your actual domain.
+  UPDATE: Replace all instances of https://www.giovanibaroni.com with your actual domain.
   To add pages, copy a <url> block and update the <loc> value.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://giovanibaroni.com/</loc>
+    <loc>https://www.giovanibaroni.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/music/</loc>
+    <loc>https://www.giovanibaroni.com/music/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/blu/</loc>
+    <loc>https://www.giovanibaroni.com/blu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/projects/</loc>
+    <loc>https://www.giovanibaroni.com/projects/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/projects/blu/</loc>
+    <loc>https://www.giovanibaroni.com/projects/blu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/projects/sukya-porno/</loc>
+    <loc>https://www.giovanibaroni.com/projects/sukya-porno/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/projects/stop-and-go-station/</loc>
+    <loc>https://www.giovanibaroni.com/projects/stop-and-go-station/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/about/</loc>
+    <loc>https://www.giovanibaroni.com/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/press/</loc>
+    <loc>https://www.giovanibaroni.com/press/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://giovanibaroni.com/contact/</loc>
+    <loc>https://www.giovanibaroni.com/contact/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
