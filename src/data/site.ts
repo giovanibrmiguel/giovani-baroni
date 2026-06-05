@@ -13,9 +13,9 @@ export const site = {
   description: "Giovani Baroni is a Brazilian musician based in Mexico City.",
   domain: "https://giovanibaroni.com",
   featuredProject: "blu",
-  email: "contact@giovanibaroni.com",
+  email: "press@giovanibaroni.com",
   pressKitUrl:
-    "https://drive.google.com/drive/u/2/folders/1wdE8OCj8gry5UlX25IxuXEJXubEP0IjX",
+    "https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B",
   defaultOgImage: "/images/og-default.jpg",
   // Legacy flat social block — kept for any legacy components that reference it.
   social: {
@@ -34,9 +34,9 @@ export const projects = {
     displayName: "GIOVANI BARONI",
     slug: "giovani-baroni",
     portrait: "/images/artist/giovani-portrait-placeholder.jpg",
-    email: "contact@giovanibaroni.com",
+    email: "press@giovanibaroni.com",
     pressKitUrl:
-      "https://drive.google.com/drive/u/2/folders/1wdE8OCj8gry5UlX25IxuXEJXubEP0IjX",
+      "https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B",
     social: {
       instagram: "https://www.instagram.com/giovanibaroni/",
       spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
@@ -47,9 +47,9 @@ export const projects = {
     displayName: "sukya || porno",
     slug: "sukya",
     portrait: "/images/artist/sukya-placeholder.jpg",
-    email: "contact@giovanibaroni.com",
+    email: "press@giovanibaroni.com",
     pressKitUrl:
-      "https://drive.google.com/drive/u/2/folders/1wdE8OCj8gry5UlX25IxuXEJXubEP0IjX",
+      "https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B",
     social: {
       instagram: "https://www.instagram.com/sukyap/",
       spotify: "https://open.spotify.com/artist/7ndXsfZrZViNKKJB2LWXz5",

@@ -162,6 +162,30 @@ const heroBackgroundImage = "/images/press/photo-4-placeholder.jpg";
           )
         }
 
+        <!-- Release info summary -->
+        {
+          bluRelease && (
+            <div class="card-ocean p-4 space-y-2">
+              <p class="label-mono text-base text-ocean-500 mb-3">Release Info</p>
+              <p class="text-ocean-300 text-xs">
+                <span class="text-ocean-500">Project Name</span><br />
+                bLU
+              </p>
+              <p class="text-ocean-300 text-xs">
+                <span class="text-ocean-500">Artist</span><br />
+                Giovani Baroni
+              </p>
+              <p class="text-ocean-300 text-xs">
+                <span class="text-ocean-500">Format</span><br />
+                {bluRelease.type.toUpperCase()}
+              </p>
+              <p class="text-ocean-300 text-xs">
+                <span class="text-ocean-500">Year</span><br />
+                {bluRelease.year}
+              </p>
+            </div>
+          )
+        }
         {
           bluRelease?.tracklist && bluRelease.tracklist.length > 0 && (
             <div>
@@ -190,26 +214,6 @@ const heroBackgroundImage = "/images/press/photo-4-placeholder.jpg";
           )
         }
 
-        <!-- Release info summary -->
-        {
-          bluRelease && (
-            <div class="card-ocean p-4 space-y-2">
-              <p class="label-mono text-base text-ocean-500 mb-3">Release Info</p>
-              <p class="text-ocean-300 text-xs">
-                <span class="text-ocean-500">Artist</span><br />
-                Giovani Baroni
-              </p>
-              <p class="text-ocean-300 text-xs">
-                <span class="text-ocean-500">Format</span><br />
-                {bluRelease.type.toUpperCase()}
-              </p>
-              <p class="text-ocean-300 text-xs">
-                <span class="text-ocean-500">Year</span><br />
-                {bluRelease.year}
-              </p>
-            </div>
-          )
-        }
       </aside>
     </div>
 

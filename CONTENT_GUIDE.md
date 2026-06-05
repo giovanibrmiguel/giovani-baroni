@@ -54,7 +54,7 @@ Open the file. You'll see clearly labeled fields. Update the values inside the q
 export const site = {
   name: "Giovani Baroni",           // ← Your display name
   tagline: "Musician · Songwriter · Producer",  // ← Your tagline
-  email: "contact@giovanibaroni.com",  // ← Your contact email
+  email: "press@giovanibaroni.com",  // ← Your contact email
 
   social: {
     instagram: "https://instagram.com/YOURHANDLE",   // ← Your Instagram URL

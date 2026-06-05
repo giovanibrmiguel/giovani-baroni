@@ -61,7 +61,7 @@ The album began taking shape after Baroni moved to Mexico City, where daily life
 
 Each track flows into the next. Themes of internal transformation, generational trauma, love, ego, eastern philosophy, and the persistence of the inner child connect the ten pieces into one immersive whole.
 
-Produced independently — vocals, guitars, and keys recorded in Mexico City; bass and mixing by Pedro Serapicos in Berlin; drums by Bianca Predieri in São Paulo. The album also features guest vocals from Jorge Sultzer (Mexico City) and co-writing from Ricardo Baroni and Mardem Humberto.`,
+Produced independently — vocals, guitars, and keys recorded in Mexico City; bass, mixing, and mastering by Pedro Serapicos in Berlin; drums by Bianca Predieri in São Paulo. The album also features guest vocals from Jorge Sultzer (Mexico City) and co-writing from Ricardo Baroni and Mardem Humberto.`,
     links: {
       spotify: "", // UPDATE: add Spotify album link when released
       bandcamp: "",
@@ -71,12 +71,12 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
     featured: true,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/PLACEHOLDER" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     credits: [
-      "Written and produced by Giovani Baroni",
-      "Bass and mixing by Pedro Serapicos (Berlin)",
-      "Drums by Bianca Predieri (São Paulo)",
-      "Guest vocals on Efervescente: Jorge Sultzer",
-      "Fishy Boy co-written with Ricardo Baroni and Mardem Humberto",
-      "Video production: Léo Lopes, Luca Tornato",
+      "Vocals, guitars, keys, writing, and production — Giovani Baroni (Mexico City)",
+      "Bass, mixing, and mastering — Pedro Serapicos (Berlin)",
+      "Drums — Bianca Predieri (São Paulo)",
+      'Guest vocals on "Efervescente" — Jorge Sultzer (Mexico City)',
+      "Video production — Léo Lopes (Recife) and Luca Tornato (The Hague)",
+      '"Fishy Boy" co-written with Ricardo Baroni and Mardem Humberto',
     ],
     tracklist: [
       "1. Ambiência Aquática No 5",

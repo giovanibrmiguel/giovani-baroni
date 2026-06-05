@@ -28,7 +28,7 @@ https://www.youtube.com/@sukyarecords
 
 # Google Drive Link with all Releases
 
-https://drive.google.com/drive/u/2/folders/1wdE8OCj8gry5UlX25IxuXEJXubEP0IjX
+https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B
 
 
 # bLU
