@@ -1,0 +1,64 @@
+---
+/**
+ * HOME PAGE
+ * The main entry point for the site.
+ * Showcases the artist, the featured project (bLU), and recent releases.
+ */
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import Hero from "@/components/home/Hero.astro";
+import FeaturedProject from "@/components/home/FeaturedProject.astro";
+import ArtistIntro from "@/components/home/ArtistIntro.astro";
+import LatestRelease from "@/components/home/LatestRelease.astro";
+import ProjectCard from "@/components/projects/ProjectCard.astro";
+import { getCollection } from "astro:content";
+import { site } from "@/data/site";
+
+const allProjects = await getCollection("projects");
+const sortedProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
+// Don't show the featured project again in the "other projects" section
+const otherProjects = sortedProjects.filter((p) => p.slug !== site.featuredProject);
+---
+
+<BaseLayout
+  title="Home"
+  description="Official website of Giovani Baroni — Brazilian musician, songwriter, vocalist, and producer."
+>
+  <!-- 1. Full-viewport hero -->
+  <Hero />
+
+  <!-- 2. Featured project spotlight (bLU) -->
+  <FeaturedProject />
+
+  <!-- 3. Short artist introduction -->
+  <ArtistIntro />
+
+  <!-- 4. Latest release -->
+  <LatestRelease />
+
+  <!-- 5. Other projects -->
+  {
+    otherProjects.length > 0 && (
+      <section class="py-16 md:py-24 px-6 border-t border-ocean-900" aria-labelledby="projects-heading">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex items-end justify-between mb-10">
+            <p class="label-mono text-[11px] text-ocean-500">Projects</p>
+            <a
+              href="/projects"
+              class="label-mono text-[10px] text-ocean-400 hover:text-ocean-200 transition-colors"
+            >
+              All projects →
+            </a>
+          </div>
+
+          <h2 id="projects-heading" class="sr-only">Musical Projects</h2>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherProjects.map((project) => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>

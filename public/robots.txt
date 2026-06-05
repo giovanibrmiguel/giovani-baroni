@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+# UPDATE: replace with your actual domain
+Sitemap: https://giovanibaroni.com/sitemap.xml

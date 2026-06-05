@@ -1,0 +1,50 @@
+---
+/**
+ * EmbedPlayer
+ * Renders a music embed (Spotify, Bandcamp, YouTube).
+ * Just pass the raw embedCode from releases.ts.
+ *
+ * To get embed code:
+ *   Spotify: Album/track → Share → Embed
+ *   Bandcamp: Album → Share/Embed → Embed this album
+ *   YouTube: Video → Share → Embed
+ */
+
+interface Props {
+  embedCode?: string;
+  title?: string;
+  /** "spotify" | "bandcamp" | "youtube" — affects container aspect ratio */
+  type?: "spotify" | "bandcamp" | "youtube";
+}
+
+const { embedCode, title, type = "spotify" } = Astro.props;
+
+// YouTube needs a 16:9 aspect ratio; Spotify/Bandcamp are fixed height
+const isYoutube = type === "youtube";
+---
+
+{
+  embedCode ? (
+    <div class="w-full rounded-sm overflow-hidden">
+      {isYoutube ? (
+        <div class="relative w-full" style="padding-bottom: 56.25%;">
+          <div
+            class="absolute inset-0"
+            set:html={embedCode}
+          />
+        </div>
+      ) : (
+        <div set:html={embedCode} />
+      )}
+    </div>
+  ) : (
+    <div class="card-ocean p-6 text-center">
+      <p class="label-mono text-[10px] text-ocean-500">
+        {title ? `${title} — ` : ""}Music embed coming soon.
+      </p>
+      <p class="text-ocean-600 text-xs mt-1">
+        Add your embed code to <code class="text-ocean-400">src/data/releases.ts</code>
+      </p>
+    </div>
+  )
+}

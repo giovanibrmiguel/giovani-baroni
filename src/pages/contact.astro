@@ -1,0 +1,124 @@
+---
+/**
+ * CONTACT PAGE — /contact
+ * Social links, email, and a simple invitation to connect.
+ * All links come from src/data/site.ts
+ */
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import { site } from "@/data/site";
+
+const links = [
+  {
+    platform: "Email",
+    url: `mailto:${site.email}`,
+    display: site.email,
+    description: "For press, bookings, and general inquiries",
+    external: false,
+  },
+  {
+    platform: "Instagram",
+    url: site.social.instagram,
+    display: "@giovanibaroni", // UPDATE: your handle
+    description: "Photos, stories, and updates",
+    external: true,
+  },
+  {
+    platform: "Spotify",
+    url: site.social.spotify,
+    display: "Giovani Baroni on Spotify", // UPDATE
+    description: "Stream all releases",
+    external: true,
+  },
+  {
+    platform: "YouTube",
+    url: site.social.youtube,
+    display: "@giovanibaroni", // UPDATE: your channel
+    description: "Music videos and live sessions",
+    external: true,
+  },
+  {
+    platform: "Bandcamp",
+    url: site.social.bandcamp,
+    display: "giovanibaroni.bandcamp.com", // UPDATE
+    description: "Buy music directly and support the work",
+    external: true,
+  },
+].filter((link) => link.url && link.url !== "" && !link.url.includes("PLACEHOLDER"));
+---
+
+<BaseLayout
+  title="Contact"
+  description={`Get in touch with ${site.name}. Email, social media, and streaming links.`}
+>
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <!-- Page header -->
+    <header class="mb-16">
+      <p class="label-mono text-[11px] text-ocean-500 mb-4">Get in Touch</p>
+      <h1 class="font-display text-foam text-4xl md:text-6xl leading-tight">
+        Contact
+      </h1>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+      <!-- Left: Message -->
+      <div>
+        <p class="text-ocean-200 text-lg leading-relaxed font-light mb-8">
+          For press inquiries, booking, collaborations, or just to say hello.
+        </p>
+        <a
+          href={`mailto:${site.email}`}
+          class="font-display text-foam text-2xl md:text-3xl hover:text-ocean-200 transition-colors duration-300"
+        >
+          {site.email}
+        </a>
+        <p class="text-ocean-500 text-sm mt-3">
+          <a href="/press" class="link-ocean">Press kit and EPK →</a>
+        </p>
+      </div>
+
+      <!-- Right: Link list -->
+      <nav aria-label="Contact and social links">
+        <ul class="space-y-0 list-none divide-y divide-ocean-900" role="list">
+          {
+            links.map(({ platform, url, display, description, external }) => (
+              <li>
+                <a
+                  href={url}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  class="flex items-start justify-between gap-4 py-5 group"
+                  aria-label={`${platform}: ${display}`}
+                >
+                  <div>
+                    <p class="label-mono text-[10px] text-ocean-500 mb-1">
+                      {platform}
+                    </p>
+                    <p class="text-foam text-sm group-hover:text-ocean-200 transition-colors duration-200">
+                      {display}
+                    </p>
+                    <p class="text-ocean-500 text-xs mt-0.5">{description}</p>
+                  </div>
+                  <span
+                    class="text-ocean-600 group-hover:text-ocean-300 transition-colors duration-200 mt-1 text-sm"
+                    aria-hidden="true"
+                  >
+                    {external ? "↗" : "→"}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <!-- Placeholder links (shown when no real links set) -->
+        {
+          links.length === 0 && (
+            <p class="text-ocean-600 label-mono text-[10px]">
+              Add your social links in <code class="text-ocean-500">src/data/site.ts</code>
+            </p>
+          )
+        }
+      </nav>
+    </div>
+  </div>
+</BaseLayout>

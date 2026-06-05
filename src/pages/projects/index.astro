@@ -1,0 +1,60 @@
+---
+/**
+ * PROJECTS INDEX PAGE — /projects
+ * Overview of all artistic projects.
+ */
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ProjectCard from "@/components/projects/ProjectCard.astro";
+import { getCollection } from "astro:content";
+import { site } from "@/data/site";
+
+const allProjects = await getCollection("projects");
+const sorted = allProjects.sort((a, b) => a.data.order - b.data.order);
+
+const featured = sorted.find((p) => p.slug === site.featuredProject);
+const others = sorted.filter((p) => p.slug !== site.featuredProject);
+---
+
+<BaseLayout
+  title="Projects"
+  description="Artistic projects of Giovani Baroni — bLU, sukya || porno, Stop & Go Station."
+>
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <!-- Page header -->
+    <header class="mb-16">
+      <p class="label-mono text-[11px] text-ocean-500 mb-4">Work</p>
+      <h1 class="font-display text-foam text-4xl md:text-6xl leading-tight">
+        Projects
+      </h1>
+      <p class="text-ocean-300 text-base mt-4 max-w-lg">
+        Musical projects, collaborations, and ongoing creative identities.
+      </p>
+    </header>
+
+    <!-- Featured project (larger card) -->
+    {
+      featured && (
+        <div class="mb-12">
+          <p class="label-mono text-[10px] text-ocean-500 mb-4">Featured</p>
+          <ProjectCard project={featured} featured />
+        </div>
+      )
+    }
+
+    <!-- Other projects -->
+    {
+      others.length > 0 && (
+        <div>
+          {featured && (
+            <div class="section-divider" />
+          )}
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {others.map((project) => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

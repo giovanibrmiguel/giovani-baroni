@@ -1,0 +1,158 @@
+---
+/**
+ * DYNAMIC PROJECT PAGE — /projects/[slug]
+ *
+ * How Astro generates these pages:
+ *   - getStaticPaths() runs at build time
+ *   - It reads every .md file in src/content/projects/
+ *   - For each file, it creates one page at /projects/[filename-without-extension]
+ *   - So src/content/projects/blu.md → /projects/blu
+ *
+ * To add a new project: just add a new .md file to src/content/projects/
+ * No code changes needed.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ReleaseCard from "@/components/music/ReleaseCard.astro";
+import EmbedPlayer from "@/components/music/EmbedPlayer.astro";
+import { releases } from "@/data/releases";
+import type { Release } from "@/data/releases";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+
+// Get releases associated with this project
+const projectReleases = releases
+  .filter((r) => r.project === project.slug as Release["project"])
+  .sort((a, b) => b.year - a.year);
+
+const { title, tagline, coverImage, label, status, links, members, seoDescription } = project.data;
+
+const statusLabel: Record<string, string> = {
+  upcoming: "Upcoming",
+  released: "Released",
+  active: "Active",
+  archived: "Archive",
+};
+---
+
+<BaseLayout
+  title={title}
+  description={seoDescription ?? tagline}
+  image={coverImage}
+>
+  <article class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <!-- Back link -->
+    <nav class="mb-12" aria-label="Breadcrumb">
+      <a
+        href="/projects"
+        class="label-mono text-[10px] text-ocean-500 hover:text-ocean-200 transition-colors"
+      >
+        ← All Projects
+      </a>
+    </nav>
+
+    <!-- Project header -->
+    <header class="grid md:grid-cols-2 gap-12 md:gap-20 items-start mb-20">
+      <!-- Text side -->
+      <div class="space-y-4">
+        {label && <p class="label-mono text-[10px] text-ocean-400">{label}</p>}
+
+        <h1 class="font-display text-foam text-4xl md:text-6xl leading-none">
+          {title}
+        </h1>
+
+        <p class="text-ocean-200 text-lg font-light leading-relaxed">{tagline}</p>
+
+        {
+          status && (
+            <p class="label-mono text-[10px] text-ocean-500">
+              {statusLabel[status] ?? status}
+            </p>
+          )
+        }
+
+        {
+          members && members.length > 0 && (
+            <div>
+              <p class="label-mono text-[10px] text-ocean-500 mb-2">Members</p>
+              <ul class="space-y-1">
+                {members.map((m) => (
+                  <li class="text-ocean-300 text-sm">{m}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+
+        {
+          links && Object.values(links).some((v) => v) && (
+            <div class="flex flex-wrap gap-3 pt-2">
+              {Object.entries(links).map(([platform, url]) =>
+                url ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="label-mono text-[10px] text-ocean-400 hover:text-ocean-200 border border-ocean-700 hover:border-ocean-500 px-3 py-1.5 rounded-sm transition-all duration-200"
+                  >
+                    {platform.charAt(0).toUpperCase() + platform.slice(1)} →
+                  </a>
+                ) : null
+              )}
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Cover image -->
+      <div class="aspect-square rounded-sm overflow-hidden bg-ocean-800">
+        <img
+          src={coverImage}
+          alt={`${title} cover image`}
+          class="w-full h-full object-cover opacity-85"
+          loading="eager"
+          width="600"
+          height="600"
+          onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #0a1520 0%, #0e2a40 100%)';"
+        />
+      </div>
+    </header>
+
+    <!-- Markdown content -->
+    <div class="prose prose-ocean max-w-2xl mb-20">
+      <Content />
+    </div>
+
+    <!-- Releases section -->
+    {
+      projectReleases.length > 0 && (
+        <section aria-labelledby="releases-heading">
+          <div class="flex items-center gap-4 mb-8">
+            <p class="label-mono text-[11px] text-ocean-500" id="releases-heading">
+              Releases
+            </p>
+            <div class="flex-1 h-px bg-ocean-800" />
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projectReleases.map((release) => (
+              <div class="space-y-4">
+                <ReleaseCard release={release} />
+                <EmbedPlayer embedCode={release.embedCode} title={release.title} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </article>
+</BaseLayout>

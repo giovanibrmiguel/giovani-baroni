@@ -1,0 +1,226 @@
+---
+/**
+ * bLU FLAGSHIP PAGE — /blu
+ *
+ * This is the dedicated page for bLU, the featured solo album.
+ * It has a special, more atmospheric layout compared to other project pages.
+ *
+ * Long-form content comes from src/content/pages/blu.md
+ * Release/embed data comes from src/data/releases.ts
+ */
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import EmbedPlayer from "@/components/music/EmbedPlayer.astro";
+import { getEntry } from "astro:content";
+import { releases } from "@/data/releases";
+
+const bluPage = await getEntry("pages", "blu");
+const { Content } = await bluPage!.render();
+
+const bluRelease = releases.find((r) => r.project === "blu");
+---
+
+<BaseLayout
+  title="bLU"
+  description="bLU is Giovani Baroni's debut solo album — a psychedelic journey through water and memory."
+  image="/images/blu/og-blu.jpg"
+  type="music.album"
+>
+  <!-- ── Hero section ─────────────────────────────────────────────── -->
+  <section
+    class="relative min-h-[70vh] flex items-end overflow-hidden"
+    aria-labelledby="blu-title"
+  >
+    <!-- Atmospheric background -->
+    <div class="absolute inset-0 bg-blu-gradient" aria-hidden="true"></div>
+
+    <!-- Radial glows -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div
+        class="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-[0.08]"
+        style="background: radial-gradient(circle, #4a9bb5 0%, transparent 70%);"
+      ></div>
+      <div
+        class="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full opacity-[0.06]"
+        style="background: radial-gradient(circle, #2d6a4f 0%, transparent 70%);"
+      ></div>
+    </div>
+
+    <!-- Cover art (if available) -->
+    {
+      bluRelease?.coverImage && (
+        <div
+          class="absolute inset-0 opacity-20"
+          aria-hidden="true"
+        >
+          <img
+            src={bluRelease.coverImage}
+            alt=""
+            class="w-full h-full object-cover object-center"
+            loading="eager"
+            onerror="this.parentElement.style.display='none';"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-ocean-950 via-ocean-950/80 to-ocean-950/30" />
+        </div>
+      )
+    }
+
+    <!-- Hero text -->
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-16 md:pb-24 w-full">
+      <p class="label-mono text-[11px] text-ocean-400 mb-6">
+        Giovani Baroni
+      </p>
+      <h1
+        id="blu-title"
+        class="font-display text-foam text-6xl md:text-8xl lg:text-9xl leading-none"
+      >
+        bLU
+      </h1>
+      <p class="text-ocean-300 text-base md:text-xl font-light mt-4 max-w-lg">
+        A psychedelic journey through water and memory.
+      </p>
+      {
+        bluRelease?.year && (
+          <p class="label-mono text-[10px] text-ocean-500 mt-3">
+            {bluRelease.type.toUpperCase()} · {bluRelease.year}
+          </p>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- ── Main content area ────────────────────────────────────────── -->
+  <div class="max-w-6xl mx-auto px-6 pb-24">
+
+    <!-- Music embed -->
+    {
+      bluRelease && (
+        <section class="py-12 md:py-16 border-b border-ocean-900" aria-label="Listen">
+          <div class="max-w-2xl">
+            <p class="label-mono text-[11px] text-ocean-500 mb-6">Listen</p>
+            <EmbedPlayer
+              embedCode={bluRelease.embedCode}
+              title="bLU"
+            />
+          </div>
+        </section>
+      )
+    }
+
+    <!-- Streaming links -->
+    {
+      bluRelease?.links && Object.values(bluRelease.links).some((v) => v) && (
+        <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
+          <p class="label-mono text-[11px] text-ocean-500 mb-5">Stream & Download</p>
+          <div class="flex flex-wrap gap-3">
+            {Object.entries(bluRelease.links).map(([platform, url]) =>
+              url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="label-mono text-[11px] text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
+                >
+                  {platform === "appleMusic" ? "Apple Music" : platform.charAt(0).toUpperCase() + platform.slice(1)} →
+                </a>
+              ) : null
+            )}
+          </div>
+        </section>
+      )
+    }
+
+    <!-- Long-form content from src/content/pages/blu.md -->
+    <div class="grid md:grid-cols-3 gap-12 md:gap-20 py-16 md:py-24">
+      <!-- Main text -->
+      <div class="md:col-span-2">
+        <div class="prose prose-ocean prose-sm md:prose-base max-w-none">
+          <Content />
+        </div>
+      </div>
+
+      <!-- Sidebar: tracklist & credits -->
+      <aside class="space-y-10">
+        {
+          bluRelease?.tracklist && bluRelease.tracklist.length > 0 && (
+            <div>
+              <p class="label-mono text-[10px] text-ocean-500 mb-4">Tracklist</p>
+              <ol class="space-y-2">
+                {bluRelease.tracklist.map((track) => (
+                  <li class="text-ocean-300 text-xs font-mono border-b border-ocean-900 pb-2 last:border-0">
+                    {track}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )
+        }
+
+        {
+          bluRelease?.credits && bluRelease.credits.length > 0 && (
+            <div>
+              <p class="label-mono text-[10px] text-ocean-500 mb-4">Credits</p>
+              <ul class="space-y-2">
+                {bluRelease.credits.map((credit) => (
+                  <li class="text-ocean-400 text-xs leading-relaxed">{credit}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+
+        <!-- Release info summary -->
+        {
+          bluRelease && (
+            <div class="card-ocean p-4 space-y-2">
+              <p class="label-mono text-[10px] text-ocean-500 mb-3">Release Info</p>
+              <p class="text-ocean-300 text-xs">
+                <span class="text-ocean-500">Artist</span><br />
+                Giovani Baroni
+              </p>
+              <p class="text-ocean-300 text-xs">
+                <span class="text-ocean-500">Format</span><br />
+                {bluRelease.type.toUpperCase()}
+              </p>
+              <p class="text-ocean-300 text-xs">
+                <span class="text-ocean-500">Year</span><br />
+                {bluRelease.year}
+              </p>
+            </div>
+          )
+        }
+      </aside>
+    </div>
+
+    <!-- Press quotes placeholder -->
+    <section class="py-12 border-t border-ocean-900" aria-labelledby="press-heading">
+      <p class="label-mono text-[11px] text-ocean-500 mb-8" id="press-heading">Press</p>
+      <div class="max-w-2xl">
+        <blockquote class="border-l-2 border-ocean-700 pl-6">
+          <p class="text-ocean-400 text-base italic font-light leading-relaxed">
+            "Press quotes appear here as they come in."
+          </p>
+          <footer class="mt-3">
+            <p class="label-mono text-[10px] text-ocean-600">— Publication Name</p>
+          </footer>
+        </blockquote>
+        <p class="label-mono text-[10px] text-ocean-600 mt-6">
+          For press inquiries: <a href="/press" class="link-ocean">Press page →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Videos placeholder -->
+    <section class="py-12 border-t border-ocean-900" aria-labelledby="videos-heading">
+      <p class="label-mono text-[11px] text-ocean-500 mb-8" id="videos-heading">Videos</p>
+      <div class="card-ocean p-8 text-center max-w-xl">
+        <p class="text-ocean-500 label-mono text-[10px]">
+          Music videos and live sessions coming soon.
+        </p>
+        <p class="text-ocean-700 text-xs mt-2">
+          Add YouTube embed codes to <code class="text-ocean-500">src/data/releases.ts</code>
+        </p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

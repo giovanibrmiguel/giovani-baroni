@@ -1,0 +1,37 @@
+---
+/**
+ * ArtistIntro
+ * Short artist introduction section on the homepage.
+ * Pulls from site.ts — edit the description there.
+ */
+import { site } from "@/data/site";
+---
+
+<section
+  class="py-16 md:py-24 px-6 border-t border-ocean-900"
+  aria-labelledby="intro-heading"
+>
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-2xl">
+      <p class="label-mono text-[11px] text-ocean-500 mb-6">The Artist</p>
+
+      <h2
+        id="intro-heading"
+        class="font-display text-foam text-2xl md:text-3xl leading-snug mb-6"
+      >
+        Brazilian musician, songwriter, vocalist, and producer.
+      </h2>
+
+      <p class="text-ocean-300 text-base leading-relaxed mb-8">
+        {site.description}
+      </p>
+
+      <a
+        href="/about"
+        class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors duration-200"
+      >
+        Read more →
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+---
+/**
+ * BaseLayout
+ * The root HTML shell. Every page uses this layout.
+ * Provides: <html>, <head>, SEO, fonts, global styles, grain overlay, and <slot />.
+ */
+import SEO from "@/components/shared/SEO.astro";
+import GrainOverlay from "@/components/shared/GrainOverlay.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article" | "music.album";
+  noindex?: boolean;
+  // Pass true on special pages (e.g. bLU) to suppress standard padding
+  fullWidth?: boolean;
+}
+
+const { title, description, image, type, noindex, fullWidth = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preconnect for Google Fonts to reduce latency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <SEO {title} {description} {image} {type} {noindex} />
+  </head>
+
+  <body class="bg-ocean-950 text-ocean-200 font-body min-h-screen flex flex-col">
+    <!-- Grain texture overlay (decorative, no interaction) -->
+    <GrainOverlay />
+
+    <!-- Navigation header -->
+    <Header />
+
+    <!-- Page content -->
+    <main
+      id="main-content"
+      class:list={[
+        "flex-1",
+        fullWidth ? "" : "page-transition",
+      ]}
+    >
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+  </body>
+</html>

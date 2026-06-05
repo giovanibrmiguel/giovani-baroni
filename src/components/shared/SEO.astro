@@ -1,0 +1,55 @@
+---
+/**
+ * SEO Component
+ * Handles all meta tags, OpenGraph, Twitter cards, and canonical URLs.
+ * Inject this inside <head> via BaseLayout.
+ */
+import { site } from "@/data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: "website" | "article" | "music.album";
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = site.description,
+  image = site.defaultOgImage,
+  canonicalURL,
+  type = "website",
+  noindex = false,
+} = Astro.props;
+
+const pageTitle = title ? `${title} | ${site.name}` : site.name;
+const resolvedImage = image.startsWith("http") ? image : `${site.domain}${image}`;
+const canonical = canonicalURL ?? new URL(Astro.url.pathname, site.domain).href;
+---
+
+<!-- Primary Meta -->
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={resolvedImage} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter / X Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={resolvedImage} />
+
+<!-- Additional -->
+<meta name="author" content={site.name} />
+<meta name="theme-color" content="#050a0e" />

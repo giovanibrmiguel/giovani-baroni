@@ -1,0 +1,107 @@
+---
+/**
+ * ABOUT PAGE — /about
+ * Long-form bio, influences, and artistic vision.
+ * Content comes from src/content/pages/about.md
+ */
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import { getEntry } from "astro:content";
+import { site } from "@/data/site";
+
+const aboutPage = await getEntry("pages", "about");
+const { Content } = await aboutPage!.render();
+---
+
+<BaseLayout
+  title="About"
+  description={`About ${site.name} — ${site.tagline}. ${site.description}`}
+>
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <!-- Page header -->
+    <header class="mb-16">
+      <p class="label-mono text-[11px] text-ocean-500 mb-4">The Artist</p>
+      <h1 class="font-display text-foam text-4xl md:text-6xl leading-tight">
+        About
+      </h1>
+    </header>
+
+    <div class="grid md:grid-cols-3 gap-12 md:gap-20">
+      <!-- Main content -->
+      <div class="md:col-span-2">
+        <div class="prose prose-ocean max-w-none">
+          <Content />
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+        <!-- Artist photo placeholder -->
+        <div class="aspect-square rounded-sm overflow-hidden bg-ocean-900">
+          <img
+            src="/images/artist/portrait-placeholder.jpg"
+            alt={`${site.name} portrait`}
+            class="w-full h-full object-cover opacity-80"
+            loading="lazy"
+            width="400"
+            height="400"
+            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #0a1520 0%, #0e2a40 100%)';"
+          />
+        </div>
+
+        <!-- Quick links -->
+        <div class="space-y-3">
+          <p class="label-mono text-[10px] text-ocean-500">Explore</p>
+          <nav aria-label="About page navigation">
+            <ul class="space-y-2 list-none">
+              <li>
+                <a href="/music" class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors">
+                  Music →
+                </a>
+              </li>
+              <li>
+                <a href="/projects" class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors">
+                  Projects →
+                </a>
+              </li>
+              <li>
+                <a href="/press" class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors">
+                  Press →
+                </a>
+              </li>
+              <li>
+                <a href="/contact" class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors">
+                  Contact →
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Social links -->
+        <div class="space-y-3">
+          <p class="label-mono text-[10px] text-ocean-500">Links</p>
+          <nav aria-label="Social links">
+            <ul class="space-y-2 list-none">
+              {
+                Object.entries(site.social).map(([platform, url]) =>
+                  url ? (
+                    <li>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="label-mono text-[11px] text-ocean-400 hover:text-ocean-200 transition-colors"
+                      >
+                        {platform.charAt(0).toUpperCase() + platform.slice(1)} ↗
+                      </a>
+                    </li>
+                  ) : null
+                )
+              }
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

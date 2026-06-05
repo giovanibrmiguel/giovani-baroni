@@ -1,0 +1,103 @@
+---
+/**
+ * FeaturedProject
+ * Homepage spotlight section for the current featured project (bLU).
+ * Reads the featured project from site config and pulls from content collections.
+ */
+import { getCollection } from "astro:content";
+import { site } from "@/data/site";
+
+const allProjects = await getCollection("projects");
+const featured = allProjects.find((p) => p.slug === site.featuredProject);
+---
+
+{
+  featured && (
+    <section
+      class="py-20 md:py-32 px-6 max-w-6xl mx-auto"
+      aria-labelledby="featured-heading"
+    >
+      <!-- Section label -->
+      <p class="label-mono text-[11px] text-ocean-500 mb-12">Featured Project</p>
+
+      <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <!-- Left: Text -->
+        <div class="space-y-6">
+          <div>
+            {featured.data.label && (
+              <p class="label-mono text-[10px] text-ocean-400 mb-2">
+                {featured.data.label}
+              </p>
+            )}
+            <h2
+              id="featured-heading"
+              class="font-display text-foam text-4xl md:text-6xl lg:text-7xl leading-none"
+            >
+              {featured.data.title}
+            </h2>
+          </div>
+
+          <p class="text-ocean-200 text-base md:text-lg leading-relaxed font-light">
+            {featured.data.tagline}
+          </p>
+
+          {featured.data.status === "upcoming" && (
+            <p class="label-mono text-[10px] text-biolum">
+              ◉ Coming Soon
+            </p>
+          )}
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a
+              href={`/blu`}
+              class="inline-flex items-center gap-2 bg-ocean-800 hover:bg-ocean-700 text-foam text-sm px-5 py-2.5 transition-colors duration-200 rounded-sm label-mono text-[11px]"
+            >
+              Explore bLU →
+            </a>
+            <a
+              href={`/projects/${featured.slug}`}
+              class="inline-flex items-center gap-2 text-ocean-400 hover:text-ocean-200 text-sm transition-colors duration-200 label-mono text-[11px]"
+            >
+              Project page →
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Cover image -->
+        <div class="relative">
+          <div class="aspect-square rounded-sm overflow-hidden bg-ocean-800 relative">
+            <img
+              src={featured.data.coverImage}
+              alt={`${featured.data.title} project image`}
+              class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+              loading="eager"
+              width="600"
+              height="600"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.featured-placeholder').style.display='flex';"
+            />
+            <!-- Placeholder -->
+            <div
+              class="featured-placeholder hidden absolute inset-0 items-center justify-center bg-gradient-to-br from-ocean-900 to-ocean-800"
+              aria-hidden="true"
+            >
+              <div class="text-center space-y-2">
+                <div class="w-16 h-16 rounded-full bg-ocean-700/50 mx-auto flex items-center justify-center">
+                  <span class="text-ocean-500 label-mono text-[9px]">artwork</span>
+                </div>
+                <p class="label-mono text-[10px] text-ocean-600">
+                  {featured.data.title}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative corner detail -->
+          <div
+            class="absolute -bottom-3 -right-3 w-full h-full border border-ocean-800 rounded-sm -z-10"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
