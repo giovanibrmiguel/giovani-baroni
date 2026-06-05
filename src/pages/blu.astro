@@ -37,7 +37,7 @@ const heroBackgroundImage = "/images/press/giovani-water.jpg";
 >
   <!-- ── Hero section ─────────────────────────────────────────────── -->
   <section
-    class="relative min-h-[70vh] flex items-end overflow-hidden"
+    class="relative overflow-hidden pb-8 md:pb-10"
     aria-labelledby="blu-title"
   >
     <!-- Atmospheric background -->
@@ -57,13 +57,13 @@ const heroBackgroundImage = "/images/press/giovani-water.jpg";
 
     <!-- Hero background photo -->
     <div
-      class="absolute inset-0 opacity-20"
+      class="absolute inset-x-0 top-0 h-[48vh] min-h-[280px] max-h-[460px] opacity-40"
       aria-hidden="true"
     >
       <img
         src={heroBackgroundImage}
         alt=""
-        class="w-full h-full object-cover object-center"
+        class="w-full h-full object-cover object-[center_15%]"
         loading="eager"
         onerror="this.parentElement.style.display='none';"
       />
@@ -71,10 +71,7 @@ const heroBackgroundImage = "/images/press/giovani-water.jpg";
     </div>
 
     <!-- Hero text -->
-    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-16 md:pb-24 w-full">
-      <p class="label-mono text-lg text-ocean-400 mb-6">
-        Giovani Baroni
-      </p>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pt-16 md:pt-20 w-full">
       <h1
         id="blu-title"
         class="font-display text-foam text-6xl md:text-8xl lg:text-9xl leading-none"
@@ -136,7 +133,7 @@ const heroBackgroundImage = "/images/press/giovani-water.jpg";
     }
 
     <!-- Long-form content from src/content/pages/blu.md -->
-    <div class="grid md:grid-cols-3 gap-12 md:gap-20 py-16 md:py-24">
+    <div class="grid md:grid-cols-3 gap-12 md:gap-20 pt-8 md:pt-10 pb-16 md:pb-24">
       <!-- Main text -->
       <div class="md:col-span-2">
         <div class="prose prose-ocean prose-base md:prose-lg max-w-none">
