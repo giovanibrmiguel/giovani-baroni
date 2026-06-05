@@ -41,12 +41,6 @@ const featured = allProjects.find((p) => p.slug === site.featuredProject);
             {featured.data.tagline}
           </p>
 
-          {featured.data.status === "upcoming" && (
-            <p class="label-mono text-[10px] text-biolum">
-              ◉ Coming Soon
-            </p>
-          )}
-
           <div class="flex flex-wrap gap-4 pt-2">
             <a
               href={`/blu`}

@@ -12,15 +12,9 @@ interface Props {
 }
 
 const { project, featured = false } = Astro.props;
-const { title, tagline, coverImage, label, status } = project.data;
+const { title, tagline, coverImage, label } = project.data;
 const slug = project.slug;
 
-const statusColors: Record<string, string> = {
-  upcoming: "text-biolum border-biolum/30",
-  released: "text-ocean-400 border-ocean-700",
-  active: "text-ocean-300 border-ocean-600",
-  archived: "text-ocean-600 border-ocean-800",
-};
 ---
 
 <a
@@ -74,21 +68,6 @@ const statusColors: Record<string, string> = {
       aria-hidden="true"
     ></div>
 
-    <!-- Status badge -->
-    {
-      status && (
-        <div class="absolute top-3 right-3">
-          <span
-            class:list={[
-              "label-mono text-[9px] border px-2 py-0.5 rounded-sm backdrop-blur-sm bg-ocean-950/60",
-              statusColors[status] ?? "text-ocean-400 border-ocean-700",
-            ]}
-          >
-            {status.toUpperCase()}
-          </span>
-        </div>
-      )
-    }
   </div>
 
   <!-- Info -->

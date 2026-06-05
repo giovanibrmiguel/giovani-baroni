@@ -22,9 +22,9 @@ export default {
         biolum: "#7fffd4", // aquamarine highlight (use sparingly)
       },
       fontFamily: {
-        display: ['"DM Serif Display"', "Georgia", "serif"],
-        body: ['"DM Sans"', "system-ui", "sans-serif"],
-        mono: ['"IBM Plex Mono"', "ui-monospace", "monospace"],
+        display: ['"Poppins"', "system-ui", "sans-serif"],
+        body: ['"Poppins"', "system-ui", "sans-serif"],
+        mono: ['"Poppins"', "ui-monospace", "monospace"],
       },
       backgroundImage: {
         "ocean-gradient": "linear-gradient(180deg, #050a0e 0%, #0a1520 60%, #0c1e30 100%)",

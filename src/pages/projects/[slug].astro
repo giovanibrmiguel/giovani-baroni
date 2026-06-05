@@ -34,14 +34,8 @@ const projectReleases = releases
   .filter((r) => r.project === project.slug as Release["project"])
   .sort((a, b) => b.year - a.year);
 
-const { title, tagline, coverImage, label, status, links, members, seoDescription } = project.data;
+const { title, tagline, coverImage, label, links, members, seoDescription } = project.data;
 
-const statusLabel: Record<string, string> = {
-  upcoming: "Upcoming",
-  released: "Released",
-  active: "Active",
-  archived: "Archive",
-};
 ---
 
 <BaseLayout
@@ -71,14 +65,6 @@ const statusLabel: Record<string, string> = {
         </h1>
 
         <p class="text-ocean-200 text-lg font-light leading-relaxed">{tagline}</p>
-
-        {
-          status && (
-            <p class="label-mono text-[10px] text-ocean-500">
-              {statusLabel[status] ?? status}
-            </p>
-          )
-        }
 
         {
           members && members.length > 0 && (
