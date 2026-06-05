@@ -93,6 +93,15 @@ const typeLabel: Record<Release["type"], string> = {
                 </p>
               )}
 
+              <!-- Tracklist -->
+              {release.tracklist && release.tracklist.length > 0 && (
+                <ol class="space-y-1 pt-1">
+                  {release.tracklist.map((track) => (
+                    <li class="text-ocean-400 text-sm font-mono">{track}</li>
+                  ))}
+                </ol>
+              )}
+
               <!-- Links -->
               <div class="flex flex-wrap gap-3 pt-1">
                 {release.project === "blu" && (

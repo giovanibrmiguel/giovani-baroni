@@ -20,6 +20,6 @@ Musically, bLU draws from progressive rock, emo, psychedelia, and Brazilian indi
 
 bLU was recorded across three cities. Baroni produced the album and tracked vocals, guitars, and keys in Mexico City. Pedro Serapicos recorded bass, mixed, and mastered the album in Berlin. Bianca Predieri recorded drums in São Paulo. Jorge Sultzer appears on “Efervescente.” “Fishy Boy,” co-written with Ricardo Baroni and Mardem Humberto, began years earlier in São Paulo after a swim, carrying traces of Radiohead and Modest Mouse before finding its final form on the album. “Paseo Largo” blends indie rock and jazz, with a Spanish-language section referencing the Argentine band Pescado Rabioso. “O Bicho que Sabia Demais” is based on a poem Baroni found written by his father at age seventeen.
 
-The album opens with “Ambiência Aquática No 5,” an instrumental introduction partly inspired by the dramatic album openings of Brazilian metal band Angra. It closes with “O Rio,” shaped in part by Hermann Hesse’s Siddhartha. Between them, bLU moves like a body of water: recurring, unstable, reflective, and difficult to separate into parts.
+The album opens with “Ambiência Aquática Nº 5,” an instrumental introduction partly inspired by the dramatic album openings of Brazilian metal band Angra. It closes with “O Rio,” shaped in part by Hermann Hesse’s Siddhartha. Between them, bLU moves like a body of water: recurring, unstable, reflective, and difficult to separate into parts.
 
 bLU will be released in 2026, preceded by a series of singles.

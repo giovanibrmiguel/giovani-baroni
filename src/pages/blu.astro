@@ -207,7 +207,7 @@ const heroBackgroundImage = "/images/press/photo-4-placeholder.jpg";
               <p class="label-mono text-base text-ocean-500 mb-4">Credits</p>
               <ul class="space-y-2">
                 {bluRelease.credits.map((credit) => (
-                  <li class="text-ocean-400 text-xs leading-relaxed">{credit}</li>
+                  <li class="text-ocean-400 text-xs leading-relaxed" set:html={credit} />
                 ))}
               </ul>
             </div>

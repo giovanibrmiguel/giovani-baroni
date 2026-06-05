@@ -79,7 +79,7 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
       '"Fishy Boy" co-written with Ricardo Baroni (São Paulo) and Mardem Humberto (Goiânia)',
     ],
     tracklist: [
-      "1. Ambiência Aquática No 5",
+      "1. Ambiência Aquática Nº 5",
       "2. Peixes Estranhos",
       "3. Norte",
       "4. O Mundo dos Sonhos",
@@ -102,7 +102,7 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
     year: 2023,
     coverImage: "/images/projects/stop-and-go-cover-placeholder.jpg",
     shortDescription:
-      "Stop & Go Station is an intimate, lo-fi and dreamy EP consisting of 4 tracks, shaped by home-recorded textures, and references to 90s video games. Blending Brazilian influences, indie rock, and nostalgia, Giovani Baroni builds a playful yet intricate sound world with echoes of Super Mario 64, Alceu Valença, and The Strokes.",
+      "Stop & Go Station is an intimate, lo-fi and dreamy EP consisting of 4 tracks, shaped by home-recorded textures, and references to 90s video games. Blending Brazilian influences, indie rock, and nostalgia, Giovani Baroni builds a playful yet intricate sound world with echoes of Super Mario 64, Alceu Valença, and The Strokes. Closing track \"Transbordar\" features Luca Tornato.",
     longDescription: `Stop & Go Station is an early solo EP by Giovani Baroni. A collection of songs written during a period of transit and uncertainty.
 
 The EP is sparse and introspective, shaped by acoustic textures, layered vocals, and the ambience of in-between places.
@@ -120,9 +120,10 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
       "[UPDATE: additional credits]",
     ],
     tracklist: [
-      "1. [Track title] — UPDATE",
-      "2. [Track title] — UPDATE",
-      "3. [Track title] — UPDATE",
+      "1. Jova Haze",
+      "2. Polinômios (File Select)",
+      "3. Kebab",
+      "4. Transbordar",
     ],
   },
 
@@ -190,9 +191,9 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
       "[UPDATE: additional credits]",
     ],
     tracklist: [
-      "1. [Track title] — UPDATE",
-      "2. [Track title] — UPDATE",
-      "3. [Track title] — UPDATE",
+      "1. Elos Atemporais",
+      "2. Um Retalho",
+      "3. APORIA",
     ],
   },
 
@@ -222,10 +223,12 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
       "[UPDATE: additional credits]",
     ],
     tracklist: [
-      "1. [Track title] — UPDATE",
-      "2. [Track title] — UPDATE",
-      "3. [Track title] — UPDATE",
-      "4. [Track title] — UPDATE",
+      "1. Rua",
+      "2. Desmoronar: Intro, Pt. I e II",
+      "3. Fótons",
+      "4. Interlúdio",
+      "5. Canvas",
+      "6. Desmoronar: Pt. III e IV",
     ],
   },
 ];

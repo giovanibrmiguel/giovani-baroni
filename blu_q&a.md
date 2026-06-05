@@ -61,7 +61,7 @@ Eu compus Fishy Boy com meu irmão e com um dos meus melhores amigos em São Pau
 Paseo Largo é basicamente um faixa misturando indie rock com jazz, sobre viajar e mudar, e tem uma seção em espanhol referenciando os lendários Pescado Rabioso
 Efervescente tem uma participação de um dos meus companheiros de composição aqui do México, ele canta parte da música (em espanhol). A música é um contraponto a Mecânica dos Fluidos e vai na direção contrária, sobre dor geracional e absolvição de pecados
 O Rio (última faixa), e várias partes do álbum foram inspiradas pelo livro Siddharta, de herman hesse
-Ambiência Aquática No 5 é uma faixa 100% instrumental, altamente inspirada pelas introduções de álbum da banda brasileira de metal Angra
+Ambiência Aquática Nº 5 é uma faixa 100% instrumental, altamente inspirada pelas introduções de álbum da banda brasileira de metal Angra
 Peixes Estranhos teve seu nome inspirado em Weird Fishes – Radiohead e Cara Estranho – Los Hermanos, e foi a música mais difícil de concluir. É inspirada em uma epifania que eu tive aos 10 anos de idade
 O Mundo dos Sonhos tem as texturas e vibes inspiradas nos filmes de David Lynch
 O Bicho que Sabia Demais foi uma tentativa de misturar Neutral Milk Hotel, Terno Rei e Mutantes, e a letra é baseada em um poema que encontrei do meu pai (escrito quando ele tinha 17 anos).
