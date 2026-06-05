@@ -6,11 +6,11 @@ ogImage: "/images/blu/og-blu.jpeg"
 
 ## Short Bio
 
-bLU is the debut solo album by Giovani Baroni, a ten-track conceptual record designed to be heard from beginning to end as one continuous piece. Written after his move from São Paulo to Mexico City, the album uses water, fish, waves, and submersion as images for transformation, memory, ego, love, and self-preservation. Sung across Portuguese, English, and Spanish, bLU draws from progressive rock, emo, psychedelia, and Brazilian indie, combining shifting time signatures, recurring leitmotifs, piano, phaser guitars, aquatic synthesizers, ambient textures, and songs that bleed directly into one another.
+bLU is the debut solo album by [Giovani Baroni](/giovani-baroni#bio), a ten-track conceptual record designed to be heard from beginning to end as one continuous piece. Written after his move from São Paulo to Mexico City, the album uses water, fish, waves, and submersion as images for transformation, memory, ego, love, and self-preservation. Sung across Portuguese, English, and Spanish, bLU draws from progressive rock, emo, psychedelia, and Brazilian indie, combining shifting time signatures, recurring leitmotifs, piano, phaser guitars, aquatic synthesizers, ambient textures, and songs that bleed directly into one another.
 
 ## Long Bio
 
-bLU is the debut solo album by Giovani Baroni: a ten-track record designed to be heard in sequence, from beginning to end, with each song bleeding into the next. More than a collection of individual tracks, it is built as a single continuous piece. A patient, immersive album in a time shaped by isolated singles.
+bLU is the debut solo album by [Giovani Baroni](/giovani-baroni#bio): a ten-track record designed to be heard in sequence, from beginning to end, with each song bleeding into the next. More than a collection of individual tracks, it is built as a single continuous piece. A patient, immersive album in a time shaped by isolated singles.
 
 The record began taking shape after Baroni moved from São Paulo to Mexico City in 2023. During the same period, he started studying piano and Spanish, and began writing toward something expansive: a conceptual album that could hold narrative, repetition, transformation, and contradiction. bLU became a record about change — the kind that alters a person without erasing what was essential in them.
 

@@ -76,7 +76,7 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
       "Drums — Bianca Predieri (São Paulo)",
       'Guest vocals on "Efervescente" — Jorge Sultzer (Mexico City)',
       "Video production — Léo Lopes (Recife) and Luca Tornato (The Hague)",
-      '"Fishy Boy" co-written with Ricardo Baroni and Mardem Humberto',
+      '"Fishy Boy" co-written with Ricardo Baroni (São Paulo) and Mardem Humberto (Goiânia)',
     ],
     tracklist: [
       "1. Ambiência Aquática No 5",
