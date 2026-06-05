@@ -52,7 +52,7 @@ export const releases: Release[] = [
     projectDisplayName: "GIOVANI BARONI",
     type: "album",
     year: 2026,
-    coverImage: "/images/blu/cover-placeholder.png",
+    coverImage: "/images/blu/cover-placeholder.jpg",
     shortDescription:
       "Upcoming debut solo album — TBD.",
     longDescription: `bLU is Giovani Baroni's debut solo album — a conceptual, narrative record designed to be listened to as a single continuous journey, from beginning to end.
@@ -134,7 +134,7 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
     projectDisplayName: "Giovani Baroni",
     type: "single",
     year: 2024,
-    coverImage: "/images/projects/ruido-branco-placeholder.png",
+    coverImage: "/images/projects/ruido-branco-placeholder.jpg",
     shortDescription: "Ruído Branco is about wanting everything at once: every dream, every place, every possible version of everything. The idea comes from white noise itself, all frequencies sounding together, and turns it into a digital nostalgic metaphor like the loud static of an old tube TV.",
     longDescription: `[UPDATE: Add description for Ruído Branco]`,
     links: {
@@ -152,7 +152,7 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
     projectDisplayName: "Giovani Baroni",
     type: "single",
     year: 2024,
-    coverImage: "/images/projects/sleep-placeholder.png",
+    coverImage: "/images/projects/sleep-placeholder.jpg",
     shortDescription: "Sleep is a downer single wrapped in a dreamlike haze between emo, shoegaze, and lo-fi Rock Triste. Washed-out guitars, lethargic vocals, half-awake vocals, and jungle-inspired beats.",
     longDescription: ` `,
     links: {
@@ -204,7 +204,7 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
     projectDisplayName: "sukya || porno",
     type: "ep",
     year: 2017,
-    coverImage: "/images/projects/urbe-placeholder.png",
+    coverImage: "/images/projects/urbe-placeholder.jpg",
     shortDescription:
       "Born out of São Paulo’s concrete, rain, crowds and quiet frustration, the record sounds like a dialogue between city life and inner turbulence. The band mixes regional Brazilian influences, progressive rock and experimental ideas without trying to fit neatly into one place.",
     longDescription: `The second EP from sukya || porno. More expansive than the first, the band pushes further into texture, atmosphere, and the complicated space between noise and melody.
