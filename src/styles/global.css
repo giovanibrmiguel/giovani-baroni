@@ -131,6 +131,16 @@
 }
 
 /* ─────────────────────────────────────────
+   Language Switcher Visibility
+   ───────────────────────────────────────── */
+/* Default: EN visible, PT hidden */
+.lang-pt { display: none; }
+
+/* When PT is active */
+[data-lang="pt"] .lang-en { display: none; }
+[data-lang="pt"] .lang-pt { display: block; }
+
+/* ─────────────────────────────────────────
    Page Transitions (CSS only)
    ───────────────────────────────────────── */
 @keyframes page-fade-in {

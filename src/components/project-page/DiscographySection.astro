@@ -86,10 +86,15 @@ const typeLabel: Record<Release["type"], string> = {
                 </span>
               </div>
 
-              <!-- Short description -->
+              <!-- Short description (language-toggled) -->
               {release.shortDescription && (
-                <p class="text-ocean-300 text-base leading-relaxed max-w-lg">
+                <p class="lang-en text-ocean-300 text-base leading-relaxed max-w-lg">
                   {release.shortDescription}
+                </p>
+              )}
+              {release.shortDescriptionPt && (
+                <p class="lang-pt text-ocean-300 text-base leading-relaxed max-w-lg">
+                  {release.shortDescriptionPt}
                 </p>
               )}
 

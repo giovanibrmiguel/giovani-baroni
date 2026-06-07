@@ -1,6 +1,7 @@
 ---
 import { projects } from "@/data/site";
 import type { ProjectKey } from "@/data/site";
+import LanguageSwitcher from "@/components/shared/LanguageSwitcher.astro";
 
 interface Props {
   project?: ProjectKey | "blu";
@@ -112,7 +113,7 @@ const headerHref = isBlu
         )
       }
 
-      <!-- Right: social icons + Projects dropdown + mobile toggle -->
+      <!-- Right: social icons + Projects dropdown + language switcher + mobile toggle -->
       <div class="flex items-center gap-4">
         {
           socialLinks.length > 0 && (
@@ -167,6 +168,11 @@ const headerHref = isBlu
             </div>
           )
         }
+
+        <!-- Language switcher (desktop) -->
+        <div class="hidden md:block">
+          <LanguageSwitcher />
+        </div>
 
         <!-- Mobile toggle -->
         {
@@ -272,6 +278,9 @@ const headerHref = isBlu
               ))}
             </div>
           )}
+          <div class="px-6 pb-5">
+            <LanguageSwitcher />
+          </div>
         </div>
       )
     }

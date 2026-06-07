@@ -13,6 +13,9 @@ const releases = getReleasesByProject("sukya-porno").sort((a, b) => b.year - a.y
 
 const sukyaProject = await getEntry("projects", "sukya-porno");
 const { Content } = await sukyaProject!.render();
+
+const sukyaProjectPt = await getEntry("projects", "sukya-porno-pt");
+const { Content: ContentPt } = await sukyaProjectPt!.render();
 ---
 
 <ProjectPage
@@ -23,5 +26,8 @@ const { Content } = await sukyaProject!.render();
 >
   <div slot="bio">
     <Content />
+  </div>
+  <div slot="bio-pt">
+    <ContentPt />
   </div>
 </ProjectPage>

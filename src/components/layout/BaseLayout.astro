@@ -38,6 +38,8 @@ const { title, description, image, type, noindex, fullWidth = false, project } =
     <SEO {title} {description} {image} {type} {noindex} />
   </head>
 
+  <!-- Sets data-lang before paint to prevent flash of wrong language -->
+  <script>document.documentElement.setAttribute('data-lang', localStorage.getItem('lang') || (navigator.language.startsWith('pt') ? 'pt' : 'en'));</script>
   <body class="bg-ocean-950 text-ocean-200 text-lg font-body min-h-screen flex flex-col">
     <!-- Grain texture overlay (decorative, no interaction) -->
     <GrainOverlay />

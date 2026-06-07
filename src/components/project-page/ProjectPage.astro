@@ -38,11 +38,13 @@ const { projectKey, config, releases, description } = Astro.props;
       aria-label="Explore bLU — debut album"
     >
       <div class="flex items-center gap-3 min-w-0">
-        <span
-          class="label-mono text-xs text-gold tracking-widest shrink-0"
-        >NEW ALBUM</span>
+        <span class="label-mono text-xs text-gold tracking-widest shrink-0">
+          <span class="lang-en">NEW ALBUM</span>
+          <span class="lang-pt">NOVO ÁLBUM</span>
+        </span>
         <span class="text-foam text-sm font-semibold tracking-wide truncate">
-          bLU — debut solo album · 2026
+          <span class="lang-en">bLU — debut album · 2026</span>
+          <span class="lang-pt">bLU — álbum de estreia · 2026</span>
         </span>
       </div>
       <span
@@ -87,11 +89,14 @@ const { projectKey, config, releases, description } = Astro.props;
         </div>
       </div>
 
-      <!-- Bio content (injected by parent page) -->
+      <!-- Bio content (injected by parent page, language-toggled) -->
       <div class="border-t border-ocean-900 pt-10 mb-12">
         <p class="label-mono text-lg text-ocean-500 mb-5">Bio</p>
-        <div class="prose prose-ocean prose-base md:prose-lg max-w-none">
+        <div class="lang-en prose prose-ocean prose-base md:prose-lg max-w-none">
           <slot name="bio" />
+        </div>
+        <div class="lang-pt prose prose-ocean prose-base md:prose-lg max-w-none">
+          <slot name="bio-pt" />
         </div>
       </div>
 
@@ -100,7 +105,8 @@ const { projectKey, config, releases, description } = Astro.props;
         <p class="label-mono text-lg text-ocean-500 mb-5">Press Kit</p>
         <div class="flex flex-col sm:flex-row sm:items-center gap-4">
           <p class="text-ocean-400 text-base">
-            Hi-resolution photos, bio, and release info.
+            <span class="lang-en">Hi-resolution photos, bio, and release info.</span>
+            <span class="lang-pt">Fotos em alta resolução, bio e informações de lançamento.</span>
           </p>
           <a
             href={config.pressKitUrl}

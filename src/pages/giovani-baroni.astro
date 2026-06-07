@@ -13,6 +13,9 @@ const releases = getGiovaniBaroniReleases();
 
 const aboutPage = await getEntry("pages", "about");
 const { Content } = await aboutPage!.render();
+
+const aboutPagePt = await getEntry("pages", "about-pt");
+const { Content: ContentPt } = await aboutPagePt!.render();
 ---
 
 <ProjectPage
@@ -23,5 +26,8 @@ const { Content } = await aboutPage!.render();
 >
   <div slot="bio">
     <Content />
+  </div>
+  <div slot="bio-pt">
+    <ContentPt />
   </div>
 </ProjectPage>

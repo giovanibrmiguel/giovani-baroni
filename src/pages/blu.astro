@@ -18,6 +18,9 @@ import { projects } from "@/data/site";
 const bluPage = await getEntry("pages", "blu");
 const { Content } = await bluPage!.render();
 
+const bluPagePt = await getEntry("pages", "blu-pt");
+const { Content: ContentPt } = await bluPagePt!.render();
+
 const bluRelease = releases.find((r) => r.project === "blu");
 const gbConfig = projects["giovani-baroni"];
 
@@ -79,7 +82,8 @@ const heroBackgroundImage = "/images/press/giovani-water_pic.jpg";
         bLU
       </h1>
       <p class="text-ocean-300 text-base md:text-xl font-light mt-4 max-w-lg">
-        A prog journey through water and memory.
+        <span class="lang-en">A prog journey through water and memory.</span>
+        <span class="lang-pt">Uma jornada prog através da água e da memória.</span>
       </p>
       {
         bluRelease?.year && (
@@ -134,10 +138,13 @@ const heroBackgroundImage = "/images/press/giovani-water_pic.jpg";
 
     <!-- Long-form content from src/content/pages/blu.md -->
     <div class="grid md:grid-cols-3 gap-12 md:gap-20 pt-8 md:pt-10 pb-16 md:pb-24">
-      <!-- Main text -->
+      <!-- Main text (language-toggled) -->
       <div class="md:col-span-2">
-        <div class="prose prose-ocean prose-base md:prose-lg max-w-none">
+        <div class="lang-en prose prose-ocean prose-base md:prose-lg max-w-none">
           <Content />
+        </div>
+        <div class="lang-pt prose prose-ocean prose-base md:prose-lg max-w-none">
+          <ContentPt />
         </div>
       </div>
 
@@ -218,7 +225,10 @@ const heroBackgroundImage = "/images/press/giovani-water_pic.jpg";
     <section class="py-12 border-t border-ocean-900" aria-label="Press Kit">
       <p class="label-mono text-lg text-ocean-500 mb-6">Press Kit</p>
       <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-        <p class="text-ocean-400 text-base">Hi-resolution photos, bio, and release info.</p>
+        <p class="text-ocean-400 text-base">
+          <span class="lang-en">Hi-resolution photos, bio, and release info.</span>
+          <span class="lang-pt">Fotos em alta resolução, bio e informações de lançamento.</span>
+        </p>
         <a
           href={gbConfig.pressKitUrl}
           target="_blank"
