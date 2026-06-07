@@ -52,7 +52,7 @@ export const releases: Release[] = [
     projectDisplayName: "GIOVANI BARONI",
     type: "album",
     year: 2026,
-    coverImage: "/images/blu/cover-placeholder.jpg",
+    coverImage: "/images/blu/blu_v5_small.png",
     shortDescription:
       "Upcoming debut solo album — TBD.",
     longDescription: `bLU is Giovani Baroni's debut solo album — a conceptual, narrative record designed to be listened to as a single continuous journey, from beginning to end.
@@ -100,7 +100,7 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
     projectDisplayName: "giovani-baroni",
     type: "ep",
     year: 2023,
-    coverImage: "/images/projects/stop-and-go-cover-placeholder.jpg",
+    coverImage: "/images/projects/stop-and-go-blu_v5_small.png",
     shortDescription:
       "Stop & Go Station is an intimate, lo-fi and dreamy EP consisting of 4 tracks, shaped by home-recorded textures, and references to 90s video games. Blending Brazilian influences, indie rock, and nostalgia, Giovani Baroni builds a playful yet intricate sound world with echoes of Super Mario 64, Alceu Valença, and The Strokes. Closing track \"Transbordar\" features Luca Tornato.",
     longDescription: `Stop & Go Station is an early solo EP by Giovani Baroni. A collection of songs written during a period of transit and uncertainty.

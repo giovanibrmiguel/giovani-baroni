@@ -1,7 +1,7 @@
 ---
 title: "sukya || porno"
 tagline: "Noise, intimacy, and the beautiful collapse"
-coverImage: "/images/projects/sukya-cover-placeholder.jpg"
+coverImage: "/images/projects/sukya-blu_v5_small.png"
 status: "active"
 order: 2
 label: "Band · Two EPs Released"

@@ -1,7 +1,7 @@
 ---
 title: "bLU"
 tagline: "Progressive indie rock with ocean imagery — designed to be heard from start to finish"
-coverImage: "/images/blu/cover-placeholder.jpg"
+coverImage: "/images/blu/blu_v5_small.png"
 status: "upcoming"
 order: 1
 label: "Solo · Album · 2026"

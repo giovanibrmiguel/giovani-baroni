@@ -1,7 +1,7 @@
 ---
 title: "Stop & Go Station"
 tagline: "Songs from the in-between"
-coverImage: "/images/projects/stop-and-go-cover-placeholder.jpg"
+coverImage: "/images/projects/stop-and-go-blu_v5_small.png"
 status: "released"
 order: 3
 label: "Solo · EP"
