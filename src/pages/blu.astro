@@ -11,9 +11,10 @@
 import BaseLayout from "@/components/layout/BaseLayout.astro";
 import EmbedPlayer from "@/components/music/EmbedPlayer.astro";
 import VideosSection from "@/components/project-page/VideosSection.astro";
+import JsonLd from "@/components/shared/JsonLd.astro";
 import { getEntry } from "astro:content";
 import { releases } from "@/data/releases";
-import { projects } from "@/data/site";
+import { projects, site } from "@/data/site";
 
 const bluPage = await getEntry("pages", "blu");
 const { Content } = await bluPage!.render();
@@ -32,15 +33,46 @@ const hasListenEmbed =
   !bluRelease.embedCode.includes("PLACEHOLDER");
 
 const heroBackgroundImage = "/images/press/giovani-water_pic.jpg";
+
+const bluTracklist = bluRelease?.tracklist ?? [];
+
+const bluSchema = {
+  "@context": "https://schema.org",
+  "@type": "MusicAlbum",
+  name: "bLU",
+  url: `${site.domain}/blu`,
+  description:
+    "Debut solo album by Giovani Baroni. A conceptual 10-track record designed to be heard start to finish — progressive rock, emo, and Brazilian indie filtered through imagery of water, memory, and transformation. Released 2026.",
+  albumProductionType: "https://schema.org/StudioAlbum",
+  albumReleaseType: "https://schema.org/AlbumRelease",
+  datePublished: "2026",
+  image: `${site.domain}/images/blu/og-blu.jpeg`,
+  genre: ["Progressive Rock", "Indie Rock", "Emo", "Psychedelic Rock"],
+  byArtist: {
+    "@type": "Person",
+    name: "Giovani Baroni",
+    url: `${site.domain}/giovani-baroni`,
+    sameAs: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+  },
+  ...(bluTracklist.length > 0 && {
+    track: bluTracklist.map((name, i) => ({
+      "@type": "MusicRecording",
+      name,
+      position: i + 1,
+    })),
+  }),
+};
 ---
 
 <BaseLayout
   title="bLU"
-  description="bLU is Giovani Baroni's debut solo album — a psychedelic journey through water and memory."
+  description="bLU is the debut solo album by Giovani Baroni — a 10-track prog and indie rock concept record built around water, memory, and transformation. Out 2026."
   image="/images/blu/og-blu.jpeg"
   type="music.album"
   project="blu"
+  lang="pt"
 >
+  <JsonLd schema={bluSchema} slot="head" />
   <!-- ── Hero section ─────────────────────────────────────────────── -->
   <section
     class="relative overflow-hidden pb-8 md:pb-10"

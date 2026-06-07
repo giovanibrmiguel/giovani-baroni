@@ -1,0 +1,12 @@
+---
+/**
+ * JsonLd
+ * Injects a JSON-LD <script type="application/ld+json"> into the <head>.
+ * Pass any schema.org object as `schema`.
+ */
+interface Props {
+  schema: Record<string, unknown>;
+}
+const { schema } = Astro.props;
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -4,9 +4,10 @@
  * Project page: bio, press kit, discography (bLU + solo releases), videos.
  */
 import ProjectPage from "@/components/project-page/ProjectPage.astro";
-import { projects } from "@/data/site";
+import { projects, site } from "@/data/site";
 import { getGiovaniBaroniReleases } from "@/data/releases";
 import { getEntry } from "astro:content";
+import JsonLd from "@/components/shared/JsonLd.astro";
 
 const config = projects["giovani-baroni"];
 const releases = getGiovaniBaroniReleases();
@@ -25,7 +26,7 @@ const { Content: ContentEs } = await aboutPageEs!.render();
   projectKey="giovani-baroni"
   config={config}
   releases={releases}
-  description="Official page of GIOVANI BARONI — Brazilian musician, songwriter, and producer based in Mexico City."
+  description="Giovani Baroni is a Brazilian multi-instrumentalist and producer based in Mexico City — known for prog-influenced indie rock, conceptual albums, and fronting the São Paulo band sukya || porno."
 >
   <div slot="bio">
     <Content />

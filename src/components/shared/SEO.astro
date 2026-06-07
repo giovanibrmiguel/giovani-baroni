@@ -13,6 +13,7 @@ interface Props {
   canonicalURL?: string;
   type?: "website" | "article" | "music.album";
   noindex?: boolean;
+  lang?: "en" | "pt" | "es";
 }
 
 const {
@@ -22,7 +23,10 @@ const {
   canonicalURL,
   type = "website",
   noindex = false,
+  lang = "en",
 } = Astro.props;
+
+const ogLocale = lang === "pt" ? "pt_BR" : lang === "es" ? "es_MX" : "en_US";
 
 const pageTitle = title ? `${title} | ${site.name}` : site.name;
 const resolvedImage = image.startsWith("http") ? image : `${site.domain}${image}`;
@@ -42,7 +46,10 @@ const canonical = canonicalURL ?? new URL(Astro.url.pathname, site.domain).href;
 <meta property="og:description" content={description} />
 <meta property="og:image" content={resolvedImage} />
 <meta property="og:site_name" content={site.name} />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="es_MX" />
 
 <!-- Twitter / X Cards -->
 <meta name="twitter:card" content="summary_large_image" />

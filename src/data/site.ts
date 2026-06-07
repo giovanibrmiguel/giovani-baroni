@@ -10,7 +10,7 @@
 
 export const site = {
   name: "Giovani Baroni",
-  description: "Giovani Baroni is a Brazilian musician based in Mexico City.",
+  description: "Giovani Baroni is a Brazilian musician, songwriter, and producer based in Mexico City — known for prog-influenced indie rock and conceptual albums.",
   domain: "https://www.giovanibaroni.com",
   featuredProject: "blu",
   email: "press@giovanibaroni.com",

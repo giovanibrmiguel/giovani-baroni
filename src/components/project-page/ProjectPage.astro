@@ -9,6 +9,8 @@
 import BaseLayout from "@/components/layout/BaseLayout.astro";
 import DiscographySection from "@/components/project-page/DiscographySection.astro";
 import VideosSection from "@/components/project-page/VideosSection.astro";
+import JsonLd from "@/components/shared/JsonLd.astro";
+import { site } from "@/data/site";
 import type { ProjectConfig, ProjectKey } from "@/data/site";
 import type { Release } from "@/data/releases";
 
@@ -20,13 +22,58 @@ interface Props {
 }
 
 const { projectKey, config, releases, description } = Astro.props;
+
+const giovaniSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Giovani Baroni",
+  url: site.domain,
+  jobTitle: "Musician, Songwriter, Producer",
+  description:
+    "Brazilian multi-instrumentalist and producer known for prog-influenced indie rock. Fronts the São Paulo band sukya || porno and releases solo work under his own name. Based in Mexico City.",
+  genre: ["Indie Rock", "Progressive Rock", "Alternative Rock"],
+  sameAs: [
+    "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+    "https://www.instagram.com/giovanibaroni/",
+    "https://www.youtube.com/@sukyarecords",
+  ],
+};
+
+const sukyaSchema = {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  name: "sukya || porno",
+  url: `${site.domain}/sukya`,
+  description:
+    "São Paulo alt-rock band with two EPs. Dense, angular, and urban — influenced by Pavement's sloppy grit and the arrangement complexity of King Crimson.",
+  genre: ["Alternative Rock", "Indie Rock", "Experimental Rock", "Progressive Rock"],
+  foundingLocation: {
+    "@type": "Place",
+    name: "São Paulo, Brazil",
+  },
+  member: {
+    "@type": "Person",
+    name: "Giovani Baroni",
+    roleName: "Vocalist, Guitarist",
+  },
+  sameAs: [
+    "https://open.spotify.com/artist/7ndXsfZrZViNKKJB2LWXz5",
+    "https://www.instagram.com/sukyap/",
+    "https://www.youtube.com/@sukyarecords",
+  ],
+};
 ---
 
 <BaseLayout
   title={config.displayName}
   description={description ?? `${config.displayName} — official page.`}
   project={projectKey}
+  lang="pt"
 >
+  <Fragment slot="head">
+    {projectKey === "giovani-baroni" && <JsonLd schema={giovaniSchema} />}
+    {projectKey === "sukya-porno" && <JsonLd schema={sukyaSchema} />}
+  </Fragment>
   <!-- ── bLU CTA banner (GIOVANI BARONI page only) ───────────────── -->
   {projectKey === "giovani-baroni" && (
     <a

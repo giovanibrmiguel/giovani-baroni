@@ -19,13 +19,18 @@ interface Props {
   fullWidth?: boolean;
   /** Which project context — forwarded to Header for per-project nav/social. */
   project?: "giovani-baroni" | "sukya-porno" | "blu";
+  /**
+   * Primary language of this page's content.
+   * Defaults to "pt" for artist pages (main audience is Brazil) and "en" elsewhere.
+   */
+  lang?: "en" | "pt" | "es";
 }
 
-const { title, description, image, type, noindex, fullWidth = false, project } = Astro.props;
+const { title, description, image, type, noindex, fullWidth = false, project, lang = "en" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +40,8 @@ const { title, description, image, type, noindex, fullWidth = false, project } =
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <SEO {title} {description} {image} {type} {noindex} />
+    <SEO {title} {description} {image} {type} {noindex} {lang} />
+    <slot name="head" />
   </head>
 
   <!-- Sets data-lang before paint to prevent flash of wrong language -->

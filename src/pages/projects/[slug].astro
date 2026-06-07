@@ -36,12 +36,17 @@ const projectReleases = releases
 
 const { title, tagline, coverImage, label, links, members, seoDescription } = project.data;
 
+// PT/ES content stubs are translation source files, not standalone pages.
+// Their canonical equivalents are /sukya and /blu — hide from search engines.
+const isTranslationStub = project.slug.endsWith("-pt") || project.slug.endsWith("-es");
+
 ---
 
 <BaseLayout
   title={title}
   description={seoDescription ?? tagline}
   image={coverImage}
+  noindex={isTranslationStub}
 >
   <article class="max-w-6xl mx-auto px-6 py-16 md:py-24">
     <!-- Back link -->
