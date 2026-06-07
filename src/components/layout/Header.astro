@@ -18,14 +18,15 @@ const isGb = project === "giovani-baroni";
 // Anchor nav — points back to /giovani-baroni on the bLU page, anchors on project pages
 const anchorNav = isBlu
   ? [
-      { href: "/giovani-baroni#bio", label: "Bio" },
-      { href: "/giovani-baroni#discography", label: "Discography" },
-      { href: "/giovani-baroni#videos", label: "Videos" },
+      { href: "/giovani-baroni#bio", label: "Bio", labelPt: "Bio", labelEs: "Bio" },
+      { href: "/giovani-baroni#discography", label: "Discography", labelPt: "Discografia", labelEs: "Discografía" },
+      { href: "/giovani-baroni#videos", label: "Videos", labelPt: "Vídeos", labelEs: "Videos" },
     ]
   : [
-      { href: "#bio", label: "Bio" },
-      { href: "#discography", label: "Discography" },
-      { href: "#videos", label: "Videos" },
+      { href: "#bio", label: "Bio", labelPt: "Bio", labelEs: "Bio" },
+      { href: "#discography", label: "Discography", labelPt: "Discografia", labelEs: "Discografía" },
+      { href: "#lyrics", label: "Lyrics", labelPt: "Letras", labelEs: "Letras" },
+      { href: "#videos", label: "Videos", labelPt: "Vídeos", labelEs: "Videos" },
     ];
 
 const icons = {
@@ -89,13 +90,15 @@ const headerHref = isBlu
       {
         (projectConfig || isBlu) && (
           <ul class="hidden md:flex items-center gap-7 list-none" role="list">
-            {anchorNav.map(({ href, label }) => (
+            {anchorNav.map(({ href, label, labelPt, labelEs }) => (
               <li>
                 <a
                   href={href}
                   class="text-sm font-medium tracking-wide text-ocean-300 hover:text-foam transition-colors duration-200"
                 >
-                  {label}
+                  <span class="lang-en">{label}</span>
+                  <span class="lang-pt">{labelPt}</span>
+                  <span class="lang-es">{labelEs}</span>
                 </a>
               </li>
             ))}
@@ -216,13 +219,15 @@ const headerHref = isBlu
           aria-label="Mobile navigation"
         >
           <ul class="list-none px-6 py-5 space-y-4" role="list">
-            {anchorNav.map(({ href, label }) => (
+            {anchorNav.map(({ href, label, labelPt, labelEs }) => (
               <li>
                 <a
                   href={href}
                   class="block text-sm font-medium tracking-wide py-1 text-ocean-300 hover:text-foam transition-colors duration-200"
                 >
-                  {label}
+                  <span class="lang-en">{label}</span>
+                  <span class="lang-pt">{labelPt}</span>
+                  <span class="lang-es">{labelEs}</span>
                 </a>
               </li>
             ))}
@@ -247,7 +252,11 @@ const headerHref = isBlu
               </li>
             )}
             <li class="border-t border-ocean-800 pt-4">
-              <p class="label-mono text-base text-ocean-600 mb-3">Projects</p>
+              <p class="label-mono text-base text-ocean-600 mb-3">
+                <span class="lang-en">Projects</span>
+                <span class="lang-pt">Projetos</span>
+                <span class="lang-es">Proyectos</span>
+              </p>
               <div class="space-y-2">
                 <a
                   href="/giovani-baroni"

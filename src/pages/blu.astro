@@ -21,6 +21,9 @@ const { Content } = await bluPage!.render();
 const bluPagePt = await getEntry("pages", "blu-pt");
 const { Content: ContentPt } = await bluPagePt!.render();
 
+const bluPageEs = await getEntry("pages", "blu-es");
+const { Content: ContentEs } = await bluPageEs!.render();
+
 const bluRelease = releases.find((r) => r.project === "blu");
 const gbConfig = projects["giovani-baroni"];
 
@@ -84,6 +87,7 @@ const heroBackgroundImage = "/images/press/giovani-water_pic.jpg";
       <p class="text-ocean-300 text-base md:text-xl font-light mt-4 max-w-lg">
         <span class="lang-en">A prog journey through water and memory.</span>
         <span class="lang-pt">Uma jornada prog através da água e da memória.</span>
+        <span class="lang-es">Un viaje prog a través del agua y la memoria.</span>
       </p>
       {
         bluRelease?.year && (
@@ -145,6 +149,9 @@ const heroBackgroundImage = "/images/press/giovani-water_pic.jpg";
         </div>
         <div class="lang-pt prose prose-ocean prose-base md:prose-lg max-w-none">
           <ContentPt />
+        </div>
+        <div class="lang-es prose prose-ocean prose-base md:prose-lg max-w-none">
+          <ContentEs />
         </div>
       </div>
 
@@ -228,6 +235,7 @@ const heroBackgroundImage = "/images/press/giovani-water_pic.jpg";
         <p class="text-ocean-400 text-base">
           <span class="lang-en">Hi-resolution photos, bio, and release info.</span>
           <span class="lang-pt">Fotos em alta resolução, bio e informações de lançamento.</span>
+          <span class="lang-es">Fotos en alta resolución, bio e información de lanzamiento.</span>
         </p>
         <a
           href={gbConfig.pressKitUrl}

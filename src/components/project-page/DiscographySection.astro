@@ -97,6 +97,11 @@ const typeLabel: Record<Release["type"], string> = {
                   {release.shortDescriptionPt}
                 </p>
               )}
+              {release.shortDescriptionEs && (
+                <p class="lang-es text-ocean-300 text-base leading-relaxed max-w-lg">
+                  {release.shortDescriptionEs}
+                </p>
+              )}
 
               <!-- Tracklist -->
               {release.tracklist && release.tracklist.length > 0 && (

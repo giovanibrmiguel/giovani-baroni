@@ -16,6 +16,9 @@ const { Content } = await sukyaProject!.render();
 
 const sukyaProjectPt = await getEntry("projects", "sukya-porno-pt");
 const { Content: ContentPt } = await sukyaProjectPt!.render();
+
+const sukyaProjectEs = await getEntry("projects", "sukya-porno-es");
+const { Content: ContentEs } = await sukyaProjectEs!.render();
 ---
 
 <ProjectPage
@@ -29,5 +32,8 @@ const { Content: ContentPt } = await sukyaProjectPt!.render();
   </div>
   <div slot="bio-pt">
     <ContentPt />
+  </div>
+  <div slot="bio-es">
+    <ContentEs />
   </div>
 </ProjectPage>

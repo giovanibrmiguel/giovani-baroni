@@ -141,6 +141,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"pages": {
+"about-es.md": {
+	id: "about-es.md";
+  slug: "about-es";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
 "about-pt.md": {
 	id: "about-pt.md";
   slug: "about-pt";
@@ -151,6 +158,13 @@ declare module 'astro:content' {
 "about.md": {
 	id: "about.md";
   slug: "about";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".md"] };
+"blu-es.md": {
+	id: "blu-es.md";
+  slug: "blu-es";
   body: string;
   collection: "pages";
   data: InferEntrySchema<"pages">
@@ -188,6 +202,13 @@ declare module 'astro:content' {
 "stop-and-go-station.md": {
 	id: "stop-and-go-station.md";
   slug: "stop-and-go-station";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"sukya-porno-es.md": {
+	id: "sukya-porno-es.md";
+  slug: "sukya-porno-es";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">

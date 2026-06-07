@@ -16,6 +16,9 @@ const { Content } = await aboutPage!.render();
 
 const aboutPagePt = await getEntry("pages", "about-pt");
 const { Content: ContentPt } = await aboutPagePt!.render();
+
+const aboutPageEs = await getEntry("pages", "about-es");
+const { Content: ContentEs } = await aboutPageEs!.render();
 ---
 
 <ProjectPage
@@ -29,5 +32,8 @@ const { Content: ContentPt } = await aboutPagePt!.render();
   </div>
   <div slot="bio-pt">
     <ContentPt />
+  </div>
+  <div slot="bio-es">
+    <ContentEs />
   </div>
 </ProjectPage>

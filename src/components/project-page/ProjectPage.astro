@@ -41,10 +41,12 @@ const { projectKey, config, releases, description } = Astro.props;
         <span class="label-mono text-xs text-gold tracking-widest shrink-0">
           <span class="lang-en">NEW ALBUM</span>
           <span class="lang-pt">NOVO ÁLBUM</span>
+          <span class="lang-es">NUEVO ÁLBUM</span>
         </span>
         <span class="text-foam text-sm font-semibold tracking-wide truncate">
           <span class="lang-en">bLU — debut album · 2026</span>
           <span class="lang-pt">bLU — álbum de estreia · 2026</span>
+          <span class="lang-es">bLU — álbum debut · 2026</span>
         </span>
       </div>
       <span
@@ -98,6 +100,9 @@ const { projectKey, config, releases, description } = Astro.props;
         <div class="lang-pt prose prose-ocean prose-base md:prose-lg max-w-none">
           <slot name="bio-pt" />
         </div>
+        <div class="lang-es prose prose-ocean prose-base md:prose-lg max-w-none">
+          <slot name="bio-es" />
+        </div>
       </div>
 
       <!-- Press Kit -->
@@ -107,6 +112,7 @@ const { projectKey, config, releases, description } = Astro.props;
           <p class="text-ocean-400 text-base">
             <span class="lang-en">Hi-resolution photos, bio, and release info.</span>
             <span class="lang-pt">Fotos em alta resolução, bio e informações de lançamento.</span>
+            <span class="lang-es">Fotos en alta resolución, bio e información de lanzamiento.</span>
           </p>
           <a
             href={config.pressKitUrl}
@@ -125,6 +131,24 @@ const { projectKey, config, releases, description } = Astro.props;
 
   <!-- ── Discography ─────────────────────────────────────────────── -->
   <DiscographySection releases={releases} />
+
+  <!-- ── Lyrics / Chords ────────────────────────────────────────── -->
+  <section id="lyrics" class="py-16 md:py-24 border-t border-ocean-900" aria-labelledby="lyrics-heading">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="label-mono text-lg text-ocean-500 mb-12" id="lyrics-heading">
+        <span class="lang-en">Lyrics / Chords</span>
+        <span class="lang-pt">Letras / Cifras</span>
+        <span class="lang-es">Letras / Cifras</span>
+      </p>
+      <div class="card-ocean p-10 text-center">
+        <p class="text-ocean-500 label-mono text-base">
+          <span class="lang-en">Lyrics and chords coming soon.</span>
+          <span class="lang-pt">Letras e cifras em breve.</span>
+          <span class="lang-es">Letras y cifras próximamente.</span>
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- ── Videos ─────────────────────────────────────────────────── -->
   <VideosSection project={projectKey} />

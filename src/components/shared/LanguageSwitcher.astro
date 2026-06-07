@@ -1,7 +1,7 @@
 ---
 /**
  * LanguageSwitcher
- * Toggles bio content between EN, PT, and ES (ES is a disabled placeholder).
+ * Toggles bio content between EN, PT, and ES.
  * Stores the selected language in localStorage and sets data-lang on <html>.
  */
 ---
@@ -19,15 +19,15 @@
     aria-label="Mudar para Português"
   >PT</button>
   <span class="text-ocean-700" aria-hidden="true">·</span>
-  <span
-    class="px-1.5 py-0.5 text-ocean-700 cursor-not-allowed"
-    title="Español — em breve / coming soon"
-    aria-disabled="true"
-  >ES</span>
+  <button
+    id="lang-es"
+    class="lang-btn px-1.5 py-0.5 rounded-sm transition-colors duration-200 text-ocean-400 hover:text-foam"
+    aria-label="Cambiar a Español"
+  >ES</button>
 </div>
 
 <script>
-  const LANGS = ["en", "pt"] as const;
+  const LANGS = ["en", "pt", "es"] as const;
   type Lang = typeof LANGS[number];
 
   function setLang(lang: Lang) {
@@ -48,7 +48,7 @@
 
   // Init on load
   const stored = localStorage.getItem("lang") as Lang | null;
-  const browserDefault: Lang = navigator.language.startsWith("pt") ? "pt" : "en";
+  const browserDefault: Lang = navigator.language.startsWith("pt") ? "pt" : navigator.language.startsWith("es") ? "es" : "en";
   const initial: Lang = stored && LANGS.includes(stored) ? stored : browserDefault;
   setLang(initial);
 
