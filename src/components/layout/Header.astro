@@ -160,28 +160,31 @@ const headerHref = isBlu
       <!-- Right: social icons + Projects dropdown + language switcher + mobile toggle -->
       <div class="flex items-center gap-2 md:gap-3 ml-auto">
 
-        <!-- Social icons: all sizes, active links only -->
-        {socialLinks.filter(l => l.active).map(({ href, label, icon }) => (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={label}
-            class="text-ocean-400 hover:text-foam transition-colors duration-200"
-            set:html={icon}
-          />
-        ))}
-        <!-- Dimmed placeholders: desktop only -->
-        {socialLinks.filter(l => !l.active).map(({ label, icon }) => (
-          <span
-            aria-label={`${label} — coming soon`}
-            class="hidden md:inline text-ocean-800 cursor-not-allowed"
-            set:html={icon}
-          />
-        ))}
+        <!-- Social icons -->
+        <div class="flex items-center gap-2 md:gap-3">
+          {socialLinks.filter(l => l.active).map(({ href, label, icon }) => (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              class="text-ocean-400 hover:text-foam transition-colors duration-200"
+              set:html={icon}
+            />
+          ))}
+          {socialLinks.filter(l => !l.active).map(({ label, icon }) => (
+            <span
+              aria-label={`${label} — coming soon`}
+              class="hidden md:inline text-ocean-800 cursor-not-allowed"
+              set:html={icon}
+            />
+          ))}
+        </div>
 
         <!-- Language switcher: always visible on all screen sizes -->
-        <LanguageSwitcher />
+        <div class="ml-3 md:ml-5">
+          <LanguageSwitcher />
+        </div>
 
         <!-- Mobile hamburger toggle (project pages only) -->
         {
