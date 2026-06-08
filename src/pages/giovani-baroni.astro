@@ -6,8 +6,15 @@
 import ProjectPage from "@/components/project-page/ProjectPage.astro";
 import { projects, site } from "@/data/site";
 import { getGiovaniBaroniReleases } from "@/data/releases";
+import { getLyricsByProject } from "@/data/lyrics";
 import { getEntry } from "astro:content";
 import JsonLd from "@/components/shared/JsonLd.astro";
+
+const gbLyrics = getLyricsByProject("giovani-baroni");
+const lyricsByRelease = gbLyrics.reduce<Record<string, typeof gbLyrics>>((acc, entry) => {
+  (acc[entry.release] ??= []).push(entry);
+  return acc;
+}, {});
 
 const config = projects["giovani-baroni"];
 const releases = getGiovaniBaroniReleases();
@@ -36,5 +43,50 @@ const { Content: ContentEs } = await aboutPageEs!.render();
   </div>
   <div slot="bio-es">
     <ContentEs />
+  </div>
+
+  <div slot="lyrics">
+    <div class="space-y-10">
+      {Object.entries(lyricsByRelease).map(([releaseName, songs]) => (
+        <div>
+          <p class="label-mono text-base text-ocean-600 mb-4 pb-2 border-b border-ocean-900">{releaseName}</p>
+          <ul class="space-y-3">
+            {songs.map((song) => (
+              <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-2 border-b border-ocean-900/50 last:border-0">
+                <span class="text-ocean-200 text-sm font-medium">{song.title}</span>
+                <div class="flex items-center gap-2 shrink-0">
+                  {song.genius && (
+                    <a
+                      href={song.genius}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 label-mono text-xs text-ocean-400 hover:text-foam border border-ocean-800 hover:border-ocean-600 px-2.5 py-1 rounded-sm transition-all duration-200"
+                    >
+                      <span class="lang-en">Lyrics</span>
+                      <span class="lang-pt">Letra</span>
+                      <span class="lang-es">Letra</span>
+                      ↗
+                    </a>
+                  )}
+                  {song.cifra && (
+                    <a
+                      href={song.cifra}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 label-mono text-xs text-ocean-400 hover:text-foam border border-ocean-800 hover:border-ocean-600 px-2.5 py-1 rounded-sm transition-all duration-200"
+                    >
+                      <span class="lang-en">Chords</span>
+                      <span class="lang-pt">Cifra</span>
+                      <span class="lang-es">Cifra</span>
+                      ↗
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   </div>
 </ProjectPage>

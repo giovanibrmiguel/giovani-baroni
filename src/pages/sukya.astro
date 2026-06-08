@@ -6,7 +6,16 @@
 import ProjectPage from "@/components/project-page/ProjectPage.astro";
 import { projects } from "@/data/site";
 import { getReleasesByProject } from "@/data/releases";
+import { getLyricsByProject } from "@/data/lyrics";
 import { getEntry } from "astro:content";
+
+const sukyaLyrics = getLyricsByProject("sukya-porno");
+
+// Group by release name, preserving insertion order
+const lyricsByRelease = sukyaLyrics.reduce<Record<string, typeof sukyaLyrics>>((acc, entry) => {
+  (acc[entry.release] ??= []).push(entry);
+  return acc;
+}, {});
 
 const config = projects["sukya-porno"];
 const releases = getReleasesByProject("sukya-porno").sort((a, b) => b.year - a.year);
@@ -25,7 +34,7 @@ const { Content: ContentEs } = await sukyaProjectEs!.render();
   projectKey="sukya-porno"
   config={config}
   releases={releases}
-  description="sukya || porno is a São Paulo alt-rock band led by Giovani Baroni — dense, angular, and urban, with two EPs that mix indie rock, prog, and Brazilian regional influences."
+  description="sukya || porno is a São Paulo alternative rock band led by Giovani Baroni — dense, angular, and urban, with two EPs that mix indie rock, prog, and Brazilian regional influences."
 >
   <div slot="bio">
     <Content />
@@ -35,5 +44,50 @@ const { Content: ContentEs } = await sukyaProjectEs!.render();
   </div>
   <div slot="bio-es">
     <ContentEs />
+  </div>
+
+  <div slot="lyrics">
+    <div class="space-y-10">
+      {Object.entries(lyricsByRelease).map(([releaseName, songs]) => (
+        <div>
+          <p class="label-mono text-base text-ocean-600 mb-4 pb-2 border-b border-ocean-900">{releaseName}</p>
+          <ul class="space-y-3">
+            {songs.map((song) => (
+              <li class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-2 border-b border-ocean-900/50 last:border-0">
+                <span class="text-ocean-200 text-sm font-medium">{song.title}</span>
+                <div class="flex items-center gap-2 shrink-0">
+                  {song.genius && (
+                    <a
+                      href={song.genius}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 label-mono text-xs text-ocean-400 hover:text-foam border border-ocean-800 hover:border-ocean-600 px-2.5 py-1 rounded-sm transition-all duration-200"
+                    >
+                      <span class="lang-en">Lyrics</span>
+                      <span class="lang-pt">Letra</span>
+                      <span class="lang-es">Letra</span>
+                      ↗
+                    </a>
+                  )}
+                  {song.cifra && (
+                    <a
+                      href={song.cifra}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 label-mono text-xs text-ocean-400 hover:text-foam border border-ocean-800 hover:border-ocean-600 px-2.5 py-1 rounded-sm transition-all duration-200"
+                    >
+                      <span class="lang-en">Chords</span>
+                      <span class="lang-pt">Cifra</span>
+                      <span class="lang-es">Cifra</span>
+                      ↗
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   </div>
 </ProjectPage>

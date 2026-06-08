@@ -84,13 +84,13 @@ const sukyaSchema = {
              transition-all duration-300"
       aria-label="Explore bLU — debut album"
     >
-      <div class="flex items-center gap-3 min-w-0">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 min-w-0">
         <span class="label-mono text-xs text-gold tracking-widest shrink-0">
           <span class="lang-en">NEW ALBUM</span>
           <span class="lang-pt">NOVO ÁLBUM</span>
           <span class="lang-es">NUEVO ÁLBUM</span>
         </span>
-        <span class="text-foam text-sm font-semibold tracking-wide truncate">
+        <span class="text-foam text-sm font-semibold tracking-wide">
           <span class="lang-en">bLU — debut album · 2026</span>
           <span class="lang-pt">bLU — álbum de estreia · 2026</span>
           <span class="lang-es">bLU — álbum debut · 2026</span>
@@ -187,13 +187,15 @@ const sukyaSchema = {
         <span class="lang-pt">Letras / Cifras</span>
         <span class="lang-es">Letras / Cifras</span>
       </p>
-      <div class="card-ocean p-10 text-center">
-        <p class="text-ocean-500 label-mono text-base">
-          <span class="lang-en">Lyrics and chords coming soon.</span>
-          <span class="lang-pt">Letras e cifras em breve.</span>
-          <span class="lang-es">Letras y cifras próximamente.</span>
-        </p>
-      </div>
+      <slot name="lyrics">
+        <div class="card-ocean p-10 text-center">
+          <p class="text-ocean-500 label-mono text-base">
+            <span class="lang-en">Lyrics and chords coming soon.</span>
+            <span class="lang-pt">Letras e cifras em breve.</span>
+            <span class="lang-es">Letras y cifras próximamente.</span>
+          </p>
+        </div>
+      </slot>
     </div>
   </section>
 

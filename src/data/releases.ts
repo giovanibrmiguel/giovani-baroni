@@ -14,9 +14,12 @@
 
 export type StreamingLinks = {
   spotify?: string;
+  youtubeMusic?: string;
+  appleMusic?: string;
+  amazonMusic?: string;
+  deezer?: string;
   bandcamp?: string;
   youtube?: string;
-  appleMusic?: string;
   soundcloud?: string;
   tidal?: string;
 };
@@ -120,8 +123,10 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
 [UPDATE: Replace with actual EP description]`,
     links: {
       spotify: "https://open.spotify.com/album/5le5q8tskih5LXdnAmK8cC",
-      bandcamp: "",
-      youtube: "",
+      youtubeMusic: "https://music.youtube.com/playlist?list=OLAK5uy_lxTD5H9m7DwsT5gWGt9XECZMDqGpjzLFE&si=xMH6bGqMiXp3zXBp",
+      appleMusic: "https://music.apple.com/us/album/stop-go-station-ep/1663981616",
+      amazonMusic: "https://music.amazon.com/albums/B0BRYT15ZK",
+      deezer: "https://www.deezer.com/en/album/395219677",
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5le5q8tskih5LXdnAmK8cC" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -152,6 +157,10 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
     longDescription: `[UPDATE: Add description for Ruído Branco]`,
     links: {
       spotify: "https://open.spotify.com/album/5yBS1vVVYiVACkOwDZ8pv1",
+      youtubeMusic: "https://music.youtube.com/watch?v=OFBGyIn83bQ",
+      appleMusic: "https://music.apple.com/us/album/ruído-branco/1725066027?i=1725066028&at=1000lHKX&ct=linktree_http&itsct=lt_m&itscg=30200&ls=1",
+      amazonMusic: "https://music.amazon.com/albums/B0CRXWHVSD?trackAsin=B0CRXXDBY9",
+      deezer: "https://www.deezer.com/en/track/2616103732",
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5yBS1vVVYiVACkOwDZ8pv1" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -172,6 +181,10 @@ The EP is sparse and introspective, shaped by acoustic textures, layered vocals,
     longDescription: ` `,
     links: {
       spotify: "https://open.spotify.com/album/4ZRBXxx4bHWWcou1cHR1Zi",
+      youtubeMusic: "https://music.youtube.com/watch?v=FDPaR8rxo84",
+      appleMusic: "https://music.apple.com/us/album/sleep/1754079916?i=1754079917",
+      amazonMusic: "https://music.amazon.com/albums/B0D81K562P?trackAsin=B0D8278DG9",
+      deezer: "https://www.deezer.com/en/track/2865365672",
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4ZRBXxx4bHWWcou1cHR1Zi" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -199,8 +212,10 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
 [UPDATE: Replace with actual EP description]`,
     links: {
       spotify: "https://open.spotify.com/album/1FIytwlVndlrmYbITk0Ibt",
-      bandcamp: "",
-      youtube: "",
+      youtubeMusic: "https://music.youtube.com/playlist?list=OLAK5uy_mBOJHn557KoyoC4OedA73O6fCWUuZ3ia8",
+      appleMusic: "https://music.apple.com/us/album/talassofobia-single/1446440427",
+      amazonMusic: "https://music.amazon.com/albums/B07LC38JYQ",
+      deezer: "https://www.deezer.com/en/album/81716042",
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1FIytwlVndlrmYbITk0Ibt" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -235,8 +250,10 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
 [UPDATE: Replace with actual EP description]`,
     links: {
       spotify: "https://open.spotify.com/album/3gsi2BJoBKdhXobj89XuYq",
-      bandcamp: "",
-      youtube: "",
+      youtubeMusic: "https://music.youtube.com/playlist?list=OLAK5uy_mZ5UpqkOrnJEEvIoqNE541VL34sGzYsIk",
+      appleMusic: "https://music.apple.com/us/album/quando-a-urbe-vira-mangue-e-nosso-sangue-lama-ep/1281169943?at=1000lHKX&ct=linktree_http&itsct=lt_m&itscg=30200&ls=1",
+      amazonMusic: "https://music.amazon.com/albums/B0761WYQSS",
+      deezer: "https://www.deezer.com/en/album/47822662",
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3gsi2BJoBKdhXobj89XuYq" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,

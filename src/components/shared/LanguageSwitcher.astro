@@ -3,24 +3,27 @@
  * LanguageSwitcher
  * Toggles bio content between EN, PT, and ES.
  * Stores the selected language in localStorage and sets data-lang on <html>.
+ *
+ * Uses data-lang-btn attributes instead of IDs so multiple instances
+ * (desktop + mobile) all work correctly.
  */
 ---
 
 <div class="flex items-center gap-1 label-mono text-base" aria-label="Language switcher">
   <button
-    id="lang-en"
+    data-lang-btn="en"
     class="lang-btn px-1.5 py-0.5 rounded-sm transition-colors duration-200 text-ocean-400 hover:text-foam"
     aria-label="Switch to English"
   >EN</button>
   <span class="text-ocean-700" aria-hidden="true">·</span>
   <button
-    id="lang-pt"
+    data-lang-btn="pt"
     class="lang-btn px-1.5 py-0.5 rounded-sm transition-colors duration-200 text-ocean-400 hover:text-foam"
     aria-label="Mudar para Português"
   >PT</button>
   <span class="text-ocean-700" aria-hidden="true">·</span>
   <button
-    id="lang-es"
+    data-lang-btn="es"
     class="lang-btn px-1.5 py-0.5 rounded-sm transition-colors duration-200 text-ocean-400 hover:text-foam"
     aria-label="Cambiar a Español"
   >ES</button>
@@ -33,10 +36,9 @@
   function setLang(lang: Lang) {
     document.documentElement.setAttribute("data-lang", lang);
     localStorage.setItem("lang", lang);
-    LANGS.forEach((l) => {
-      const btn = document.getElementById(`lang-${l}`);
-      if (!btn) return;
-      if (l === lang) {
+    // Update ALL instances of every button (desktop + mobile)
+    document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]").forEach((btn) => {
+      if (btn.dataset.langBtn === lang) {
         btn.classList.add("text-foam");
         btn.classList.remove("text-ocean-400");
       } else {
@@ -52,7 +54,11 @@
   const initial: Lang = stored && LANGS.includes(stored) ? stored : browserDefault;
   setLang(initial);
 
-  LANGS.forEach((l) => {
-    document.getElementById(`lang-${l}`)?.addEventListener("click", () => setLang(l));
+  // Attach listeners to ALL button instances
+  document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]").forEach((btn) => {
+    const lang = btn.dataset.langBtn as Lang;
+    if (LANGS.includes(lang)) {
+      btn.addEventListener("click", () => setLang(lang));
+    }
   });
 </script>

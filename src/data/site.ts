@@ -41,6 +41,7 @@ export const projects = {
       instagram: "https://www.instagram.com/giovanibaroni/",
       spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
       youtube: "https://www.youtube.com/@sukyarecords",
+      bandcamp: "",
     },
   },
   "sukya-porno": {
@@ -54,6 +55,7 @@ export const projects = {
       instagram: "https://www.instagram.com/sukyap/",
       spotify: "https://open.spotify.com/artist/7ndXsfZrZViNKKJB2LWXz5",
       youtube: "https://www.youtube.com/@sukyarecords",
+      bandcamp: "https://sukyaporno.bandcamp.com/music",
     },
   },
 } as const;
