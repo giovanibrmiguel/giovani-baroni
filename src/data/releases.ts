@@ -230,10 +230,10 @@ Raw and immediate, the debut EP established the band's sonic identity: distorted
     ],
   },
 
-  // ── sukya || porno — Quando a Urbe Vira Mange e Nosso Sangue, Lama ──────
+  // ── sukya || porno — Quando a Urbe Vira Mangue e Nosso Sangue, Lama ─────
   {
     id: "sukya-porno-ep2",
-    title: "Quando a Urbe Vira Mange e Nosso Sangue, Lama",
+    title: "Quando a Urbe Vira Mangue e Nosso Sangue, Lama",
     project: "sukya-porno",
     projectDisplayName: "sukya || porno",
     type: "ep",

@@ -64,7 +64,7 @@ const headerHref = isBlu
       aria-label="Main navigation"
     >
       <!-- Left: project name + Projects dropdown -->
-      <div class="hidden md:flex items-center gap-4 min-w-0">
+      <div class="flex items-center gap-4 min-w-0">
         {
           isBlu && (
             <a
@@ -79,7 +79,7 @@ const headerHref = isBlu
           headerName ? (
             <a
               href={headerHref}
-              class="font-display text-foam text-lg font-semibold tracking-wide hover:text-ocean-200 transition-colors duration-300 truncate"
+              class="font-display text-foam text-[10px] sm:text-xs md:text-lg font-semibold tracking-wider md:tracking-wide hover:text-ocean-200 transition-colors duration-300 whitespace-nowrap"
               aria-label={`${headerName} — top of page`}
             >
               {headerName}

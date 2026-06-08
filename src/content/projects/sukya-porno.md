@@ -16,7 +16,7 @@ seoDescription: "sukya || porno is a Brazilian experimental rock band with two r
 featured: true
 ---
 
-sukya || porno is an alternative rock band from São Paulo that channels the claustrophobia, grey skies, and friction of the São Paulo megalopolis (s || p) into sharp crooked noise. Founded by [Giovani Baroni](/giovani-baroni#bio) (vocals, guitar), [Luca Tornato](https://lucatornato.com) (bass), Walter Gonçales (bass), Matheus Gonçalves (keys),  Mardem Humberto (drums), the band draws together musicians from across Brazil to build a sound that is intentionally unstable.
+sukya || porno is an alternative rock band from São Paulo that channels the claustrophobia, grey skies, and friction of the São Paulo megalopolis (s || p) into sharp crooked noise. Founded by [Giovani Baroni](/giovani-baroni#bio) on vocals and guitar, [Luca Tornato](https://lucatornato.com) on bass, Walter Gonçales on bass, Matheus Gonçalves on keys, and Mardem Humberto on drums, the band draws together musicians from across Brazil to build a sound that is intentionally unstable.
 
 Their 2017 independent debut EP, Quando a Urbe Vira Mangue, e Nosso Sangue, Lama, served as a raw introduction to their world. The record subverts traditional indie rock by bleeding it into regional Brazilian rhythms and experimental prog, trading predictable hooks for uncomfortable, urban melancholy and sharp lyrical turns.
 
