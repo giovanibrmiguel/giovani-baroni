@@ -13,10 +13,15 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) =>
-        // Exclude stub pages — canonical versions live at /sukya and /blu
-        !page.includes("/projects/sukya-porno") &&
-        !page.includes("/projects/blu/"),
+      filter: (page) => {
+        const allowed = [
+          `${SITE_URL}/`,
+          `${SITE_URL}/blu/`,
+          `${SITE_URL}/giovani-baroni/`,
+          `${SITE_URL}/sukya/`,
+        ];
+        return allowed.includes(page);
+      },
     }),
   ],
   output: "static",
