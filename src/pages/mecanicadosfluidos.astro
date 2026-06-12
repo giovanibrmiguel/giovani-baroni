@@ -1,11 +1,11 @@
 ---
 /**
- * bLU FLAGSHIP PAGE — /blu
+ * MECÂNICA DOS FLUIDOS — /mecanicadosfluidos
  *
- * This is the dedicated page for bLU, the featured solo album.
- * It has a special, more atmospheric layout compared to other project pages.
+ * Dedicated page for the first single from bLU.
+ * Follows the same atmospheric layout as the bLU page.
  *
- * Long-form content comes from src/content/pages/blu.md
+ * Long-form content comes from src/content/pages/mecanicadosfluidos.md
  * Release/embed data comes from src/data/releases.ts
  */
 import BaseLayout from "@/components/layout/BaseLayout.astro";
@@ -16,23 +16,23 @@ import { getEntry } from "astro:content";
 import { releases } from "@/data/releases";
 import { projects, site } from "@/data/site";
 
-const bluPage = await getEntry("pages", "blu");
-const { Content } = await bluPage!.render();
+const mdfPage = await getEntry("pages", "mecanicadosfluidos");
+const { Content } = await mdfPage!.render();
 
-const bluPagePt = await getEntry("pages", "blu-pt");
-const { Content: ContentPt } = await bluPagePt!.render();
+const mdfPagePt = await getEntry("pages", "mecanicadosfluidos-pt");
+const { Content: ContentPt } = await mdfPagePt!.render();
 
-const bluPageEs = await getEntry("pages", "blu-es");
-const { Content: ContentEs } = await bluPageEs!.render();
+const mdfPageEs = await getEntry("pages", "mecanicadosfluidos-es");
+const { Content: ContentEs } = await mdfPageEs!.render();
 
-const bluRelease = releases.find((r) => r.project === "blu");
+const mdfRelease = releases.find((r) => r.project === "mecanicadosfluidos");
 const gbConfig = projects["giovani-baroni"];
 
 const hasListenEmbed =
-  bluRelease?.embedCode &&
-  !bluRelease.embedCode.includes("PLACEHOLDER");
+  mdfRelease?.embedCode &&
+  !mdfRelease.embedCode.includes("PLACEHOLDER");
 
-const heroBackgroundImage = "/images/press/giovani-water_pic.jpg";
+const heroBackgroundImage = "/images/mecanicadosfluidos/mecanica_photo__small_no_ border.jpg";
 
 const streamingPlatforms = [
   { key: "spotify",      label: "Spotify",  line2: undefined,
@@ -47,49 +47,43 @@ const streamingPlatforms = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.944 17.773h4.112v1.217h-4.112zm0-2.79h4.112v1.217h-4.112zm0-2.79h4.112v1.218h-4.112zm0-2.791h4.112v1.218h-4.112zm-5.552 8.371h4.112v1.217h-4.112zm0-2.79h4.112v1.217h-4.112zm0-2.79h4.112v1.218h-4.112zm-5.517 5.58h4.112v1.217H7.875zm0-2.79h4.112v1.217H7.875zM2.357 18.99h4.111v1.217H2.357z"/></svg>` },
 ] as const;
 
-const bluTracklist = bluRelease?.tracklist ?? [];
-
-const bluSchema = {
+const mdfSchema = {
   "@context": "https://schema.org",
-  "@type": "MusicAlbum",
-  name: "bLU",
-  url: `${site.domain}/blu`,
+  "@type": "MusicRecording",
+  name: "Mecânica dos Fluidos",
+  url: `${site.domain}/mecanicadosfluidos`,
   description:
-    "Debut solo album by Giovani Baroni. A conceptual 10-track record designed to be heard start to finish — progressive rock, emo, and Brazilian indie filtered through imagery of water, memory, and transformation. Released 2026.",
-  albumProductionType: "https://schema.org/StudioAlbum",
-  albumReleaseType: "https://schema.org/AlbumRelease",
+    "First single from bLU, Giovani Baroni's debut solo album. A tender two-minute piece of Brazilian alternative rock shaped by shoegaze textures, soft melancholy, and the direct emotional language of Rock Triste.",
   datePublished: "2026",
-  image: `${site.domain}/images/blu/og-blu.jpeg`,
-  genre: ["Progressive Rock", "Indie Rock", "Emo", "Psychedelic Rock"],
+  image: `${site.domain}/images/mecanicadosfluidos/mecanicadosfluidos.jpg`,
+  genre: ["Alternative Rock", "Shoegaze", "Rock Triste", "Brazilian Indie"],
   byArtist: {
     "@type": "Person",
     name: "Giovani Baroni",
     url: `${site.domain}/giovani-baroni`,
     sameAs: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
   },
-  ...(bluTracklist.length > 0 && {
-    track: bluTracklist.map((name, i) => ({
-      "@type": "MusicRecording",
-      name,
-      position: i + 1,
-    })),
-  }),
+  inAlbum: {
+    "@type": "MusicAlbum",
+    name: "bLU",
+    url: `${site.domain}/blu`,
+  },
 };
 ---
 
 <BaseLayout
-  title="bLU"
-  description="bLU is the debut solo album by Giovani Baroni — a 10-track prog and indie rock concept record built around water, memory, and transformation. Out 2026."
-  image="/images/blu/og-blu.jpeg"
-  type="music.album"
+  title="Mecânica dos Fluidos"
+  description="First single from bLU by Giovani Baroni — a tender two-minute piece of Brazilian alternative rock shaped by shoegaze textures and soft melancholy. Out 2026."
+  image="/images/mecanicadosfluidos/mecanicadosfluidos.jpg"
+  type="music.song"
   project="blu"
   lang="pt"
 >
-  <JsonLd schema={bluSchema} slot="head" />
+  <JsonLd schema={mdfSchema} slot="head" />
   <!-- ── Hero section ─────────────────────────────────────────────── -->
   <section
     class="relative overflow-hidden pb-8 md:pb-10"
-    aria-labelledby="blu-title"
+    aria-labelledby="mdf-title"
   >
     <!-- Atmospheric background -->
     <div class="absolute inset-0 bg-blu-gradient" aria-hidden="true"></div>
@@ -123,21 +117,30 @@ const bluSchema = {
 
     <!-- Hero text -->
     <div class="relative z-10 max-w-6xl mx-auto px-6 pt-16 md:pt-20 w-full">
+      <p class="label-mono text-base text-ocean-500 mb-3">
+        <a href="/giovani-baroni" class="hover:text-ocean-300 transition-colors duration-200">Giovani Baroni</a>
+        <span class="mx-2 text-ocean-700">·</span>
+        <a href="/blu" class="hover:text-ocean-300 transition-colors duration-200">bLU</a>
+        <span class="mx-2 text-ocean-700">·</span>
+        <span class="lang-en">First Single</span>
+        <span class="lang-pt">Primeiro Single</span>
+        <span class="lang-es">Primer Sencillo</span>
+      </p>
       <h1
-        id="blu-title"
-        class="font-display text-foam text-6xl md:text-8xl lg:text-9xl leading-none"
+        id="mdf-title"
+        class="font-display text-foam text-4xl md:text-6xl lg:text-7xl leading-none"
       >
-        bLU
+        Mecânica dos Fluidos
       </h1>
       <p class="text-ocean-300 text-base md:text-xl font-light mt-4 max-w-lg">
-        <span class="lang-en">A prog journey through water and memory.</span>
-        <span class="lang-pt">Uma jornada prog através da água e da memória.</span>
-        <span class="lang-es">Un viaje prog a través del agua y la memoria.</span>
+        <span class="lang-en">Romantic Shoegaze</span>
+        <span class="lang-pt">Shoegaze romântico</span>
+        <span class="lang-es">Shoegaze romantico</span>
       </p>
       {
-        bluRelease?.year && (
+        mdfRelease?.year && (
           <p class="label-mono text-base text-ocean-500 mt-3">
-            {bluRelease.type.toUpperCase()} · {bluRelease.year}
+            {mdfRelease.type.toUpperCase()} · {mdfRelease.year}
           </p>
         )
       }
@@ -149,13 +152,13 @@ const bluSchema = {
 
     <!-- Listen — hidden until embedCode is set in releases.ts -->
     {
-      hasListenEmbed && bluRelease && (
+      hasListenEmbed && mdfRelease && (
         <section class="py-12 md:py-16 border-b border-ocean-900" aria-label="Listen">
           <div class="max-w-2xl">
             <p class="label-mono text-lg text-ocean-500 mb-6">Listen</p>
             <EmbedPlayer
-              embedCode={bluRelease.embedCode}
-              title="bLU"
+              embedCode={mdfRelease.embedCode}
+              title="Mecânica dos Fluidos"
             />
           </div>
         </section>
@@ -164,11 +167,11 @@ const bluSchema = {
 
     <!-- Streaming links -->
     {
-      bluRelease?.links && Object.values(bluRelease.links).some((v) => v) && (
+      mdfRelease?.links && Object.values(mdfRelease.links).some((v) => v) && (
         <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
           <p class="label-mono text-lg text-ocean-500 mb-5">Stream & Download</p>
           <div class="flex flex-wrap gap-3">
-            {Object.entries(bluRelease.links).map(([platform, url]) =>
+            {Object.entries(mdfRelease.links).map(([platform, url]) =>
               url ? (
                 <a
                   href={url}
@@ -185,7 +188,7 @@ const bluSchema = {
       )
     }
 
-    <!-- Long-form content from src/content/pages/blu.md -->
+    <!-- Long-form content from src/content/pages/mecanicadosfluidos.md -->
     <div class="grid md:grid-cols-3 gap-12 md:gap-20 pt-8 md:pt-10 pb-16 md:pb-24">
       <!-- Main text (language-toggled) -->
       <div class="md:col-span-2">
@@ -200,14 +203,14 @@ const bluSchema = {
         </div>
       </div>
 
-      <!-- Sidebar: cover, tracklist & credits -->
+      <!-- Sidebar: cover & credits -->
       <aside class="space-y-10">
         {
-          bluRelease?.coverImage && (
+          mdfRelease?.coverImage && (
             <div class="aspect-square rounded-sm overflow-hidden bg-ocean-900 border border-ocean-800">
               <img
-                src={bluRelease.coverImage}
-                alt="bLU album cover"
+                src={mdfRelease.coverImage}
+                alt="Mecânica dos Fluidos single cover"
                 class="w-full h-full object-cover"
                 loading="lazy"
                 width="400"
@@ -220,69 +223,39 @@ const bluSchema = {
 
         <!-- Release info summary -->
         {
-          bluRelease && (
+          mdfRelease && (
             <div class="card-ocean p-4 space-y-2">
               <p class="label-mono text-base text-ocean-500 mb-3">Release Info</p>
               <p class="text-ocean-300 text-xs">
-                <span class="text-ocean-500">Project Name</span><br />
-                bLU
+                <span class="text-ocean-500">Title</span><br />
+                Mecânica dos Fluidos
               </p>
               <p class="text-ocean-300 text-xs">
                 <span class="text-ocean-500">Artist</span><br />
                 <a href="/giovani-baroni" class="hover:text-foam transition-colors duration-200">Giovani Baroni</a>
               </p>
               <p class="text-ocean-300 text-xs">
+                <span class="text-ocean-500">From</span><br />
+                <a href="/blu" class="hover:text-foam transition-colors duration-200">bLU</a>
+              </p>
+              <p class="text-ocean-300 text-xs">
                 <span class="text-ocean-500">Format</span><br />
-                {bluRelease.type.toUpperCase()}
+                {mdfRelease.type.toUpperCase()}
               </p>
               <p class="text-ocean-300 text-xs">
                 <span class="text-ocean-500">Year</span><br />
-                {bluRelease.year}
+                {mdfRelease.year}
               </p>
             </div>
           )
         }
-        {
-          bluRelease?.tracklist && bluRelease.tracklist.length > 0 && (
-            <div>
-              <p class="label-mono text-base text-ocean-500 mb-4">Tracklist</p>
-              <ol class="space-y-2">
-                {bluRelease.tracklist.map((track) => (
-                  <li class="text-ocean-300 text-xs font-mono border-b border-ocean-900 pb-2 last:border-0">
-                    {track.includes("Mecânica dos Fluidos") ? (
-                      <a href="/mecanicadosfluidos" class="hover:text-foam transition-colors duration-200">
-                        {track}
-                      </a>
-                    ) : track}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )
-        }
-
-        <!-- Singles links -->
-        <div>
-          <p class="label-mono text-base text-ocean-500 mb-4">Singles</p>
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="/mecanicadosfluidos"
-                class="group flex items-center justify-between text-ocean-300 hover:text-foam text-xs font-mono border-b border-ocean-900 pb-2 transition-colors duration-200"
-              >
-                <span>Mecânica dos Fluidos</span>
-                <span class="text-ocean-600 group-hover:text-ocean-400 transition-colors duration-200">→</span>
-              </a>
-            </li>
-          </ul>
-        </div>
 
         {
-          bluRelease?.credits && bluRelease.credits.length > 0 && (
+          mdfRelease?.credits && mdfRelease.credits.length > 0 && (
             <div>
               <p class="label-mono text-base text-ocean-500 mb-4">Credits</p>
               <ul class="space-y-2">
-                {bluRelease.credits.map((credit) => (
+                {mdfRelease.credits.map((credit) => (
                   <li class="text-ocean-400 text-xs leading-relaxed" set:html={credit} />
                 ))}
               </ul>
@@ -295,7 +268,7 @@ const bluSchema = {
           <p class="label-mono text-base text-ocean-500 mb-3">Stream</p>
           <div class="flex flex-wrap gap-2">
             {streamingPlatforms.map(({ key, label, line2, icon }) => {
-              const url = bluRelease?.links?.[key as keyof typeof bluRelease.links];
+              const url = mdfRelease?.links?.[key as keyof typeof mdfRelease.links];
               return url ? (
                 <a
                   href={url}

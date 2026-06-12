@@ -4,11 +4,11 @@ excerpt: "bLU é o álbum de estreia solo de Giovani Baroni — dez faixas const
 ogImage: "/images/blu/og-blu.jpeg"
 ---
 
-## Bio Curta
+## Descrição Curta
 
 bLU é o álbum de estreia solo de [Giovani Baroni](/giovani-baroni#bio), um disco conceitual de dez faixas concebido para ser ouvido do começo ao fim como uma única peça contínua. Escrito após sua mudança de São Paulo para a Cidade do México, o álbum usa água, peixes, ondas e submersão como imagens de transformação, memória, ego, amor e autopreservação. Cantado em português, inglês e espanhol, bLU bebe do rock progressivo, emo, psicodelia e indie brasileiro, combinando compassos que mudam, leitmotifs recorrentes, piano, guitarras com phaser, sintetizadores aquáticos, texturas ambiente e músicas que sangram umas para as outras.
 
-## Bio Longa
+## Descrição Longa
 
 bLU é o álbum de estreia solo de [Giovani Baroni](/giovani-baroni#bio): um disco de dez faixas concebido para ser ouvido em sequência, do começo ao fim, com cada música escorregando para a seguinte. Mais do que uma coleção de faixas individuais, ele é construído como uma única peça contínua. Um álbum paciente e imersivo num tempo marcado por singles isolados.
 
@@ -22,4 +22,4 @@ bLU foi gravado em três cidades. Baroni produziu o álbum e gravou vocais, guit
 
 O álbum abre com "Ambiência Aquática Nº 5", uma introdução instrumental parcialmente inspirada nas aberturas dramáticas de álbuns da banda brasileira de metal Angra. Fecha com "O Rio", moldada em parte pelo Sidarta de Hermann Hesse. Entre elas, bLU se move como um corpo d'água: recorrente, instável, reflexivo e difícil de separar em partes.
 
-bLU será lançado em 2026, precedido por uma série de singles.
+bLU será lançado em 2026, precedido por uma série de singles. O primeiro, ["Mecânica dos Fluidos"](/mecanicadosfluidos), já está disponível.

@@ -27,8 +27,8 @@ export type StreamingLinks = {
 export type Release = {
   id: string;
   title: string;
-  // "blu" → featured sub-page; "giovani-baroni" → GB page; "sukya-porno" → sukya page
-  project: "blu" | "sukya-porno" | "giovani-baroni";
+  // "blu" → featured sub-page; "mecanicadosfluidos" → single sub-page; "giovani-baroni" → GB page; "sukya-porno" → sukya page
+  project: "blu" | "mecanicadosfluidos" | "sukya-porno" | "giovani-baroni";
   projectDisplayName: string;
   type: "album" | "ep" | "single" | "live" | "compilation";
   year: number;
@@ -98,6 +98,41 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
       "8. Fishy Boy",
       "9. Paseo Largo",
       "10. O Rio",
+    ],
+  },
+
+  // ── Mecânica dos Fluidos — Single ────────────────────────────────────────
+  {
+    id: "mecanicadosfluidos-single",
+    title: "Mecânica dos Fluidos",
+    project: "mecanicadosfluidos",
+    projectDisplayName: "GIOVANI BARONI",
+    type: "single",
+    year: 2026,
+    coverImage: "/images/mecanicadosfluidos/mecanicadosfluidos.jpg",
+    shortDescription:
+      "The first single from bLU: a tender two-minute piece of Brazilian Rock Triste shaped by aquatic shoegaze textures.",
+    shortDescriptionPt:
+      "O primeiro single de bLU: uma delicada canção de dois minutos de Rock Triste brasileiro, marcada por texturas de shoegaze aquático.",
+    shortDescriptionEs:
+      "El primer sencillo de bLU: una delicada pieza de dos minutos de Rock Triste brasileño, marcada por texturas de shoegaze aquatico.",
+    longDescription: `"Mecânica dos Fluidos" is the first single from bLU, Giovani Baroni's debut solo album arriving in September 2026. At two minutes, it is the shortest and most immediate song on the record: a tender piece of Brazilian alternative rock shaped by shoegaze textures, soft melancholy, and the direct emotional language of Rock Triste.
+
+The title comes from a fluid mechanics class Baroni took at university, where he became interested in the way invisible forces — currents, pressure, and movement — appear not only in physics, but in ordinary life. In the song, that image becomes a way to write about love as something innocent and transformative.`,
+    links: {
+      spotify: "",
+      youtubeMusic: "",
+      appleMusic: "",
+      amazonMusic: "",
+      deezer: "",
+    },
+    featured: false,
+    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/PLACEHOLDER" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+    credits: [
+      "Vocals, guitars, keys, writing, and production — Giovani Baroni (Mexico City)",
+      "Bass, mixing, and mastering — Pedro Serapicos (Berlin)",
+      "Drums — Bianca Predieri (São Paulo)",
+      "Inspiration — Juliana Morette (Rio de Janeiro)",
     ],
   },
 
@@ -285,12 +320,17 @@ export function getReleasesByProject(
 }
 
 /**
- * Get all GIOVANI BARONI releases: includes both the "giovani-baroni"
- * releases and the "blu" album (which lives on its own featured sub-page).
+ * Get all GIOVANI BARONI releases: includes "giovani-baroni", "blu",
+ * and single sub-pages like "mecanicadosfluidos".
  */
 export function getGiovaniBaroniReleases(): Release[] {
   return releases
-    .filter((r) => r.project === "giovani-baroni" || r.project === "blu")
+    .filter(
+      (r) =>
+        r.project === "giovani-baroni" ||
+        r.project === "blu" ||
+        r.project === "mecanicadosfluidos"
+    )
     .sort((a, b) => b.year - a.year);
 }
 

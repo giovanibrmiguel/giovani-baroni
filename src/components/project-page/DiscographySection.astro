@@ -76,6 +76,18 @@ const typeLabel: Record<Release["type"], string> = {
                     onerror="this.style.display='none'; this.parentElement.style.background='#0c1e30';"
                   />
                 </a>
+              ) : release.project === "mecanicadosfluidos" ? (
+                <a href="/mecanicadosfluidos" aria-label={`View ${release.title} page`}>
+                  <img
+                    src={release.coverImage}
+                    alt={`${release.title} cover`}
+                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                    loading="lazy"
+                    width="160"
+                    height="160"
+                    onerror="this.style.display='none'; this.parentElement.style.background='#0c1e30';"
+                  />
+                </a>
               ) : (
                 <img
                   src={release.coverImage}
@@ -96,6 +108,10 @@ const typeLabel: Record<Release["type"], string> = {
                 <h3 class="font-display text-foam text-lg md:text-xl leading-tight">
                   {release.project === "blu" ? (
                     <a href="/blu" class="hover:text-ocean-200 transition-colors duration-200">
+                      {release.title}
+                    </a>
+                  ) : release.project === "mecanicadosfluidos" ? (
+                    <a href="/mecanicadosfluidos" class="hover:text-ocean-200 transition-colors duration-200">
                       {release.title}
                     </a>
                   ) : (
@@ -154,6 +170,18 @@ const typeLabel: Record<Release["type"], string> = {
                       <span class="lang-en">View bLU page →</span>
                       <span class="lang-pt">Ver página do bLU →</span>
                       <span class="lang-es">Ver página de bLU →</span>
+                    </a>
+                  </div>
+                )}
+                {release.project === "mecanicadosfluidos" && (
+                  <div>
+                    <a
+                      href="/mecanicadosfluidos"
+                      class="inline-block label-mono text-sm bg-ocean-800 hover:bg-ocean-700 text-foam border border-ocean-600 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
+                    >
+                      <span class="lang-en">View Mecânica dos Fluidos page →</span>
+                      <span class="lang-pt">Ver página de Mecânica dos Fluidos →</span>
+                      <span class="lang-es">Ver página de Mecânica dos Fluidos →</span>
                     </a>
                   </div>
                 )}
