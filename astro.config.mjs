@@ -19,6 +19,7 @@ export default defineConfig({
           `${SITE_URL}/blu/`,
           `${SITE_URL}/giovani-baroni/`,
           `${SITE_URL}/sukya/`,
+          `${SITE_URL}/mecanicadosfluidos/`,
         ];
         return allowed.includes(page);
       },
