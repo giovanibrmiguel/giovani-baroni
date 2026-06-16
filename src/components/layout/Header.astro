@@ -18,16 +18,16 @@ const isGb = project === "giovani-baroni";
 // Anchor nav — points back to /giovani-baroni on the bLU page, anchors on project pages
 const anchorNav = isBlu
   ? [
-      { href: "/giovani-baroni#bio", label: "Bio", labelPt: "Bio", labelEs: "Bio" },
-      { href: "/giovani-baroni#discography", label: "Discography", labelPt: "Discografia", labelEs: "Discografía" },
-      { href: "/giovani-baroni#lyrics", label: "Lyrics", labelPt: "Letras", labelEs: "Letras" },
-      { href: "/giovani-baroni#videos", label: "Videos", labelPt: "Vídeos", labelEs: "Videos" },
+      { href: "/giovani-baroni#bio", label: "about", labelPt: "about", labelEs: "about" },
+      { href: "/giovani-baroni#discography", label: "discography", labelPt: "discografia", labelEs: "discografía" },
+      { href: "/giovani-baroni#lyrics", label: "lyrics", labelPt: "letras", labelEs: "letras" },
+      { href: "/giovani-baroni#videos", label: "videos", labelPt: "vídeos", labelEs: "videos" },
     ]
   : [
-      { href: "#bio", label: "Bio", labelPt: "Bio", labelEs: "Bio" },
-      { href: "#discography", label: "Discography", labelPt: "Discografia", labelEs: "Discografía" },
-      { href: "#lyrics", label: "Lyrics", labelPt: "Letras", labelEs: "Letras" },
-      { href: "#videos", label: "Videos", labelPt: "Vídeos", labelEs: "Videos" },
+      { href: "#bio", label: "about", labelPt: "about", labelEs: "about" },
+      { href: "#discography", label: "discography", labelPt: "discografia", labelEs: "discografía" },
+      { href: "#lyrics", label: "lyrics", labelPt: "letras", labelEs: "letras" },
+      { href: "#videos", label: "videos", labelPt: "vídeos", labelEs: "videos" },
     ];
 
 const icons = {
@@ -76,7 +76,7 @@ const headerHref = isBlu
           )
         }
         {
-          headerName ? (
+          headerName && !isBlu ? (
             <a
               href={headerHref}
               class="font-display text-foam text-[10px] sm:text-xs md:text-lg font-semibold tracking-wider md:tracking-wide hover:text-ocean-200 transition-colors duration-300 whitespace-nowrap"
@@ -93,13 +93,13 @@ const headerHref = isBlu
             <div class="hidden md:block relative" id="projects-dropdown-wrapper">
               <button
                 id="projects-dropdown-toggle"
-                class="flex items-center gap-1.5 label-mono text-base text-ocean-500 hover:text-ocean-300 transition-colors"
+                class="flex items-center gap-1.5 label-mono normal-case text-base text-ocean-500 hover:text-ocean-300 transition-colors"
                 aria-expanded="false"
                 aria-haspopup="true"
               >
-                <span class="lang-en">Projects</span>
-                <span class="lang-pt">Projetos</span>
-                <span class="lang-es">Proyectos</span>
+                <span class="lang-en">projects</span>
+                <span class="lang-pt">projetos</span>
+                <span class="lang-es">proyectos</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div
@@ -131,6 +131,14 @@ const headerHref = isBlu
       {
         (projectConfig || isBlu) && (
           <ul class="hidden md:flex items-center gap-7 list-none" role="list">
+            <li>
+              <a
+                href="/blu"
+                class="font-display text-sm font-semibold tracking-wide transition-colors duration-300" style="color: var(--color-accent);"
+              >
+                bLU
+              </a>
+            </li>
             {anchorNav.map(({ href, label, labelPt, labelEs }) => (
               <li>
                 <a
@@ -143,16 +151,6 @@ const headerHref = isBlu
                 </a>
               </li>
             ))}
-            {isGb && (
-              <li>
-                <a
-                  href="/blu"
-                  class="text-sm font-medium tracking-wide text-ocean-400 hover:text-foam transition-colors duration-200"
-                >
-                  bLU
-                </a>
-              </li>
-            )}
           </ul>
         )
       }

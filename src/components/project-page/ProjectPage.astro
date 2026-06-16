@@ -82,23 +82,15 @@ const sukyaSchema = {
              bg-crimson-700 hover:bg-crimson-500
              border-b border-crimson-500 hover:border-crimson-400
              transition-all duration-300"
-      aria-label="Explore bLU — debut album"
+      aria-label="bLU — album · 2026"
     >
       <div class="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 min-w-0">
-        <span class="label-mono text-xs text-gold tracking-widest shrink-0">
-          <span class="lang-en">NEW ALBUM</span>
-          <span class="lang-pt">NOVO ÁLBUM</span>
-          <span class="lang-es">NUEVO ÁLBUM</span>
-        </span>
-        <span class="text-foam text-sm font-semibold tracking-wide">
-          <span class="lang-en">bLU — debut album · 2026</span>
-          <span class="lang-pt">bLU — álbum de estreia · 2026</span>
-          <span class="lang-es">bLU — álbum debut · 2026</span>
-        </span>
+        <span class="label-mono text-xs text-gold tracking-widest shrink-0">2026</span>
+        <span class="text-foam text-sm font-semibold tracking-wide">bLU</span>
       </div>
       <span
         class="label-mono text-xs text-gold group-hover:text-foam shrink-0 transition-colors duration-200"
-      >Explore →</span>
+      >→</span>
     </a>
   )}
 
@@ -110,23 +102,15 @@ const sukyaSchema = {
              bg-ocean-900 hover:bg-ocean-800
              border-b border-ocean-700 hover:border-ocean-500
              transition-all duration-300"
-      aria-label="Explore Mecânica dos Fluidos — first single"
+      aria-label="Mecânica dos Fluidos — bLU · 2026"
     >
       <div class="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 min-w-0">
-        <span class="label-mono text-xs text-ocean-400 tracking-widest shrink-0">
-          <span class="lang-en">NEW SINGLE</span>
-          <span class="lang-pt">NOVO SINGLE</span>
-          <span class="lang-es">NUEVO SENCILLO</span>
-        </span>
-        <span class="text-ocean-200 text-sm font-semibold tracking-wide">
-          <span class="lang-en">Mecânica dos Fluidos — first single from bLU · 2026</span>
-          <span class="lang-pt">Mecânica dos Fluidos — primeiro single de bLU · 2026</span>
-          <span class="lang-es">Mecânica dos Fluidos — primer sencillo de bLU · 2026</span>
-        </span>
+        <span class="label-mono text-xs text-ocean-400 tracking-widest shrink-0">2026</span>
+        <span class="text-ocean-200 text-sm font-semibold tracking-wide">mecânica dos fluidos · bLU</span>
       </div>
       <span
         class="label-mono text-xs text-ocean-400 group-hover:text-foam shrink-0 transition-colors duration-200"
-      >Explore →</span>
+      >→</span>
     </a>
   )}
 
@@ -168,7 +152,7 @@ const sukyaSchema = {
 
       <!-- Bio content (injected by parent page, language-toggled) -->
       <div class="border-t border-ocean-900 pt-10 mb-12">
-        <p class="label-mono text-lg text-ocean-500 mb-5">Bio</p>
+        <p class="label-mono text-lg text-ocean-500 mb-5 normal-case">about</p>
         <div class="lang-en prose prose-ocean prose-base md:prose-lg max-w-none">
           <slot name="bio" />
         </div>
@@ -182,22 +166,38 @@ const sukyaSchema = {
 
       <!-- Press Kit -->
       <div id="presskit" class="py-10 border-t border-ocean-900">
-        <p class="label-mono text-lg text-ocean-500 mb-5">Press Kit</p>
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+        <p class="label-mono text-lg text-ocean-500 mb-5">press kit</p>
+        <div class="flex flex-col gap-4">
           <p class="text-ocean-400 text-base">
             <span class="lang-en">Hi-resolution photos, bio, and release info.</span>
             <span class="lang-pt">Fotos em alta resolução, bio e informações de lançamento.</span>
             <span class="lang-es">Fotos en alta resolución, bio e información de lanzamiento.</span>
           </p>
-          <a
-            href={config.pressKitUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 label-mono text-lg text-foam bg-ocean-800 hover:bg-ocean-700 border border-ocean-700 hover:border-ocean-500 px-5 py-2.5 rounded-sm transition-all duration-200 whitespace-nowrap"
-            aria-label="Download press kit (opens Google Drive)"
-          >
-            Download Press Kit ↓
-          </a>
+          <div class="flex flex-wrap items-center gap-3">
+            <a
+              href={config.pressKitUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 whitespace-nowrap"
+              style="background:#c0c0c0; color:#000; font-family:'MS Sans Serif',Arial,sans-serif; font-size:0.8rem; letter-spacing:0.05em; padding:4px 10px; border-top:2px solid #fff; border-left:2px solid #fff; border-right:2px solid #808080; border-bottom:2px solid #808080; cursor:pointer; text-decoration:none; width:fit-content;"
+              aria-label="Download press kit (opens Google Drive)"
+              onmousedown="this.style.borderTop='2px solid #808080';this.style.borderLeft='2px solid #808080';this.style.borderRight='2px solid #fff';this.style.borderBottom='2px solid #fff';"
+              onmouseup="this.style.borderTop='2px solid #fff';this.style.borderLeft='2px solid #fff';this.style.borderRight='2px solid #808080';this.style.borderBottom='2px solid #808080';"
+            >
+              download press-kit
+            </a>
+            {projectKey === "sukya-porno" && (
+              <a
+                href="/easter-egg-3"
+                class="inline-flex items-center gap-2 whitespace-nowrap"
+                style="background:#c0c0c0; color:#000; font-family:'MS Sans Serif',Arial,sans-serif; font-size:0.8rem; letter-spacing:0.05em; padding:4px 10px; border-top:2px solid #fff; border-left:2px solid #fff; border-right:2px solid #808080; border-bottom:2px solid #808080; cursor:pointer; text-decoration:none; width:fit-content;"
+                onmousedown="this.style.borderTop='2px solid #808080';this.style.borderLeft='2px solid #808080';this.style.borderRight='2px solid #fff';this.style.borderBottom='2px solid #fff';"
+                onmouseup="this.style.borderTop='2px solid #fff';this.style.borderLeft='2px solid #fff';this.style.borderRight='2px solid #808080';this.style.borderBottom='2px solid #808080';"
+              >
+                I wanna have fun
+              </a>
+            )}
+          </div>
         </div>
       </div>
 
@@ -229,5 +229,20 @@ const sukyaSchema = {
 
   <!-- ── Videos ─────────────────────────────────────────────────── -->
   <VideosSection project={projectKey} />
+
+  <!-- ── hidden easter egg ──────────────────────────────────────── -->
+  {projectKey === "giovani-baroni" && (
+    <div class="flex justify-center px-6 py-4">
+      <a
+        href="/easter-egg"
+        class="inline-flex items-center gap-2 whitespace-nowrap"
+        style="background:#c0c0c0; color:#000; font-family:'MS Sans Serif',Arial,sans-serif; font-size:0.75rem; letter-spacing:0.04em; padding:3px 8px; border-top:2px solid #fff; border-left:2px solid #fff; border-right:2px solid #808080; border-bottom:2px solid #808080; cursor:pointer; text-decoration:none; width:fit-content;"
+        onmousedown="this.style.borderTop='2px solid #808080';this.style.borderLeft='2px solid #808080';this.style.borderRight='2px solid #fff';this.style.borderBottom='2px solid #fff';"
+        onmouseup="this.style.borderTop='2px solid #fff';this.style.borderLeft='2px solid #fff';this.style.borderRight='2px solid #808080';this.style.borderBottom='2px solid #808080';"
+      >
+        download evil virus
+      </a>
+    </div>
+  )}
 
 </BaseLayout>

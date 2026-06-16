@@ -1,0 +1,164 @@
+---
+/**
+ * EasterEggLayout
+ * Full-screen easter egg page. Takes an image and shows it with a
+ * Kirby/Nintendo-style CONGRATULATIONS caption.
+ * Reuse for every secret page: <EasterEggLayout image="/images/secret_pics/foo.jpg" />
+ */
+interface Props {
+  image: string;
+  secretNumber?: number;
+  secretTotal?: number;
+  objectFit?: "cover" | "contain" | "scale-down";
+  congratsText?: string;
+}
+const { image, secretNumber = 1, secretTotal = 4, objectFit = "cover", congratsText } = Astro.props;
+
+const defaultLetters = [
+  { char: "C", color: "#ff3b3b" },
+  { char: "O", color: "#ff7c00" },
+  { char: "N", color: "#ffe000" },
+  { char: "G", color: "#5aff3a" },
+  { char: "R", color: "#00e8c8" },
+  { char: "A", color: "#3ab8ff" },
+  { char: "T", color: "#a64dff" },
+  { char: "U", color: "#ff3bde" },
+  { char: "L", color: "#ff3b3b" },
+  { char: "A", color: "#ff7c00" },
+  { char: "T", color: "#ffe000" },
+  { char: "I", color: "#5aff3a" },
+  { char: "O", color: "#00e8c8" },
+  { char: "N", color: "#3ab8ff" },
+  { char: "S", color: "#a64dff" },
+];
+
+const letters = congratsText
+  ? congratsText.split("").map((char, i) => {
+      const colors = ["#ff3b3b","#ff7c00","#ffe000","#5aff3a","#00e8c8","#3ab8ff","#a64dff","#ff3bde"];
+      return { char, color: char === " " ? "transparent" : colors[i % colors.length] };
+    })
+  : defaultLetters;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>congratulations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Bangers&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="frame">
+      <img src={image} alt="" class="bg-img" style={`object-fit: ${objectFit};`} />
+
+      <!-- SECRET FOUND banner -->
+      <div class="secret-banner-wrap">
+        <div class="secret-banner-stroke">SECRET FOUND {secretNumber}/{secretTotal}</div>
+        <div class="secret-banner">SECRET FOUND {secretNumber}/{secretTotal}</div>
+      </div>
+
+      <div class="caption">
+        {letters.map(({ char, color }) => (
+          char === " "
+            ? <span class="letter-space"> </span>
+            : <span class="letter" style={`color: ${color};`}>{char}</span>
+        ))}
+      </div>
+    </div>
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        background: #000;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='28' font-size='28'>🐟</text></svg>") 16 16, auto;
+      }
+
+      .frame {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+
+      .caption {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        display: flex;
+        gap: 1px;
+        line-height: 1;
+      }
+
+      .secret-banner-wrap {
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        /* offset shadow layer behind */
+        filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.85));
+      }
+
+      /* Bottom layer: thick dark stroke, rendered first */
+      .secret-banner-stroke {
+        position: absolute;
+        inset: 0;
+        font-family: 'Bangers', 'Impact', 'Arial Black', sans-serif;
+        font-size: clamp(2rem, 6vw, 4rem);
+        font-style: italic;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 8px #2a0800;
+      }
+
+      /* Top layer: gradient fill */
+      .secret-banner {
+        position: relative;
+        font-family: 'Bangers', 'Impact', 'Arial Black', sans-serif;
+        font-size: clamp(2rem, 6vw, 4rem);
+        font-style: italic;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #ffe000 20%, #ff8c00 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-text-stroke: 1px transparent;
+      }
+
+      .letter-space {
+        display: inline-block;
+        width: 0.4em;
+      }
+
+      .letter {
+        font-family: 'Fredoka One', 'Arial Rounded MT Bold', Arial, sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        -webkit-text-stroke: 3px #1a0030;
+        paint-order: stroke fill;
+        text-shadow:
+          0 1px 0 rgba(255,255,255,0.55),
+          0 2px 6px rgba(0,0,0,0.6);
+        display: inline-block;
+      }
+    </style>
+  </body>
+</html>

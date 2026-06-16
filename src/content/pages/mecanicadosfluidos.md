@@ -12,4 +12,4 @@ His debut album, [bLU](/blu), arrives in September 2026. Sung across Portuguese,
 ## Short Song Description
 
 "Mecânica dos Fluidos" is the first single from [bLU](/blu), [Giovani Baroni](/giovani-baroni)'s debut solo album arriving in September 2026. At two minutes, it is the shortest and most immediate song on the record: a tender piece of Brazilian alternative rock shaped by shoegaze textures, soft melancholy, and the direct emotional language of Rock Triste.
-The title comes from a fluid mechanics class Baroni took at university, where he became interested in the way invisible forces, currents, pressure, and movement appear not only in physics, but in ordinary life. In the song, that image becomes a way to write about love as something innocent and transformative.
+The title comes from a fluid mechanics class Baroni took at university, where he became interested in the way invisible forces, currents, pressure, and movement appear not only in physics, but in ordinary life. In the song, that image becomes a way to write about love as something <a href="/easter-egg-very-hidden" style="color:#3b82f6; text-decoration:underline;">innocent and transformative</a>.
