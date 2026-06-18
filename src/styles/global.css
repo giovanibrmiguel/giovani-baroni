@@ -86,9 +86,8 @@
     @apply font-display text-foam leading-tight tracking-tight;
   }
 
-  /* Uppercase label — dark magenta by default; use text-ocean-400 for lighter pink accent. */
   .label-mono {
-    @apply font-mono text-base uppercase tracking-widest text-ocean-500;
+    @apply font-mono text-base tracking-widest text-ocean-500;
   }
 
   .section-divider {

@@ -146,7 +146,7 @@ const mdfSchema = {
       hasListenEmbed && mdfRelease && (
         <section class="py-12 md:py-16 border-b border-ocean-900" aria-label="Listen">
           <div class="max-w-2xl">
-            <p class="label-mono text-lg text-ocean-500 mb-6">Listen</p>
+            <p class="label-mono text-lg text-ocean-500 mb-6">listen</p>
             <EmbedPlayer
               embedCode={mdfRelease.embedCode}
               title="Mecânica dos Fluidos"
@@ -160,7 +160,7 @@ const mdfSchema = {
     {
       mdfRelease?.links && Object.values(mdfRelease.links).some((v) => v) && (
         <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
-          <p class="label-mono text-lg text-ocean-500 mb-5">Stream & Download</p>
+          <p class="label-mono text-lg text-ocean-500 mb-5">stream & download</p>
           <div class="flex flex-wrap gap-3">
             {Object.entries(mdfRelease.links).map(([platform, url]) =>
               url ? (
@@ -216,7 +216,7 @@ const mdfSchema = {
         {
           mdfRelease && (
             <div class="card-ocean p-4 space-y-2">
-              <p class="label-mono text-base text-ocean-500 mb-3">Release Info</p>
+              <p class="label-mono text-base text-ocean-500 mb-3">release info</p>
               <p class="text-ocean-300 text-xs">
                 <span class="text-ocean-500">Title</span><br />
                 Mecânica dos Fluidos
@@ -244,7 +244,7 @@ const mdfSchema = {
         {
           mdfRelease?.credits && mdfRelease.credits.length > 0 && (
             <div>
-              <p class="label-mono text-base text-ocean-500 mb-4">Credits</p>
+              <p class="label-mono text-base text-ocean-500 mb-4">credits</p>
               <ul class="space-y-2">
                 {mdfRelease.credits.map((credit) => (
                   <li class="text-ocean-400 text-xs leading-relaxed" set:html={credit} />
@@ -256,7 +256,7 @@ const mdfSchema = {
 
         <!-- Streaming buttons -->
         <div>
-          <p class="label-mono text-base text-ocean-500 mb-3">Stream</p>
+          <p class="label-mono text-base text-ocean-500 mb-3">stream</p>
           <div class="flex flex-wrap gap-2">
             {streamingPlatforms.map(({ key, label, line2, icon }) => {
               const url = mdfRelease?.links?.[key as keyof typeof mdfRelease.links];
@@ -291,7 +291,7 @@ const mdfSchema = {
 
     <!-- Press Kit + Contact -->
     <section class="py-12 border-t border-ocean-900" aria-label="Press Kit">
-      <p class="label-mono text-lg text-ocean-500 mb-6">Press Kit</p>
+      <p class="label-mono text-lg text-ocean-500 mb-6">press kit</p>
       <div class="flex flex-col gap-4 mb-6">
         <p class="text-ocean-400 text-base">
           <span class="lang-en">Hi-resolution photos, bio, and release info.</span>

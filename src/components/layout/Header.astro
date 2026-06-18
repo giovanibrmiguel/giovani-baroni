@@ -18,13 +18,13 @@ const isGb = project === "giovani-baroni";
 // Anchor nav — points back to /giovani-baroni on the bLU page, anchors on project pages
 const anchorNav = isBlu
   ? [
-      { href: "/giovani-baroni#bio", label: "about", labelPt: "about", labelEs: "about" },
+      { href: "/giovani-baroni#bio", label: "about", labelPt: "sobre", labelEs: "sobre" },
       { href: "/giovani-baroni#discography", label: "discography", labelPt: "discografia", labelEs: "discografía" },
       { href: "/giovani-baroni#lyrics", label: "lyrics", labelPt: "letras", labelEs: "letras" },
       { href: "/giovani-baroni#videos", label: "videos", labelPt: "vídeos", labelEs: "videos" },
     ]
   : [
-      { href: "#bio", label: "about", labelPt: "about", labelEs: "about" },
+      { href: "#bio", label: "about", labelPt: "sobre", labelEs: "sobre" },
       { href: "#discography", label: "discography", labelPt: "discografia", labelEs: "discografía" },
       { href: "#lyrics", label: "lyrics", labelPt: "letras", labelEs: "letras" },
       { href: "#videos", label: "videos", labelPt: "vídeos", labelEs: "videos" },
@@ -93,7 +93,7 @@ const headerHref = isBlu
             <div class="hidden md:block relative" id="projects-dropdown-wrapper">
               <button
                 id="projects-dropdown-toggle"
-                class="flex items-center gap-1.5 label-mono normal-case text-base text-ocean-500 hover:text-ocean-300 transition-colors"
+                class="flex items-center gap-1.5 label-mono text-base text-ocean-500 hover:text-ocean-300 transition-colors"
                 aria-expanded="false"
                 aria-haspopup="true"
               >

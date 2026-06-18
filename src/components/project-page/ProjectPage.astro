@@ -152,7 +152,11 @@ const sukyaSchema = {
 
       <!-- Bio content (injected by parent page, language-toggled) -->
       <div class="border-t border-ocean-900 pt-10 mb-12">
-        <p class="label-mono text-lg text-ocean-500 mb-5 normal-case">about</p>
+        <p class="label-mono text-lg text-ocean-500 mb-5">
+          <span class="lang-en">about</span>
+          <span class="lang-pt">sobre</span>
+          <span class="lang-es">sobre</span>
+        </p>
         <div class="lang-en prose prose-ocean prose-base md:prose-lg max-w-none">
           <slot name="bio" />
         </div>
@@ -211,9 +215,9 @@ const sukyaSchema = {
   <section id="lyrics" class="py-16 md:py-24 border-t border-ocean-900" aria-labelledby="lyrics-heading">
     <div class="max-w-4xl mx-auto px-6">
       <p class="label-mono text-lg text-ocean-500 mb-12" id="lyrics-heading">
-        <span class="lang-en">Lyrics / Chords</span>
-        <span class="lang-pt">Letras / Cifras</span>
-        <span class="lang-es">Letras / Cifras</span>
+        <span class="lang-en">lyrics / chords</span>
+        <span class="lang-pt">letras / cifras</span>
+        <span class="lang-es">letras / cifras</span>
       </p>
       <slot name="lyrics">
         <div class="card-ocean p-10 text-center">

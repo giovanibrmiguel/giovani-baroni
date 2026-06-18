@@ -152,7 +152,7 @@ const bluSchema = {
       hasListenEmbed && bluRelease && (
         <section class="py-12 md:py-16 border-b border-ocean-900" aria-label="Listen">
           <div class="max-w-2xl">
-            <p class="label-mono text-lg text-ocean-500 mb-6">Listen</p>
+            <p class="label-mono text-lg text-ocean-500 mb-6">listen</p>
             <EmbedPlayer
               embedCode={bluRelease.embedCode}
               title="bLU"
@@ -166,7 +166,7 @@ const bluSchema = {
     {
       bluRelease?.links && Object.values(bluRelease.links).some((v) => v) && (
         <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
-          <p class="label-mono text-lg text-ocean-500 mb-5">Stream & Download</p>
+          <p class="label-mono text-lg text-ocean-500 mb-5">stream & download</p>
           <div class="flex flex-wrap gap-3">
             {Object.entries(bluRelease.links).map(([platform, url]) =>
               url ? (
@@ -251,7 +251,7 @@ const bluSchema = {
         {
           bluRelease?.tracklist && bluRelease.tracklist.length > 0 && (
             <div>
-              <p class="label-mono text-base text-ocean-500 mb-4">Tracklist</p>
+              <p class="label-mono text-base text-ocean-500 mb-4">tracklist</p>
               <ol class="space-y-2">
                 {bluRelease.tracklist.map((track) => (
                   <li class="text-ocean-300 text-xs font-mono border-b border-ocean-900 pb-2 last:border-0">
@@ -269,7 +269,7 @@ const bluSchema = {
 
         <!-- Singles links -->
         <div>
-          <p class="label-mono text-base text-ocean-500 mb-4">Singles</p>
+          <p class="label-mono text-base text-ocean-500 mb-4">singles</p>
           <ul class="space-y-2">
             <li>
               <a
@@ -286,7 +286,7 @@ const bluSchema = {
         {
           bluRelease?.credits && bluRelease.credits.length > 0 && (
             <div>
-              <p class="label-mono text-base text-ocean-500 mb-4">Credits</p>
+              <p class="label-mono text-base text-ocean-500 mb-4">credits</p>
               <ul class="space-y-2">
                 {bluRelease.credits.map((credit) => (
                   <li class="text-ocean-400 text-xs leading-relaxed" set:html={credit} />
@@ -298,7 +298,7 @@ const bluSchema = {
 
         <!-- Streaming buttons -->
         <div>
-          <p class="label-mono text-base text-ocean-500 mb-3">Stream</p>
+          <p class="label-mono text-base text-ocean-500 mb-3">stream</p>
           <div class="flex flex-wrap gap-2">
             {streamingPlatforms.map(({ key, label, line2, icon }) => {
               const url = bluRelease?.links?.[key as keyof typeof bluRelease.links];
@@ -343,7 +343,7 @@ const bluSchema = {
 
     <!-- Press Kit + Contact -->
     <section class="py-12 border-t border-ocean-900" aria-label="Press Kit">
-      <p class="label-mono text-lg text-ocean-500 mb-6">Press Kit</p>
+      <p class="label-mono text-lg text-ocean-500 mb-6">press kit</p>
       <div class="flex flex-col gap-4 mb-6">
         <p class="text-ocean-400 text-base">
           <span class="lang-en">Hi-resolution photos, bio, and release info.</span>
