@@ -137,7 +137,8 @@ The title comes from a fluid mechanics class Baroni took at university, where he
   },
 
   // ── Fishy Boy — Single ───────────────────────────────────────────────────
-  {
+  // TODO: uncomment when promoting Fishy Boy
+  /* {
     id: "fishyboy-single",
     title: "Fishy Boy",
     project: "fishyboy",
@@ -146,12 +147,12 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     year: 2026,
     coverImage: "/images/fishyboy/fishyboy.jpg",
     shortDescription:
-      "The second single from bLU — [UPDATE: short description].",
+      "The second single from bLU: a progressive emo fish rock anthem about swimming.",
     shortDescriptionPt:
-      "O segundo single de bLU — [ATUALIZAR: descrição curta].",
+      "O segundo single de bLU: um hino de rock emo progressivo sobre nadar.",
     shortDescriptionEs:
-      "El segundo sencillo de bLU — [ACTUALIZAR: descripción corta].",
-    longDescription: `"Fishy Boy" is the second single from bLU, Giovani Baroni's debut solo album arriving in 2026. [UPDATE: long description]`,
+      "El segundo sencillo de bLU: un himno de rock emo progresivo sobre nadar.",
+    longDescription: `"Fishy Boy" is the second single from bLU, Giovani Baroni's debut solo album arriving in 2026. A progressive emo fish rock anthem about getting deep into your own head and somehow coming out weirder on the other side.`,
     links: {
       spotify: "",
       youtubeMusic: "",
@@ -168,7 +169,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
       "Writing — Mardem Humberto (Goiânia)",
       "Writing — Ricardo Baroni (São Paulo)",
     ],
-  },
+  }, */
 
   // ── Stop & Go Station ────────────────────────────────────────────────────
   {
