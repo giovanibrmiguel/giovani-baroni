@@ -20,6 +20,7 @@ export default defineConfig({
           `${SITE_URL}/giovani-baroni/`,
           `${SITE_URL}/sukya/`,
           `${SITE_URL}/mecanicadosfluidos/`,
+          `${SITE_URL}/fishyboy/`,
         ];
         return allowed.includes(page);
       },

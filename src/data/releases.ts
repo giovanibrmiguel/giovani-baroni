@@ -27,8 +27,8 @@ export type StreamingLinks = {
 export type Release = {
   id: string;
   title: string;
-  // "blu" → featured sub-page; "mecanicadosfluidos" → single sub-page; "giovani-baroni" → GB page; "sukya-porno" → sukya page
-  project: "blu" | "mecanicadosfluidos" | "sukya-porno" | "giovani-baroni";
+  // "blu" → featured sub-page; "mecanicadosfluidos" → single sub-page; "fishyboy" → single sub-page; "giovani-baroni" → GB page; "sukya-porno" → sukya page
+  project: "blu" | "mecanicadosfluidos" | "fishyboy" | "sukya-porno" | "giovani-baroni";
   projectDisplayName: string;
   type: "album" | "ep" | "single" | "live" | "compilation";
   year: number;
@@ -133,6 +133,40 @@ The title comes from a fluid mechanics class Baroni took at university, where he
       "Bass, mixing, and mastering — Pedro Serapicos (Berlin)",
       "Drums — Bianca Predieri (São Paulo)",
       "Inspiration — Juliana Morette (Rio de Janeiro)",
+    ],
+  },
+
+  // ── Fishy Boy — Single ───────────────────────────────────────────────────
+  {
+    id: "fishyboy-single",
+    title: "Fishy Boy",
+    project: "fishyboy",
+    projectDisplayName: "GIOVANI BARONI",
+    type: "single",
+    year: 2026,
+    coverImage: "/images/fishyboy/fishyboy.jpg",
+    shortDescription:
+      "The second single from bLU — [UPDATE: short description].",
+    shortDescriptionPt:
+      "O segundo single de bLU — [ATUALIZAR: descrição curta].",
+    shortDescriptionEs:
+      "El segundo sencillo de bLU — [ACTUALIZAR: descripción corta].",
+    longDescription: `"Fishy Boy" is the second single from bLU, Giovani Baroni's debut solo album arriving in 2026. [UPDATE: long description]`,
+    links: {
+      spotify: "",
+      youtubeMusic: "",
+      appleMusic: "",
+      amazonMusic: "",
+      deezer: "",
+    },
+    featured: false,
+    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/PLACEHOLDER" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+    credits: [
+      "Vocals, guitars, keys, writing, and production — Giovani Baroni (Mexico City)",
+      "Bass, mixing, and mastering — Pedro Serapicos (Berlin)",
+      "Drums — Bianca Predieri (São Paulo)",
+      "Writing — Mardem Humberto (Goiânia)",
+      "Writing — Ricardo Baroni (São Paulo)",
     ],
   },
 
@@ -329,7 +363,8 @@ export function getGiovaniBaroniReleases(): Release[] {
       (r) =>
         r.project === "giovani-baroni" ||
         r.project === "blu" ||
-        r.project === "mecanicadosfluidos"
+        r.project === "mecanicadosfluidos" ||
+        r.project === "fishyboy"
     )
     .sort((a, b) => b.year - a.year);
 }

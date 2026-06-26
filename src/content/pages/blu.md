@@ -4,11 +4,11 @@ excerpt: "bLU is Giovani Baroni's debut solo album — ten tracks built as a sin
 ogImage: "/images/blu/og-blu.jpeg"
 ---
 
-## Short Description
+## short album description
 
 bLU is the debut solo album by [Giovani Baroni](/giovani-baroni#bio), a ten-track conceptual record designed to be heard from beginning to end as one continuous piece. Written after his move from São Paulo to Mexico City, the album uses water, fish, waves, and submersion as images for transformation, memory, ego, love, and self-preservation. Sung across Portuguese, English, and Spanish, bLU draws from progressive rock, emo, psychedelia, and Brazilian indie, combining shifting time signatures, recurring leitmotifs, piano, phaser guitars, aquatic synthesizers, ambient textures, and songs that bleed directly into one another.
 
-## Long Description
+## long album description
 
 bLU is the debut solo album by [Giovani Baroni](/giovani-baroni#bio): a ten-track record designed to be heard in sequence, from beginning to end, with each song bleeding into the next. More than a collection of individual tracks, it is built as a single continuous piece. A patient, immersive album in a time shaped by isolated singles.
 

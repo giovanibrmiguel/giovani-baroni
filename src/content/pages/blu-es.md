@@ -4,11 +4,11 @@ excerpt: "bLU es el álbum debut solista de Giovani Baroni — diez tracks const
 ogImage: "/images/blu/og-blu.jpeg"
 ---
 
-## Descripción Corta
+## descripción corta del álbum
 
 bLU es el álbum debut solista de [Giovani Baroni](/giovani-baroni#bio), un disco conceptual de diez tracks concebido para escucharse de principio a fin como una sola pieza continua. Escrito tras su mudanza de São Paulo a la Ciudad de México, el álbum usa agua, peces, olas y la sumersión como imágenes de transformación, memoria, ego, amor y autopreservación. Cantado en portugués, inglés y español, bLU bebe del rock progresivo, emo, psicodelia e indie brasileño, combinando compases que cambian, leitmotifs recurrentes, piano, guitarras con phaser, sintetizadores acuáticos, texturas ambientales y canciones que sangran unas en otras.
 
-## Descripción Larga
+## descripción larga del álbum
 
 bLU es el álbum debut solista de [Giovani Baroni](/giovani-baroni#bio): un disco de diez tracks concebido para escucharse en secuencia, de principio a fin, con cada canción fluyendo hacia la siguiente. Más que una colección de tracks individuales, está construido como una sola pieza continua. Un álbum paciente e inmersivo en un tiempo marcado por singles aislados.
 

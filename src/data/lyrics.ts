@@ -57,6 +57,20 @@ export const lyrics: LyricEntry[] = [
     genius: "https://www.letras.mus.br/giovani-baroni/kebab/",
   },
 
+  // ── bLU (2026) ───────────────────────────────────────────────────────────
+  {
+    title: "Mecânica dos Fluidos",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-mecanica-dos-fluidos-lyrics",
+  },
+  {
+    title: "Fishy Boy",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-fishy-boy-lyrics",
+  },
+
   // ── Singles ───────────────────────────────────────────────────────────────
   {
     title: "Ruído Branco",
