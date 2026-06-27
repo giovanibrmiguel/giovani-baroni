@@ -156,46 +156,31 @@ const mdfSchema = {
       )
     }
 
-    <!-- Streaming links -->
-    {
-      mdfRelease?.links && Object.values(mdfRelease.links).some((v) => v) && (
-        <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
-          <p class="label-mono text-lg text-ocean-500 mb-5">stream & download</p>
-          <div class="flex flex-wrap gap-3">
-            {Object.entries(mdfRelease.links).map(([platform, url]) =>
-              url ? (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
-                >
-                  {platform === "appleMusic" ? "Apple Music" : platform.charAt(0).toUpperCase() + platform.slice(1)} →
-                </a>
-              ) : null
-            )}
-          </div>
-        </section>
-      )
-    }
+    <!-- Streaming links — shown only when track URLs exist -->
+    {mdfRelease?.links && Object.values(mdfRelease.links).some((v) => v) && (
+      <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
+        <p class="label-mono text-lg text-ocean-500 mb-5">stream & download</p>
+        <div class="flex flex-wrap gap-3">
+          {Object.entries(mdfRelease.links).map(([platform, url]) =>
+            url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
+              >
+                {platform === "appleMusic" ? "Apple Music" : platform.charAt(0).toUpperCase() + platform.slice(1)} →
+              </a>
+            ) : null
+          )}
+        </div>
+      </section>
+    )}
 
     <!-- Long-form content from src/content/pages/mecanicadosfluidos.md -->
     <div class="grid md:grid-cols-3 gap-12 md:gap-20 pt-8 md:pt-10 pb-16 md:pb-24">
       <!-- Main text (language-toggled) -->
       <div class="md:col-span-2">
-
-        <!-- PRE-SAVE campaign -->
-        <div class="mb-10">
-          <p class="label-mono text-base text-ocean-500 mb-3">pre-save</p>
-          <iframe
-            src="https://show.co/social-unlock/3nSpj3fM6PYheuNqcl4MXh/widget"
-            width="300"
-            height="300"
-            frameborder="0"
-            title="Pre-save Mecânica dos Fluidos"
-            loading="lazy"
-          ></iframe>
-        </div>
 
         <div class="lang-en prose prose-ocean prose-base md:prose-lg max-w-none">
           <Content />
@@ -210,6 +195,43 @@ const mdfSchema = {
 
       <!-- Sidebar: cover & credits -->
       <aside class="space-y-10">
+
+        <!-- Streaming buttons — active when track URLs exist, /listen CTA otherwise -->
+        <div>
+          <p class="label-mono text-base text-ocean-500 mb-3">stream</p>
+          {mdfRelease?.links && Object.values(mdfRelease.links).some((v) => v) ? (
+            <div class="flex flex-wrap gap-2">
+              {streamingPlatforms.map(({ key, label, line2, icon }) => {
+                const url = mdfRelease?.links?.[key as keyof typeof mdfRelease.links];
+                return url ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 label-mono text-xs text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-2.5 py-1.5 rounded-sm transition-all duration-200"
+                  >
+                    <span set:html={icon} />
+                    <span class="flex flex-col leading-[1.1] text-left">
+                      <span>{label}</span>
+                      {line2 && <span>{line2}</span>}
+                    </span>
+                  </a>
+                ) : null;
+              })}
+            </div>
+          ) : (
+            <div>
+              <a
+                href="/listen"
+                class="inline-flex items-center gap-2 label-mono text-xs text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-2.5 py-1.5 rounded-sm transition-all duration-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z"/><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 21.6C6.705 21.6 2.4 17.295 2.4 12S6.705 2.4 12 2.4 21.6 6.705 21.6 12 17.295 21.6 12 21.6z"/></svg>
+                listen now!!!
+              </a>
+            </div>
+          )}
+        </div>
+
         {
           mdfRelease?.coverImage && (
             <div class="aspect-square rounded-sm overflow-hidden bg-ocean-900 border border-ocean-800">
@@ -267,38 +289,6 @@ const mdfSchema = {
             </div>
           )
         }
-
-        <!-- Streaming buttons -->
-        <div>
-          <p class="label-mono text-base text-ocean-500 mb-3">stream</p>
-          <div class="flex flex-wrap gap-2">
-            {streamingPlatforms.map(({ key, label, line2, icon }) => {
-              const url = mdfRelease?.links?.[key as keyof typeof mdfRelease.links];
-              return url ? (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 label-mono text-xs text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-2.5 py-1.5 rounded-sm transition-all duration-200"
-                >
-                  <span set:html={icon} />
-                  <span class="flex flex-col leading-[1.1] text-left">
-                    <span>{label}</span>
-                    {line2 && <span>{line2}</span>}
-                  </span>
-                </a>
-              ) : (
-                <span class="inline-flex items-center gap-1.5 label-mono text-xs text-ocean-700 border border-ocean-900 px-2.5 py-1.5 rounded-sm cursor-not-allowed select-none">
-                  <span set:html={icon} />
-                  <span class="flex flex-col leading-[1.1] text-left">
-                    <span>{label}</span>
-                    {line2 && <span>{line2}</span>}
-                  </span>
-                </span>
-              );
-            })}
-          </div>
-        </div>
 
       </aside>
     </div>

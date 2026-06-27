@@ -13,6 +13,8 @@ export const site = {
   description: "Giovani Baroni is a Brazilian musician, songwriter, and producer based in Mexico City — known for prog-influenced indie rock and conceptual albums.",
   domain: "https://www.giovanibaroni.com",
   featuredProject: "blu",
+  // Controls which release is shown on /listen. Change this to swap to the next single.
+  listenPageReleaseId: "mecanicadosfluidos-single",
   email: "press@giovanibaroni.com",
   pressKitUrl:
     "https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B",

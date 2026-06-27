@@ -21,6 +21,7 @@ export default defineConfig({
           `${SITE_URL}/sukya/`,
           `${SITE_URL}/mecanicadosfluidos/`,
           `${SITE_URL}/fishyboy/`,
+          `${SITE_URL}/listen/`,
         ];
         return allowed.includes(page);
       },

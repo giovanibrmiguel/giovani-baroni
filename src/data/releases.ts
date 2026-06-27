@@ -46,6 +46,20 @@ export type Release = {
   embedCode?: string;
   credits?: string[];
   tracklist?: string[];
+  // ── /listen page controls ─────────────────────────────────────────────────
+  // Set to true on release day to flip the /listen page to stream links.
+  released?: boolean;
+  // Human-readable release date shown on /listen, e.g. "10 DE JULHO, 2026".
+  // Displayed as "EM BREVE – [releaseDateLabel]" when released is false.
+  releaseDateLabel?: string;
+  // Links shown before release — use artist profile URLs (phase 1: "follow")
+  // or a previous released track (phases 3, 5: "listen while you wait").
+  preReleaseLinks?: StreamingLinks;
+  // Controls button CTA on /listen during pre-release.
+  preReleaseCta?: "follow" | "listen";
+  // Optional subtitle shown above buttons on /listen during pre-release,
+  // e.g. "segue ae, pra ouvir quando sair".
+  preReleaseSubtitle?: string;
 };
 
 export const releases: Release[] = [
@@ -120,11 +134,12 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
 
 The title comes from a fluid mechanics class Baroni took at university, where he became interested in the way invisible forces — currents, pressure, and movement — appear not only in physics, but in ordinary life. In the song, that image becomes a way to write about love as something innocent and transformative.`,
     links: {
-      spotify: "",
-      youtubeMusic: "",
-      appleMusic: "",
-      amazonMusic: "",
-      deezer: "",
+      spotify: "",       // UPDATE on release day: add Spotify track link
+      appleMusic: "",    // UPDATE on release day: add Apple Music track link
+      youtube: "",       // UPDATE on release day: add YouTube music video link (if exists)
+      deezer: "",        // UPDATE on release day: add Deezer track link
+      amazonMusic: "",   // UPDATE on release day: add Amazon Music track link
+      youtubeMusic: "",  // UPDATE on release day: add YouTube Music track link
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/PLACEHOLDER" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -134,6 +149,20 @@ The title comes from a fluid mechanics class Baroni took at university, where he
       "Drums — Bianca Predieri (São Paulo)",
       "Inspiration — Juliana Morette (Rio de Janeiro)",
     ],
+    // ── /listen page: pre-release state ─────────────────────────────────────
+    // Flip to released: true on release day and fill in track URLs above.
+    released: false,
+    releaseDateLabel: "10 DE JULHO, 2026",
+    preReleaseCta: "follow",
+    preReleaseSubtitle: "segue ae, pra ouvir quando sair",
+    preReleaseLinks: {
+      spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+      appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
+      youtube: "https://www.youtube.com/@sukyarecords",
+      deezer: "https://www.deezer.com/en/artist/196727277",
+      amazonMusic: "https://music.amazon.com.mx/artists/B0BRYQLL26/giovani-baroni",
+      youtubeMusic: "https://music.youtube.com/channel/UCinFYYohAKD0ENr6jxGmqMw",
+    },
   },
 
   // ── Fishy Boy — Single ───────────────────────────────────────────────────
