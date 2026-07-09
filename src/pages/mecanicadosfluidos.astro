@@ -45,6 +45,8 @@ const streamingPlatforms = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.7-3.182v.685zm3.186 7.705a.661.661 0 0 1-.748.075c-1.051-.873-1.239-1.279-1.814-2.111-1.734 1.769-2.962 2.299-5.209 2.299-2.66 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.58l-3.064-.33c-.259-.057-.547-.266-.472-.661C6.054 2.567 8.982 1.5 11.61 1.5c1.34 0 3.091.356 4.149 1.372C16.891 4.004 16.8 5.8 16.8 7.753v4.735c0 1.424.591 2.049 1.146 2.819.196.275.238.603-.01.806l-2.792 2.682zm3.581 1.424c.293.235.332.573.039.766-1.285.955-3.305 2.578-5.951 1.726-1.344-.432-2.298-1.247-3.079-2.126-.392-.45.017-.978.498-.768 1.547.664 3.167.905 4.79.542 1.137-.254 2.16-.79 3.703-2.14zm.668 1.707c-.266-.396-1.759-.188-2.43-.094-.204.028-.236-.152-.051-.281 1.191-.836 3.145-.595 3.37-.315.227.283-.06 2.247-1.176 3.185-.172.144-.335.067-.259-.121.252-.629.808-2.038.546-2.374z"/></svg>` },
   { key: "deezer",       label: "Deezer",  line2: undefined,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.944 17.773h4.112v1.217h-4.112zm0-2.79h4.112v1.217h-4.112zm0-2.79h4.112v1.218h-4.112zm0-2.791h4.112v1.218h-4.112zm-5.552 8.371h4.112v1.217h-4.112zm0-2.79h4.112v1.217h-4.112zm0-2.79h4.112v1.218h-4.112zm-5.517 5.58h4.112v1.217H7.875zm0-2.79h4.112v1.217H7.875zM2.357 18.99h4.111v1.217H2.357z"/></svg>` },
+  { key: "youtube",      label: "YouTube", line2: undefined,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>` },
 ] as const;
 
 const mdfSchema = {
@@ -73,7 +75,7 @@ const mdfSchema = {
 
 <BaseLayout
   title="Mecânica dos Fluidos"
-  description="First single from bLU by Giovani Baroni — a tender two-minute piece of Brazilian alternative rock shaped by shoegaze textures and soft melancholy. Out 2026."
+  description="First single from bLU by Giovani Baroni — a tender two-minute piece of Brazilian alternative rock shaped by shoegaze textures and soft melancholy. Out now."
   image="/images/mecanicadosfluidos/mecanicadosfluidos.jpg"
   type="music.song"
   project="blu"
@@ -156,26 +158,19 @@ const mdfSchema = {
       )
     }
 
-    <!-- Streaming links — shown only when track URLs exist -->
-    {mdfRelease?.links && Object.values(mdfRelease.links).some((v) => v) && (
-      <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
-        <p class="label-mono text-lg text-ocean-500 mb-5">stream & download</p>
-        <div class="flex flex-wrap gap-3">
-          {Object.entries(mdfRelease.links).map(([platform, url]) =>
-            url ? (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
-              >
-                {platform === "appleMusic" ? "Apple Music" : platform.charAt(0).toUpperCase() + platform.slice(1)} →
-              </a>
-            ) : null
-          )}
-        </div>
-      </section>
-    )}
+    <!-- Stream CTA — full width, prominent -->
+    <section class="py-10 border-b border-ocean-900" aria-label="Stream">
+      <div class="prose prose-ocean prose-base md:prose-lg max-w-none mb-5">
+        <h2 class="mt-0 mb-0">stream</h2>
+      </div>
+      <a
+        href="/listen"
+        class="inline-flex items-center gap-3 label-mono text-base text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-5 py-3 rounded-sm transition-all duration-200"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z"/><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 21.6C6.705 21.6 2.4 17.295 2.4 12S6.705 2.4 12 2.4 21.6 6.705 21.6 12 17.295 21.6 12 21.6z"/></svg>
+        listen now!!!
+      </a>
+    </section>
 
     <!-- Long-form content from src/content/pages/mecanicadosfluidos.md -->
     <div class="grid md:grid-cols-3 gap-12 md:gap-20 pt-8 md:pt-10 pb-16 md:pb-24">
@@ -195,42 +190,6 @@ const mdfSchema = {
 
       <!-- Sidebar: cover & credits -->
       <aside class="space-y-10">
-
-        <!-- Streaming buttons — active when track URLs exist, /listen CTA otherwise -->
-        <div>
-          <p class="label-mono text-base text-ocean-500 mb-3">stream</p>
-          {mdfRelease?.links && Object.values(mdfRelease.links).some((v) => v) ? (
-            <div class="flex flex-wrap gap-2">
-              {streamingPlatforms.map(({ key, label, line2, icon }) => {
-                const url = mdfRelease?.links?.[key as keyof typeof mdfRelease.links];
-                return url ? (
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1.5 label-mono text-xs text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-2.5 py-1.5 rounded-sm transition-all duration-200"
-                  >
-                    <span set:html={icon} />
-                    <span class="flex flex-col leading-[1.1] text-left">
-                      <span>{label}</span>
-                      {line2 && <span>{line2}</span>}
-                    </span>
-                  </a>
-                ) : null;
-              })}
-            </div>
-          ) : (
-            <div>
-              <a
-                href="/listen"
-                class="inline-flex items-center gap-2 label-mono text-xs text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-2.5 py-1.5 rounded-sm transition-all duration-200"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z"/><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 21.6C6.705 21.6 2.4 17.295 2.4 12S6.705 2.4 12 2.4 21.6 6.705 21.6 12 17.295 21.6 12 21.6z"/></svg>
-                listen now!!!
-              </a>
-            </div>
-          )}
-        </div>
 
         {
           mdfRelease?.coverImage && (
@@ -289,6 +248,30 @@ const mdfSchema = {
             </div>
           )
         }
+
+        <!-- Streaming buttons -->
+        <div>
+          <p class="label-mono text-base text-ocean-500 mb-3">stream</p>
+          <div class="flex flex-wrap gap-2">
+            {streamingPlatforms.map(({ key, label, line2, icon }) => {
+              const url = mdfRelease?.links?.[key as keyof typeof mdfRelease.links];
+              return url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 label-mono text-xs text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-2.5 py-1.5 rounded-sm transition-all duration-200"
+                >
+                  <span set:html={icon} />
+                  <span class="flex flex-col leading-[1.1] text-left">
+                    <span>{label}</span>
+                    {line2 && <span>{line2}</span>}
+                  </span>
+                </a>
+              ) : null;
+            })}
+          </div>
+        </div>
 
       </aside>
     </div>

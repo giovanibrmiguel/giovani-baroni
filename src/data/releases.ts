@@ -134,12 +134,12 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
 
 The title comes from a fluid mechanics class Baroni took at university, where he became interested in the way invisible forces — currents, pressure, and movement — appear not only in physics, but in ordinary life. In the song, that image becomes a way to write about love as something innocent and transformative.`,
     links: {
-      spotify: "",       // UPDATE on release day: add Spotify track link
-      appleMusic: "",    // UPDATE on release day: add Apple Music track link
-      youtube: "",       // UPDATE on release day: add YouTube music video link (if exists)
-      deezer: "",        // UPDATE on release day: add Deezer track link
-      amazonMusic: "",   // UPDATE on release day: add Amazon Music track link
-      youtubeMusic: "",  // UPDATE on release day: add YouTube Music track link
+      spotify: "https://open.spotify.com/album/31NS3tSydJaSED9iYEBVdV",
+      appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223", // UPDATE when track link is live
+      youtube: "https://youtu.be/iK4oo1eGhy4",
+      deezer: "https://link.deezer.com/s/33MDXSb3XOFp0JZKi4XMW",
+      amazonMusic: "https://music.amazon.com.au/albums/B0H6F9MY2W?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_Zsg7HKCFTlYE2TEh1oz8UoqR2",
+      youtubeMusic: "https://music.youtube.com/watch?v=0vbe0cA9or8&si=LRLXR0xBs3IwokX1",
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/PLACEHOLDER" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -151,10 +151,10 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     ],
     // ── /listen page: pre-release state ─────────────────────────────────────
     // Flip to released: true on release day and fill in track URLs above.
-    released: false,
+    released: true,
     releaseDateLabel: "10 DE JULHO, 2026",
     preReleaseCta: "follow",
-    preReleaseSubtitle: "segue ae, pra ouvir quando sair",
+    preReleaseSubtitle: "escuta ae na moral, tá fera",
     preReleaseLinks: {
       spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
       appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
