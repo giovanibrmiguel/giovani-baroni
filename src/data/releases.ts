@@ -135,7 +135,7 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
 The title comes from a fluid mechanics class Baroni took at university, where he became interested in the way invisible forces — currents, pressure, and movement — appear not only in physics, but in ordinary life. In the song, that image becomes a way to write about love as something innocent and transformative.`,
     links: {
       spotify: "https://open.spotify.com/album/31NS3tSydJaSED9iYEBVdV",
-      appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223", // UPDATE when track link is live
+      appleMusic: "https://music.apple.com/us/song/mec%C3%A2nica-dos-fluidos/6783129020",
       youtube: "https://youtu.be/iK4oo1eGhy4",
       deezer: "https://link.deezer.com/s/33MDXSb3XOFp0JZKi4XMW",
       amazonMusic: "https://music.amazon.com.au/albums/B0H6F9MY2W?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_Zsg7HKCFTlYE2TEh1oz8UoqR2",
