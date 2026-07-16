@@ -136,7 +136,8 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     links: {
       spotify: "https://open.spotify.com/album/31NS3tSydJaSED9iYEBVdV",
       appleMusic: "https://music.apple.com/us/song/mec%C3%A2nica-dos-fluidos/6783129020",
-      youtube: "https://youtu.be/iK4oo1eGhy4",
+      // youtube: "https://youtu.be/iK4oo1eGhy4", // link to individual video
+      youtube: "https://www.youtube.com/watch?v=iK4oo1eGhy4&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27", // link to playlist
       deezer: "https://link.deezer.com/s/33MDXSb3XOFp0JZKi4XMW",
       amazonMusic: "https://music.amazon.com.au/albums/B0H6F9MY2W?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_Zsg7HKCFTlYE2TEh1oz8UoqR2",
       youtubeMusic: "https://music.youtube.com/watch?v=0vbe0cA9or8&si=LRLXR0xBs3IwokX1",
