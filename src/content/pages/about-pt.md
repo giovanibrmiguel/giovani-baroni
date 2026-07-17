@@ -8,4 +8,4 @@ Depois de mais de uma década na cena independente paulistana, sendo o centro do
 
 Essa identidade tomou forma depois da mudança para a CDMX, onde Baroni se viu obrigado a abandonar projetos antigos e reconstruir seu processo artístico do zero. Hoje, ele é o núcleo de uma rede de colaboradores que vai do Brasil a Berlim, gerando um som trilíngue que transita entre português, inglês e espanhol. Com referências em texturas cinematográficas, literatura e imagens oceânicas, sua música usa sintetizadores aquáticos, phasers e delays intensos para traduzir temas de transformação interna.
 
-Tudo isso culmina em seu álbum conceitual de estreia, [bLU](/blu), com lançamento previsto para setembro de 2026: uma jornada imersiva de 10 faixas concebida para ser ouvida do começo ao fim.
+Tudo isso culmina em seu álbum conceitual de estreia, [bLU](/blu), com lançamento previsto para 4 de setembro de 2026: uma jornada imersiva de 10 faixas concebida para ser ouvida do começo ao fim.

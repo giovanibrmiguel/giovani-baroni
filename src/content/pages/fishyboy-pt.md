@@ -11,6 +11,8 @@ Seu álbum de estreia, [bLU](/blu), chega em setembro de 2026. Cantado em portug
 
 ## descrição curta do single
 
-"Fishy Boy" é o segundo single de [bLU](/blu), o álbum de estreia solo de [Giovani Baroni](/giovani-baroni). Com cinco minutos de duração, é uma das faixas mais imersivas do disco: uma música aquática e hipnótica construída em torno de um arpejo de guitarra limpa, sons de água, sintetizadores e uma levada que não larga.
+"Fishy Boy" é o segundo single de [bLU](/blu), o álbum de estreia solo de [Giovani Baroni](/giovani-baroni). Com cinco minutos de duração, é uma das faixas mais imersivas do disco: uma paisagem aquática construída sobre arpejos limpos de guitarra, sintetizadores de dreampop e um groove hipnótico.
 
-A música foi composta anos antes em São Paulo com o irmão de Baroni e um amigo próximo depois de uma nadada, inspirada em "Weird Fishes" do Radiohead e no espírito do Modest Mouse. Quase se perdeu em um projeto abandonado antes de encontrar seu lugar perto do fim de bLU. As letras transitam entre o inglês e o português, entre a superfície e o que está embaixo, e a sensação física de estar submerso.
+A música nasceu anos antes, em São Paulo, em colaboração com o irmão de Baroni e um amigo próximo, após uma experiência transformadora nadando. Influenciada por “Weird Fishes”, do Radiohead, e com ecos de Modest Mouse, a faixa quase se perdeu em um projeto abandonado antes de encontrar seu lugar na reta final de bLU.
+
+Como no restante do álbum, as letras são simbólicas e exploram a mitologia aquática de bLU, alternando entre inglês e português, entre a superfície e a sensação física de estar submerso.

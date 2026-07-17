@@ -73,11 +73,11 @@ export const releases: Release[] = [
     year: 2026,
     coverImage: "/images/blu/blu_v5_small.png",
     shortDescription:
-      "Upcoming debut solo album — TBD.",
+      "Upcoming debut solo album — September 04th, 2026.",
     shortDescriptionPt:
-      "Álbum de estreia solo em breve — TBD.",
+      "Álbum de estreia solo em breve — 04 de Setembro, 2026.",
     shortDescriptionEs:
-      "Álbum debut solista en camino — próximamente.",
+      "Álbum debut solista en camino — 04 de Septiembre, 2026.",
     longDescription: `bLU is Giovani Baroni's debut solo album — a conceptual, narrative record designed to be listened to as a single continuous journey, from beginning to end.
 
 The album began taking shape after Baroni moved to Mexico City, where daily life in a new language and a new continent pushed him toward a deeper introspection. Drawing from psychedelic rock, shoegaze, Brazilian indie, prog, and emo, bLU uses the ocean as both metaphor and sonic texture — fish, water, waves, and the abyss running throughout its lyrics and production.
@@ -167,8 +167,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
   },
 
   // ── Fishy Boy — Single ───────────────────────────────────────────────────
-  // TODO: uncomment when promoting Fishy Boy
-  /* {
+  {
     id: "fishyboy-single",
     title: "Fishy Boy",
     project: "fishyboy",
@@ -189,6 +188,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
       appleMusic: "",
       amazonMusic: "",
       deezer: "",
+      youtube: "",
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/PLACEHOLDER" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
@@ -199,7 +199,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
       "Writing — Mardem Humberto (Goiânia)",
       "Writing — Ricardo Baroni (São Paulo)",
     ],
-  }, */
+  },
 
   // ── Stop & Go Station ────────────────────────────────────────────────────
   {
