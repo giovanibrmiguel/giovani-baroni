@@ -14,7 +14,7 @@ export const site = {
   domain: "https://www.giovanibaroni.com",
   featuredProject: "blu",
   // Controls which release is shown on /listen. Change this to swap to the next single.
-  listenPageReleaseId: "mecanicadosfluidos-single",
+  listenPageReleaseId: "fishyboy-single",
   email: "press@giovanibaroni.com",
   pressKitUrl:
     "https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B",
