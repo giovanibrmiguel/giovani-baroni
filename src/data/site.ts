@@ -17,7 +17,7 @@ export const site = {
   listenPageReleaseId: "fishyboy-single",
   email: "press@giovanibaroni.com",
   pressKitUrl:
-    "https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B",
+    "https://drive.google.com/drive/u/2/folders/1gtWdjgsw14YECJpDGW1LIJouy_w3nbgN",
   defaultOgImage: "/images/og-default.jpg",
   // Legacy flat social block — kept for any legacy components that reference it.
   social: {
@@ -38,7 +38,7 @@ export const projects = {
     portrait: "/images/artist/giovani-portrait-placeholder.jpg",
     email: "press@giovanibaroni.com",
     pressKitUrl:
-      "https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B",
+      "https://drive.google.com/drive/u/2/folders/1gtWdjgsw14YECJpDGW1LIJouy_w3nbgN",
     social: {
       instagram: "https://www.instagram.com/giovanibaroni/",
       spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
@@ -52,7 +52,7 @@ export const projects = {
     portrait: "/images/artist/sukya-placeholder.jpg",
     email: "press@giovanibaroni.com",
     pressKitUrl:
-      "https://drive.google.com/drive/u/2/folders/1CZFK3o8dtHyRhNbWmWq0C7Bv8hOfl--B",
+      "https://drive.google.com/drive/u/2/folders/1gtWdjgsw14YECJpDGW1LIJouy_w3nbgN",
     social: {
       instagram: "https://www.instagram.com/sukyap/",
       spotify: "https://open.spotify.com/artist/7ndXsfZrZViNKKJB2LWXz5",
