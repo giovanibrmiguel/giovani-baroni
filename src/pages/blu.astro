@@ -9,10 +9,13 @@
  * Release/embed data comes from src/data/releases.ts
  */
 import BaseLayout from "@/components/layout/BaseLayout.astro";
+import BluWorldFooter from "@/components/project-page/BluWorldFooter.astro";
+import BluWorldNav from "@/components/project-page/BluWorldNav.astro";
 import EmbedPlayer from "@/components/music/EmbedPlayer.astro";
 import VideosSection from "@/components/project-page/VideosSection.astro";
 import JsonLd from "@/components/shared/JsonLd.astro";
 import { getEntry } from "astro:content";
+import { resolveBluTrackHref } from "@/data/bluWorld";
 import { releases } from "@/data/releases";
 import { projects, site } from "@/data/site";
 
@@ -131,7 +134,7 @@ const bluSchema = {
       </h1>
       <p class="text-ocean-300 text-base md:text-xl font-light mt-4 max-w-lg">
         <span class="lang-en">A prog journey through water and memory.</span>
-        <span class="lang-pt">Uma jornada prog através da água e da memória.</span>
+        <span class="lang-pt">Uma jornada prog pela água e memória.</span>
         <span class="lang-es">Un viaje prog a través del agua y la memoria.</span>
       </p>
       {
@@ -141,6 +144,8 @@ const bluSchema = {
           </p>
         )
       }
+
+      <BluWorldNav current="blu" />
     </div>
   </section>
 
@@ -253,15 +258,32 @@ const bluSchema = {
             <div>
               <p class="label-mono text-base text-ocean-500 mb-4">tracklist</p>
               <ol class="space-y-2">
-                {bluRelease.tracklist.map((track) => (
-                  <li class="text-ocean-300 text-xs font-mono border-b border-ocean-900 pb-2 last:border-0">
-                    {track.includes("Mecânica dos Fluidos") ? (
-                      <a href="/mecanicadosfluidos" class="hover:text-foam transition-colors duration-200">
-                        {track}
-                      </a>
-                    ) : track}
-                  </li>
-                ))}
+                {bluRelease.tracklist.map((track) => {
+                  const href = resolveBluTrackHref(track);
+                  return (
+                    <li
+                      class:list={[
+                        "text-xs font-mono border-b border-ocean-900 pb-2 last:border-0",
+                        href ? "text-ocean-300" : "text-ocean-600",
+                      ]}
+                    >
+                      {href ? (
+                        <a
+                          href={href}
+                          class="group inline-flex items-center gap-2 hover:text-foam transition-colors duration-200"
+                        >
+                          <span>{track}</span>
+                          <span
+                            class="text-ocean-600 group-hover:text-ocean-400 transition-colors duration-200"
+                            aria-hidden="true"
+                          >→</span>
+                        </a>
+                      ) : (
+                        <span>{track}</span>
+                      )}
+                    </li>
+                  );
+                })}
               </ol>
             </div>
           )
@@ -277,6 +299,15 @@ const bluSchema = {
                 class="group flex items-center justify-between text-ocean-300 hover:text-foam text-xs font-mono border-b border-ocean-900 pb-2 transition-colors duration-200"
               >
                 <span>Mecânica dos Fluidos</span>
+                <span class="text-ocean-600 group-hover:text-ocean-400 transition-colors duration-200">→</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/fishyboy"
+                class="group flex items-center justify-between text-ocean-300 hover:text-foam text-xs font-mono border-b border-ocean-900 pb-2 transition-colors duration-200"
+              >
+                <span>Fishy Boy</span>
                 <span class="text-ocean-600 group-hover:text-ocean-400 transition-colors duration-200">→</span>
               </a>
             </li>
@@ -371,4 +402,6 @@ const bluSchema = {
   </div>
 
   <VideosSection project="blu" />
+
+  <BluWorldFooter current="blu" />
 </BaseLayout>

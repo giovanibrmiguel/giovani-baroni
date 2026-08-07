@@ -3,9 +3,11 @@
  *
  * Add YouTube embeds here.
  *
- * project: "sukya-porno" → shows on /sukya
- *          "giovani-baroni" → shows on /giovani-baroni
- *          "blu" → shows on /blu AND automatically on /giovani-baroni
+ * project: "sukya-porno"         → shows on /sukya
+ *          "giovani-baroni"      → shows on /giovani-baroni
+ *          "blu"                 → shows on /blu AND /giovani-baroni
+ *          "mecanicadosfluidos"  → shows on /mecanicadosfluidos, /blu, AND /giovani-baroni
+ *          "fishyboy"            → shows on /fishyboy, /blu, AND /giovani-baroni
  *
  * To add a video:
  *   1. Open the YouTube video → Share → Embed
@@ -13,9 +15,16 @@
  *   3. Add a new entry below with the correct project
  */
 
+export type VideoProject =
+  | "sukya-porno"
+  | "giovani-baroni"
+  | "blu"
+  | "mecanicadosfluidos"
+  | "fishyboy";
+
 export type Video = {
   id: string;
-  project: "sukya-porno" | "giovani-baroni" | "blu";
+  project: VideoProject;
   embedCode: string;
 };
 
@@ -77,6 +86,19 @@ export const videos: Video[] = [
     id: "gb-4",
     project: "giovani-baroni",
     embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Yv_68xEEi2s?si=drG0H02XsUm5RfpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  },
+
+  // ── bLU singles ──────────────────────────────────────────────────────────
+  // Single videos also appear on /blu and /giovani-baroni (see VideosSection).
+  {
+    id: "mdf-1",
+    project: "mecanicadosfluidos",
+    embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/iK4oo1eGhy4" title="Mecânica dos Fluidos — Giovani Baroni" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  },
+  {
+    id: "fb-1",
+    project: "fishyboy",
+    embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/XV0NjFqtp3U" title="Fishy Boy — Giovani Baroni" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
 
   // ── bLU ─────────────────────────────────────────────────────────────────

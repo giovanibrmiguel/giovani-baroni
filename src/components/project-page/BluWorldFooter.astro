@@ -1,0 +1,128 @@
+---
+/**
+ * BluWorldFooter
+ * "Continue exploring" cards at the bottom of the bLU world pages, so a page
+ * ends with somewhere to go instead of stopping cold after the videos.
+ *
+ * Singles lead with their sibling single (framed as previous/next by album
+ * order), then the album, then the artist. The album page leads with its
+ * singles. Data comes from src/data/bluWorld.ts.
+ */
+import {
+  bluAlbumItem,
+  bluSingleItems,
+  giovaniBaroniItem,
+  type BluWorldId,
+} from "@/data/bluWorld";
+
+interface Props {
+  current: BluWorldId;
+}
+
+const { current } = Astro.props;
+
+type Card = {
+  href: string;
+  title: string;
+  thumb: string;
+  labelEn: string;
+  labelPt: string;
+  labelEs: string;
+};
+
+const currentItem = [bluAlbumItem, ...bluSingleItems].find((i) => i.id === current);
+
+const siblingCards: Card[] = bluSingleItems
+  .filter((single) => single.id !== current)
+  .map((single) => {
+    // On the album page every single is just a track; between singles, frame
+    // them as previous/next so the album order stays legible.
+    const isTrackContext = current === "blu" || !currentItem?.trackNumber;
+    const isNext =
+      !isTrackContext &&
+      (single.trackNumber ?? "") > (currentItem?.trackNumber ?? "");
+
+    if (isTrackContext) {
+      return {
+        ...single,
+        labelEn: single.trackNumber ? `track ${single.trackNumber}` : "single",
+        labelPt: single.trackNumber ? `faixa ${single.trackNumber}` : "single",
+        labelEs: single.trackNumber ? `pista ${single.trackNumber}` : "single",
+      };
+    }
+
+    return {
+      ...single,
+      labelEn: isNext ? "next single" : "previous single",
+      labelPt: isNext ? "próximo single" : "single anterior",
+      labelEs: isNext ? "siguiente single" : "single anterior",
+    };
+  });
+
+const albumCard: Card = {
+  ...bluAlbumItem,
+  labelEn: "the full album",
+  labelPt: "o álbum completo",
+  labelEs: "el álbum completo",
+};
+
+const artistCard: Card = {
+  ...giovaniBaroniItem,
+  labelEn: "the artist",
+  labelPt: "o artista",
+  labelEs: "el artista",
+};
+
+const cards: Card[] = [
+  ...siblingCards,
+  ...(current === "blu" ? [] : [albumCard]),
+  artistCard,
+];
+---
+
+<section
+  class="py-16 md:py-24 border-t border-ocean-900"
+  aria-labelledby="continue-exploring-heading"
+>
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="label-mono text-lg text-ocean-500 mb-8 md:mb-10" id="continue-exploring-heading">
+      <span class="lang-en">continue exploring</span>
+      <span class="lang-pt">continue explorando</span>
+      <span class="lang-es">sigue explorando</span>
+    </p>
+
+    <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 list-none" role="list">
+      {cards.map(({ href, title, thumb, labelEn, labelPt, labelEs }) => (
+        <li>
+          <a
+            href={href}
+            class="group flex items-center gap-4 h-full p-3 md:p-4 rounded-sm border border-ocean-800 hover:border-ocean-500 bg-ocean-900/40 hover:bg-ocean-800/50 transition-colors duration-200"
+          >
+            <img
+              src={thumb}
+              alt=""
+              width="64"
+              height="64"
+              loading="lazy"
+              class="w-16 h-16 shrink-0 object-cover rounded-sm bg-ocean-800"
+            />
+            <span class="flex flex-col min-w-0">
+              <span class="label-mono text-[10px] leading-none mb-1.5 text-ocean-500">
+                <span class="lang-en">{labelEn}</span>
+                <span class="lang-pt">{labelPt}</span>
+                <span class="lang-es">{labelEs}</span>
+              </span>
+              <span class="text-sm font-medium leading-tight text-ocean-200 group-hover:text-foam transition-colors duration-200">
+                {title}
+              </span>
+            </span>
+            <span
+              class="ml-auto shrink-0 label-mono text-xs text-ocean-600 group-hover:text-ocean-300 group-hover:translate-x-0.5 transition-all duration-200"
+              aria-hidden="true"
+            >→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

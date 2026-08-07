@@ -3,26 +3,33 @@
  * VideosSection
  * Renders YouTube embeds for a given project.
  *
- * project: "giovani-baroni" → shows GB videos + bLU videos (bLU auto-syncs here)
- *          "sukya-porno"    → shows sukya videos only
- *          "blu"            → shows bLU videos only
+ * project: "giovani-baroni"     → GB + bLU + single videos
+ *          "sukya-porno"        → sukya videos only
+ *          "blu"                → bLU + single videos
+ *          "mecanicadosfluidos" → Mecânica dos Fluidos videos only
+ *          "fishyboy"           → Fishy Boy videos only
  *
  * To add a video: add an entry in src/data/videos.ts
  */
-import { videos } from "@/data/videos";
+import { videos, type VideoProject } from "@/data/videos";
 
 interface Props {
-  project: "giovani-baroni" | "sukya-porno" | "blu";
+  project: VideoProject;
 }
 
 const { project } = Astro.props;
 
-// GB page shows its own videos + bLU videos (future bLU videos auto-appear here)
-const projectVideos = videos.filter((v) =>
-  project === "giovani-baroni"
-    ? v.project === "giovani-baroni" || v.project === "blu"
-    : v.project === project
-);
+const bluFamily: VideoProject[] = ["blu", "mecanicadosfluidos", "fishyboy"];
+
+const projectVideos = videos.filter((v) => {
+  if (project === "giovani-baroni") {
+    return v.project === "giovani-baroni" || bluFamily.includes(v.project);
+  }
+  if (project === "blu") {
+    return bluFamily.includes(v.project);
+  }
+  return v.project === project;
+});
 ---
 
 <section id="videos" class="py-16 md:py-24 border-t border-ocean-900" aria-labelledby="videos-heading">

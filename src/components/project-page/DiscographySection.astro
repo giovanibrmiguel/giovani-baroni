@@ -5,6 +5,7 @@
  * Each row: square cover (left) + metadata/description/link (right).
  */
 import type { Release } from "@/data/releases";
+import { resolveBluTrackHref } from "@/data/bluWorld";
 
 const platformLinks: { key: keyof import("@/data/releases").StreamingLinks; label: string; line2?: string; icon: string }[] = [
   {
@@ -169,9 +170,33 @@ const typeLabel: Record<Release["type"], string> = {
               <!-- Tracklist -->
               {release.tracklist && release.tracklist.length > 0 && (
                 <ol class="space-y-1 pt-1">
-                  {release.tracklist.map((track) => (
-                    <li class="text-ocean-400 text-sm font-mono">{track}</li>
-                  ))}
+                  {release.tracklist.map((track) => {
+                    const href =
+                      release.project === "blu" ? resolveBluTrackHref(track) : null;
+                    return (
+                      <li
+                        class:list={[
+                          "text-sm font-mono",
+                          href ? "text-ocean-300" : "text-ocean-600",
+                        ]}
+                      >
+                        {href ? (
+                          <a
+                            href={href}
+                            class="group inline-flex items-center gap-1.5 hover:text-foam transition-colors duration-200"
+                          >
+                            <span>{track}</span>
+                            <span
+                              class="text-ocean-600 group-hover:text-ocean-400 transition-colors duration-200"
+                              aria-hidden="true"
+                            >→</span>
+                          </a>
+                        ) : (
+                          <span>{track}</span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ol>
               )}
 

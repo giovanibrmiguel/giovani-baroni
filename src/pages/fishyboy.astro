@@ -9,6 +9,8 @@
  * Release/embed data comes from src/data/releases.ts
  */
 import BaseLayout from "@/components/layout/BaseLayout.astro";
+import BluWorldFooter from "@/components/project-page/BluWorldFooter.astro";
+import BluWorldNav from "@/components/project-page/BluWorldNav.astro";
 import EmbedPlayer from "@/components/music/EmbedPlayer.astro";
 import VideosSection from "@/components/project-page/VideosSection.astro";
 import JsonLd from "@/components/shared/JsonLd.astro";
@@ -137,6 +139,8 @@ const fbSchema = {
           </p>
         )
       }
+
+      <BluWorldNav current="fishyboy" />
     </div>
   </section>
 
@@ -313,5 +317,7 @@ const fbSchema = {
 
   </div>
 
-  <VideosSection project="blu" />
+  <VideosSection project="fishyboy" />
+
+  <BluWorldFooter current="fishyboy" />
 </BaseLayout>

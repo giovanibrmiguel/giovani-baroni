@@ -37,8 +37,44 @@
 
   /* Selection highlight */
   ::selection {
-    background-color: rgba(191, 4, 73, 0.35);
-    color: var(--color-foam);
+    background-color: #e01860;
+    color: #000000;
+  }
+  ::-moz-selection {
+    background-color: #e01860;
+    color: #000000;
+  }
+
+  /* Custom cursors — jellyfish by default, trident on interactive elements.
+     PNG (not SVG) because Safari and Windows ignore SVG cursors. The plain
+     url() line is the fallback for browsers that can't parse image-set().
+     Set on html too: body alone leaves the root canvas (overscroll area,
+     gaps below short pages) showing the default arrow. */
+  html,
+  body {
+    cursor: url("/images/cursors/jellyfish-32.png") 12 4, auto;
+    cursor: image-set(
+        url("/images/cursors/jellyfish-32.png") 1x,
+        url("/images/cursors/jellyfish-64.png") 2x
+      ) 12 4, auto;
+  }
+
+  a,
+  button,
+  [role="button"],
+  summary,
+  label,
+  select {
+    cursor: url("/images/cursors/trident-32.png") 10 4, pointer;
+    cursor: image-set(
+        url("/images/cursors/trident-32.png") 1x,
+        url("/images/cursors/trident-64.png") 2x
+      ) 10 4, pointer;
+  }
+
+  input,
+  textarea {
+    cursor: text;
   }
 
   /* Focus ring */

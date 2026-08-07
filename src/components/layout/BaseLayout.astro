@@ -5,6 +5,7 @@
  * Provides: <html>, <head>, SEO, fonts, global styles, grain overlay, and <slot />.
  */
 import SEO from "@/components/shared/SEO.astro";
+import CursorPreload from "@/components/shared/CursorPreload.astro";
 import GrainOverlay from "@/components/shared/GrainOverlay.astro";
 import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
@@ -39,6 +40,8 @@ const { title, description, image, type, noindex, fullWidth = false, project, la
     <!-- Preconnect for Google Fonts to reduce latency -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <CursorPreload />
 
     <SEO {title} {description} {image} {type} {noindex} {lang} />
     <slot name="head" />

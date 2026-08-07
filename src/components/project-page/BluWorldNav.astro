@@ -1,0 +1,115 @@
+---
+/**
+ * BluWorldNav
+ * Connects the bLU album world: the album page and each released single.
+ * Sits in the hero of /blu, /mecanicadosfluidos, and /fishyboy so visitors can
+ * see where they are and jump between pages without hunting through sidebars.
+ *
+ * Layout: one horizontally scrollable row on mobile, a settled row on desktop.
+ * Data (including track numbers) comes from src/data/bluWorld.ts.
+ */
+import { bluWorldItems, type BluWorldId } from "@/data/bluWorld";
+
+interface Props {
+  current: BluWorldId;
+}
+
+const { current } = Astro.props;
+
+const items = bluWorldItems.map((item) => ({
+  ...item,
+  labelEn: item.trackNumber ? `track ${item.trackNumber}` : "the album",
+  labelPt: item.trackNumber ? `faixa ${item.trackNumber}` : "o álbum",
+  labelEs: item.trackNumber ? `pista ${item.trackNumber}` : "el álbum",
+}));
+---
+
+<nav class="mt-8 md:mt-10" aria-label="bLU album world">
+  <div class="flex items-baseline justify-between gap-4 mb-3">
+    <p class="label-mono text-[10px] md:text-xs text-ocean-500">
+      <span class="lang-en">explore the bLUverse</span>
+      <span class="lang-pt">explore o bLUverso</span>
+      <span class="lang-es">explora el bLUverso</span>
+    </p>
+    <a
+      href="/giovani-baroni"
+      class="label-mono text-[10px] md:text-xs text-ocean-600 hover:text-ocean-300 transition-colors duration-200 whitespace-nowrap"
+    >
+      ← GIOVANI BARONI
+    </a>
+  </div>
+
+  <ul class="world-row flex gap-2.5 md:gap-3 list-none -mx-6 px-6 md:mx-0 md:px-0" role="list">
+    {items.map(({ id, href, title, thumb, labelEn, labelPt, labelEs }) => {
+      const isCurrent = id === current;
+      const inner = (
+        <>
+          <img
+            src={thumb}
+            alt=""
+            width="56"
+            height="56"
+            loading="lazy"
+            class="w-11 h-11 md:w-14 md:h-14 shrink-0 object-cover rounded-sm bg-ocean-800"
+          />
+          <span class="flex flex-col min-w-0">
+            <span class="label-mono text-[9px] md:text-[10px] leading-none mb-1 text-ocean-500">
+              <span class="lang-en">{labelEn}</span>
+              <span class="lang-pt">{labelPt}</span>
+              <span class="lang-es">{labelEs}</span>
+            </span>
+            <span
+              class:list={[
+                "text-xs md:text-sm font-medium leading-tight truncate",
+                isCurrent ? "text-foam" : "text-ocean-300 group-hover:text-foam transition-colors duration-200",
+              ]}
+            >
+              {title}
+            </span>
+          </span>
+        </>
+      );
+
+      return (
+        <li class="snap-start shrink-0 md:shrink">
+          {isCurrent ? (
+            <span
+              aria-current="page"
+              class="flex items-center gap-3 pl-2 pr-4 py-2 rounded-sm border border-crimson-500 bg-crimson-700/15 min-h-[60px] md:min-h-[72px]"
+            >
+              {inner}
+            </span>
+          ) : (
+            <a
+              href={href}
+              class="group flex items-center gap-3 pl-2 pr-4 py-2 rounded-sm border border-ocean-800 hover:border-ocean-500 bg-ocean-900/50 hover:bg-ocean-800/60 transition-colors duration-200 min-h-[60px] md:min-h-[72px]"
+            >
+              {inner}
+            </a>
+          )}
+        </li>
+      );
+    })}
+  </ul>
+</nav>
+
+<style>
+  /* Mobile: swipeable row. Desktop: everything fits, so no scrolling. */
+  .world-row {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .world-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .world-row {
+      overflow-x: visible;
+      flex-wrap: wrap;
+    }
+  }
+</style>

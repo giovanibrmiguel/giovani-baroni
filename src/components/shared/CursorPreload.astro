@@ -1,0 +1,13 @@
+---
+/**
+ * CursorPreload
+ * Warms the custom cursor images (see @/styles/global.css) so the first hover
+ * shows the jellyfish/trident instead of briefly falling back to the system
+ * cursor while the PNG is still being fetched. Belongs in <head>.
+ */
+---
+
+<link rel="preload" as="image" href="/images/cursors/jellyfish-32.png" />
+<link rel="preload" as="image" href="/images/cursors/jellyfish-64.png" />
+<link rel="preload" as="image" href="/images/cursors/trident-32.png" />
+<link rel="preload" as="image" href="/images/cursors/trident-64.png" />

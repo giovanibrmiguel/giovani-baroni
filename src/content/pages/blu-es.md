@@ -22,4 +22,4 @@ bLU fue grabado en tres ciudades. Baroni produjo el álbum y grabó voces, guita
 
 El álbum abre con "Ambiência Aquática Nº 5", una introducción instrumental parcialmente inspirada en las aperturas dramáticas de discos de la banda brasileña de metal Angra. Cierra con "O Rio", moldeada en parte por el Siddhartha de Hermann Hesse. Entre ellas, bLU se mueve como un cuerpo de agua: recurrente, inestable, reflexivo y difícil de separar en partes.
 
-bLU será lanzado en 2026, precedido por una serie de singles. El primero, ["Mecânica dos Fluidos"](/mecanicadosfluidos), ya está disponible.
+bLU será lanzado en 2026, precedido por una serie de singles. El primero, ["Mecânica dos Fluidos"](/mecanicadosfluidos), y el segundo, ["Fishy Boy"](/fishyboy), ya están disponibles.

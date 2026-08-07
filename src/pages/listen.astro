@@ -6,6 +6,7 @@
  * Release day flip: set released: true + fill release.links with track URLs.
  */
 import SEO from "@/components/shared/SEO.astro";
+import CursorPreload from "@/components/shared/CursorPreload.astro";
 import GrainOverlay from "@/components/shared/GrainOverlay.astro";
 import "@/styles/global.css";
 import { releases, type StreamingLinks } from "@/data/releases";
@@ -93,6 +94,7 @@ const seoDescription = release
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <CursorPreload />
     <SEO title={seoTitle} description={seoDescription} image={release?.coverImage} />
   </head>
 
@@ -299,7 +301,6 @@ const seoDescription = release
   .release-title-link {
     color: inherit;
     text-decoration: none;
-    cursor: pointer;
   }
   .release-title-link:hover {
     text-decoration: underline;
