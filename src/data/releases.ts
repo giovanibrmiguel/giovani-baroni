@@ -183,13 +183,12 @@ The title comes from a fluid mechanics class Baroni took at university, where he
       "El segundo sencillo de bLU: un himno de rock emo progresivo sobre nadar.",
     longDescription: `"Fishy Boy" is the second single from bLU, Giovani Baroni's debut solo album arriving in 2026. A progressive emo fish rock anthem about getting deep into your own head and somehow coming out weirder on the other side.`,
     links: {
-      // Fishy Boy links where available; Mecânica placeholders until the rest land.
       spotify: "https://open.spotify.com/album/0ttDNT0X8vgTi2V0wT5K9E",
-      youtube: "https://www.youtube.com/watch?v=XV0NjFqtp3U",
-      appleMusic: "https://music.apple.com/us/song/mec%C3%A2nica-dos-fluidos/6783129020",
-      deezer: "https://link.deezer.com/s/33MDXSb3XOFp0JZKi4XMW",
-      amazonMusic: "https://music.amazon.com.au/albums/B0H6F9MY2W?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_Zsg7HKCFTlYE2TEh1oz8UoqR2",
-      youtubeMusic: "https://music.youtube.com/watch?v=0vbe0cA9or8&si=LRLXR0xBs3IwokX1",
+      youtube: "https://www.youtube.com/watch?v=XV0NjFqtp3U&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&index=1",
+      appleMusic: "https://music.apple.com/us/album/fishy-boy-single/6786827968",
+      deezer: "https://link.deezer.com/s/342Z3eihl82fEyOSYDnjW",
+      amazonMusic: "https://music.amazon.com.au/albums/B0H7P8YYQD?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_DeNaXVoOM2D4YazptxZCBHT2z",
+      youtubeMusic: "https://music.youtube.com/playlist?list=OLAK5uy_n31Y-xzqMHaZpu_W4YPos-JvHT2-ID01Q&si=p5gprXieEZdv1IiA",
     },
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/PLACEHOLDER" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
