@@ -183,7 +183,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
       "El segundo sencillo de bLU: un himno de rock emo progresivo sobre nadar.",
     longDescription: `"Fishy Boy" is the second single from bLU, Giovani Baroni's debut solo album arriving in 2026. A progressive emo fish rock anthem about getting deep into your own head and somehow coming out weirder on the other side.`,
     links: {
-      spotify: "https://open.spotify.com/album/0ttDNT0X8vgTi2V0wT5K9E",
+      spotify: "https://open.spotify.com/track/7KQZ8coDwBhnEkIIpQFfj4?context=spotify:playlist:4yqsuNH97ZcyvRXboOEI5e",
       youtube: "https://www.youtube.com/watch?v=XV0NjFqtp3U&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&index=1",
       appleMusic: "https://music.apple.com/us/album/fishy-boy-single/6786827968",
       deezer: "https://link.deezer.com/s/342Z3eihl82fEyOSYDnjW",
