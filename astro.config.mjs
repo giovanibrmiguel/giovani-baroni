@@ -8,6 +8,9 @@ const SITE_URL = "https://www.giovanibaroni.com";
 
 export default defineConfig({
   site: SITE_URL,
+  redirects: {
+    "/listen": "/listen/fishyboy",
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -21,7 +24,7 @@ export default defineConfig({
           `${SITE_URL}/sukya/`,
           `${SITE_URL}/mecanicadosfluidos/`,
           `${SITE_URL}/fishyboy/`,
-          `${SITE_URL}/listen/`,
+          `${SITE_URL}/listen/fishyboy/`,
         ];
         return allowed.includes(page);
       },
