@@ -9,7 +9,7 @@ const SITE_URL = "https://www.giovanibaroni.com";
 export default defineConfig({
   site: SITE_URL,
   redirects: {
-    "/listen": "/listen/fishyboy",
+    "/listen": "/listen/fishyboy/",
   },
   integrations: [
     tailwind({

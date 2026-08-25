@@ -1,0 +1,15 @@
+---
+/**
+ * Analytics
+ * Umami Cloud pageview/event tracker — no cookies, GDPR-friendly, free tier.
+ * Website ID comes from PUBLIC_UMAMI_WEBSITE_ID (set in Cloudflare Pages env vars).
+ * Renders nothing if unset, and is skipped in local dev so `astro dev` traffic
+ * doesn't pollute the stats.
+ */
+const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const shouldTrack = !import.meta.env.DEV && Boolean(websiteId);
+---
+
+{shouldTrack && (
+  <script defer src="https://cloud.umami.is/script.js" data-website-id={websiteId}></script>
+)}
