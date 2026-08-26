@@ -113,6 +113,22 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
       "9. Paseo Largo",
       "10. O Rio",
     ],
+    // ── /listen/blu page: pre-release state ──────────────────────────────────
+    // Used to promote singles off the album (e.g. "Peixes Estranhos") before
+    // the full album is out. Once a track's real Spotify deep link exists,
+    // replace preReleaseLinks.spotify below with it and set preReleaseCta to
+    // "listen". On the actual album release day, flip released: true and
+    // fill in `links` above instead.
+    preReleaseCta: "follow",
+    preReleaseSubtitle: "volta aqui dia 04 de setembro de 2026",
+    preReleaseLinks: {
+      spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+      appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
+      youtube: "https://www.youtube.com/@sukyarecords",
+      deezer: "https://www.deezer.com/en/artist/196727277",
+      amazonMusic: "https://music.amazon.com.mx/artists/B0BRYQLL26/giovani-baroni",
+      youtubeMusic: "https://music.youtube.com/channel/UCinFYYohAKD0ENr6jxGmqMw",
+    },
   },
 
   // ── Mecânica dos Fluidos — Single ────────────────────────────────────────
@@ -155,7 +171,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     released: true,
     releaseDateLabel: "10 DE JULHO, 2026",
     preReleaseCta: "follow",
-    preReleaseSubtitle: "escuta ae na moral, tá fera",
+    preReleaseSubtitle: "eu e vocêeeeee sem contorno definido",
     preReleaseLinks: {
       spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
       appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
@@ -201,6 +217,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     ],
     // ── /listen page: set released: true on release day ─────────────────────
     released: true,
+    preReleaseSubtitle: "swim in, swim in",
   },
 
   // ── Stop & Go Station ────────────────────────────────────────────────────
