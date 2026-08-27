@@ -1,0 +1,45 @@
+---
+/**
+ * MetaPixel
+ * Meta (Facebook/Instagram) Ads Pixel — base code + a StreamClick custom
+ * conversion event, so Meta can optimize ad delivery toward people who
+ * actually click through to a streaming platform, not just anyone who loads
+ * the page. Pixel ID comes from PUBLIC_META_PIXEL_ID (set in Cloudflare
+ * Pages env vars). Renders nothing if unset, and is skipped in local dev.
+ *
+ * Listens for clicks on the same [data-umami-event="stream_click"] elements
+ * Umami already tracks, so the two systems share one set of markup and stay
+ * in sync without duplicating attributes across pages.
+ */
+const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
+const shouldTrack = !import.meta.env.DEV && Boolean(pixelId);
+---
+
+{shouldTrack && (
+  <>
+    <script define:vars={{ pixelId }}>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', pixelId);
+      fbq('track', 'PageView');
+
+      document.addEventListener('click', function (e) {
+        const el = e.target.closest('[data-umami-event="stream_click"]');
+        if (!el) return;
+        fbq('trackCustom', 'StreamClick', {
+          platform: el.getAttribute('data-umami-event-platform'),
+          song: el.getAttribute('data-umami-event-song'),
+        });
+      });
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`} />
+    </noscript>
+  </>
+)}

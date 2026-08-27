@@ -6,6 +6,7 @@
  */
 import SEO from "@/components/shared/SEO.astro";
 import Analytics from "@/components/shared/Analytics.astro";
+import MetaPixel from "@/components/shared/MetaPixel.astro";
 import CursorPreload from "@/components/shared/CursorPreload.astro";
 import GrainOverlay from "@/components/shared/GrainOverlay.astro";
 import Header from "@/components/layout/Header.astro";
@@ -46,6 +47,7 @@ const { title, description, image, type, noindex, fullWidth = false, project, la
 
     <SEO {title} {description} {image} {type} {noindex} {lang} />
     <Analytics />
+    <MetaPixel />
     <slot name="head" />
   </head>
 

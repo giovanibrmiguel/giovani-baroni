@@ -15,6 +15,15 @@ and whether those visitors clicked through to Spotify (or another platform).
 - UTM parameters (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`,
   `utm_term`) on the incoming URL are captured **automatically** by Umami —
   nothing to build for this part.
+- **Meta (Facebook/Instagram) Ads Pixel** (`src/components/shared/MetaPixel.astro`,
+  included in `BaseLayout.astro` and each standalone `/listen/*` page, same
+  pattern as Umami) fires the standard `PageView` event plus a custom
+  `StreamClick` event on the same platform-button clicks Umami tracks — no
+  duplicate markup, it just listens for `[data-umami-event="stream_click"]`.
+  This exists so Meta's ad delivery can optimize toward people who actually
+  click through to a streaming platform, not just anyone who loads the page.
+  Unlike Umami, this sets a cookie and sends data to Meta — see "GDPR/consent"
+  below before relying on it for EU traffic.
 
 ## One-time setup (you do this, not code)
 
@@ -31,6 +40,33 @@ and whether those visitors clicked through to Spotify (or another platform).
 No other infrastructure, database, or paid tool involved. If you ever want to
 stop paying attention to it, deleting the env var silently disables tracking
 without touching code.
+
+## Meta Pixel setup (do this to enable ad-conversion optimization)
+
+1. In [Meta Events Manager](https://business.facebook.com/events_manager), create
+   a Pixel (or use the existing one for your ad account) and copy its ID.
+2. Add `PUBLIC_META_PIXEL_ID` = that ID in Cloudflare Pages env vars (same
+   place as `PUBLIC_UMAMI_WEBSITE_ID`), Production environment. Redeploy.
+3. In Events Manager, create a **Custom Conversion** based on the `StreamClick`
+   custom event (Data Sources → your pixel → Custom Conversions → From Pixel →
+   event = `StreamClick`).
+4. In Ads Manager, at the ad set level, set **Performance Goal / Conversion
+   event** to that custom conversion instead of "Link Clicks" — this is what
+   actually changes ad delivery (who Meta shows the ad to), not just what gets
+   reported. Needs some conversion volume (Meta's rule of thumb is ~50/week
+   per ad set) to reliably exit the learning phase.
+
+### GDPR/consent
+
+The Meta Pixel sets a third-party cookie and sends visitor data (IP, fbclid,
+etc.) to Meta for ad-targeting purposes — unlike Umami, this generally
+requires a consent banner for EU/UK/Swiss visitors under GDPR/ePrivacy, and
+Meta's own business-tools terms require consent for EEA traffic regardless of
+mechanism (Pixel or server-side Conversions API). Ads here are geo-targeted to
+Brazil only, where LGPD doesn't mandate the same banner mechanic, so this is
+live without a banner for now — a stray non-Brazilian organic visitor to a
+`/listen/*` page is a small, currently-accepted residual gap, not a resolved
+one. Add a consent banner before running any EU/UK-targeted campaigns.
 
 ## UTM convention — use this for every link you hand out
 

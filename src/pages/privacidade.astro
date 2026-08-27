@@ -1,0 +1,53 @@
+---
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Privacidade"
+  description="Como o giovanibaroni.com usa Umami e Meta Pixel."
+  lang="pt"
+  noindex={true}
+>
+  <div class="max-w-2xl mx-auto px-6 py-16 md:py-24">
+    <div class="prose prose-ocean prose-base md:prose-lg max-w-none">
+      <h1>Privacidade</h1>
+      <p class="label-mono text-base text-ocean-600">Última atualização: 27 de agosto de 2026</p>
+
+      <h2>O que é rastreado</h2>
+      <p>Este site usa duas ferramentas:</p>
+      <ul>
+        <li><strong>Umami</strong> — mede visitas ao site inteiro. Não usa cookies e não coleta dados pessoais.</li>
+        <li>
+          <strong>Meta Pixel</strong> — presente nas páginas <code>/listen/*</code>, usado para medir a
+          efetividade dos meus anúncios no Instagram/Facebook e mostrar esses anúncios pra quem já
+          visitou essas páginas. Toda vez que você carrega uma dessas páginas, seu navegador envia
+          pra Meta a URL da página, seu IP e informações do navegador/dispositivo — e, se você
+          clicar em algum link de streaming, qual plataforma e qual música.
+        </li>
+      </ul>
+
+      <h2>Por quê</h2>
+      <p>
+        Uso esses dados pra saber se os anúncios que rodo estão realmente levando gente a ouvir
+        minha música, e pra melhorar pra quem esses anúncios aparecem. Não vendo nem compartilho
+        esses dados com mais ninguém além da Meta e da Umami.
+      </p>
+
+      <h2>Base legal</h2>
+      <p>
+        Uso o Meta Pixel com base em legítimo interesse (LGPD, art. 7º, IX) em divulgar meu
+        trabalho como artista independente.
+      </p>
+
+      <h2>Como desativar</h2>
+      <ul>
+        <li>Ajuste suas preferências de anúncios no Facebook em <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener noreferrer">facebook.com/adpreferences</a>.</li>
+        <li>Bloqueadores de rastreamento e o modo privado do navegador também impedem o Meta Pixel de funcionar.</li>
+        <li>A Meta é controladora independente dos dados que recebe — veja a <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">política de privacidade da Meta</a>.</li>
+      </ul>
+
+      <h2>Dúvidas</h2>
+      <p>Pra qualquer pergunta sobre esses dados, escreva pra <a href="mailto:press@giovanibaroni.com">press@giovanibaroni.com</a>.</p>
+    </div>
+  </div>
+</BaseLayout>
