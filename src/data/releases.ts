@@ -28,7 +28,9 @@ export type Release = {
   id: string;
   title: string;
   // "blu" → featured sub-page; "mecanicadosfluidos" → single sub-page; "fishyboy" → single sub-page; "giovani-baroni" → GB page; "sukya-porno" → sukya page
-  project: "blu" | "mecanicadosfluidos" | "fishyboy" | "sukya-porno" | "giovani-baroni";
+  // "peixesestranhos" | "efervescente" | "norte" | "paseolargo" → bLU album tracks with
+  // no dedicated project page — used only by their ads-only /listen/* landing pages.
+  project: "blu" | "mecanicadosfluidos" | "fishyboy" | "sukya-porno" | "giovani-baroni" | "peixesestranhos" | "efervescente" | "norte" | "paseolargo";
   projectDisplayName: string;
   type: "album" | "ep" | "single" | "live" | "compilation";
   year: number;
@@ -218,6 +220,129 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     // ── /listen page: set released: true on release day ─────────────────────
     released: true,
     preReleaseSubtitle: "swim in, swim in",
+  },
+
+  // ── bLU album tracks — ads-only /listen/* landing pages ─────────────────
+  // These four have no dedicated project page (unlike Fishy Boy and Mecânica
+  // dos Fluidos) — they exist only so paid ads can point at a track-specific
+  // /listen/* page. Not linked anywhere on the site itself. Once bLU is out,
+  // flip `released: true` and fill in `links` below with the real track URLs;
+  // also swap `preReleaseSubtitle` for a lyric snippet.
+  {
+    id: "peixesestranhos-single",
+    title: "Peixes Estranhos",
+    project: "peixesestranhos",
+    projectDisplayName: "GIOVANI BARONI",
+    type: "single",
+    year: 2026,
+    coverImage: "/images/blu/blu_v5_small.png",
+    shortDescription: "A track from bLU, Giovani Baroni's debut solo album.",
+    shortDescriptionPt: "Uma faixa do álbum bLU, disco de estreia solo de Giovani Baroni.",
+    shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
+    longDescription: `"Peixes Estranhos" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
+    links: {
+      spotify: "", // UPDATE: add track link when bLU is released
+      appleMusic: "",
+      youtube: "",
+    },
+    featured: false,
+    preReleaseCta: "follow",
+    preReleaseSubtitle: "quem vai dizer como tudo deve ser?",
+    preReleaseLinks: {
+      spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+      appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
+      youtube: "https://www.youtube.com/@sukyarecords",
+      deezer: "https://www.deezer.com/en/artist/196727277",
+      amazonMusic: "https://music.amazon.com.mx/artists/B0BRYQLL26/giovani-baroni",
+      youtubeMusic: "https://music.youtube.com/channel/UCinFYYohAKD0ENr6jxGmqMw",
+    },
+  },
+  {
+    id: "efervescente-single",
+    title: "Efervescente",
+    project: "efervescente",
+    projectDisplayName: "GIOVANI BARONI",
+    type: "single",
+    year: 2026,
+    coverImage: "/images/blu/blu_v5_small.png",
+    shortDescription: "A track from bLU, Giovani Baroni's debut solo album.",
+    shortDescriptionPt: "Uma faixa do álbum bLU, disco de estreia solo de Giovani Baroni.",
+    shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
+    longDescription: `"Efervescente" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
+    links: {
+      spotify: "", // UPDATE: add track link when bLU is released
+      appleMusic: "",
+      youtube: "",
+    },
+    featured: false,
+    preReleaseCta: "follow",
+    preReleaseSubtitle: "meu talismã de sangue",
+    preReleaseLinks: {
+      spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+      appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
+      youtube: "https://www.youtube.com/@sukyarecords",
+      deezer: "https://www.deezer.com/en/artist/196727277",
+      amazonMusic: "https://music.amazon.com.mx/artists/B0BRYQLL26/giovani-baroni",
+      youtubeMusic: "https://music.youtube.com/channel/UCinFYYohAKD0ENr6jxGmqMw",
+    },
+  },
+  {
+    id: "norte-single",
+    title: "Norte",
+    project: "norte",
+    projectDisplayName: "GIOVANI BARONI",
+    type: "single",
+    year: 2026,
+    coverImage: "/images/blu/blu_v5_small.png",
+    shortDescription: "A track from bLU, Giovani Baroni's debut solo album.",
+    shortDescriptionPt: "Uma faixa do álbum bLU, disco de estreia solo de Giovani Baroni.",
+    shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
+    longDescription: `"Norte" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
+    links: {
+      spotify: "", // UPDATE: add track link when bLU is released
+      appleMusic: "",
+      youtube: "",
+    },
+    featured: false,
+    preReleaseCta: "follow",
+    preReleaseSubtitle: "me devoooooolva o meu norte",
+    preReleaseLinks: {
+      spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+      appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
+      youtube: "https://www.youtube.com/@sukyarecords",
+      deezer: "https://www.deezer.com/en/artist/196727277",
+      amazonMusic: "https://music.amazon.com.mx/artists/B0BRYQLL26/giovani-baroni",
+      youtubeMusic: "https://music.youtube.com/channel/UCinFYYohAKD0ENr6jxGmqMw",
+    },
+  },
+  {
+    id: "paseolargo-single",
+    title: "Paseo Largo",
+    project: "paseolargo",
+    projectDisplayName: "GIOVANI BARONI",
+    type: "single",
+    year: 2026,
+    coverImage: "/images/blu/blu_v5_small.png",
+    shortDescription: "A track from bLU, Giovani Baroni's debut solo album.",
+    shortDescriptionPt: "Uma faixa do álbum bLU, disco de estreia solo de Giovani Baroni.",
+    shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
+    longDescription: `"Paseo Largo" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
+    links: {
+      spotify: "", // UPDATE: add track link when bLU is released
+      appleMusic: "",
+      youtube: "",
+    },
+    featured: false,
+    preReleaseCta: "follow",
+    preReleaseSubtitle: "fui por aí sentir tremores na carne",
+    preReleaseLinks: {
+      spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
+      appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
+      youtube: "https://www.youtube.com/@sukyarecords",
+      deezer: "https://www.deezer.com/en/artist/196727277",
+      amazonMusic: "https://music.amazon.com.mx/artists/B0BRYQLL26/giovani-baroni",
+      youtubeMusic: "https://music.youtube.com/channel/UCinFYYohAKD0ENr6jxGmqMw",
+    },
   },
 
   // ── Stop & Go Station ────────────────────────────────────────────────────
