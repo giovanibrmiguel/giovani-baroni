@@ -6,8 +6,8 @@ ogImage: "/images/blu/og-blu.jpeg"
 
 ## bio breve del artista
 
-[Giovani Baroni](/giovani-baroni) es un multiinstrumentista, compositor y productor brasileño radicado en Ciudad de México. Después de más de una década en la escena independiente de São Paulo, incluyendo su trabajo con el proyecto de rock alternativo sukya \|\| porno, comenzó a desarrollar un proyecto solista enfocado en canciones narrativas de largo aliento, arreglos intrincados y un rock alternativo emocionalmente sincero.
-Su álbum debut, [bLU](/blu), llega en septiembre de 2026. Cantado en portugués, inglés y español, el disco es conceptual en el sentido narrativo clásico: un álbum de 10 canciones pensado para escucharse de principio a fin. Musicalmente, [bLU](/blu) combina shoegaze brasileño, rock progresivo, psicodelia y una producción textural y onírica en un universo acuático fluido e interconectado.
+[Giovani Baroni](/giovani-baroni) es un multiinstrumentista, compositor y productor brasileño radicado en Ciudad de México. Tras más de una década en la escena independiente de São Paulo — incluyendo el proyecto de rock alternativo sukya \|\| porno — siguió en solitario, escribiendo canciones largas construidas sobre arreglos detallados en lugar de ganchos rápidos.
+Su álbum debut, [bLU](/blu), llega en septiembre de 2026: un disco conceptual de 10 tracks, cantado en portugués, inglés y español, pensado para escucharse de principio a fin. Musicalmente se mueve entre el shoegaze brasileño, el rock progresivo y la psicodelia, unidos por un mundo submarino recurrente.
 
 ## descripción breve del sencillo
 

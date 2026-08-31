@@ -17,7 +17,7 @@ export const site = {
   listenPageReleaseId: "fishyboy-single",
   email: "press@giovanibaroni.com",
   pressKitUrl:
-    "https://drive.google.com/drive/u/2/folders/1gtWdjgsw14YECJpDGW1LIJouy_w3nbgN",
+    "https://drive.google.com/drive/folders/1ALzbMNythoCO0gk_-h7OvrJ2KFAA2awA?usp=share_link",
   defaultOgImage: "/images/og-default.jpg",
   // Legacy flat social block — kept for any legacy components that reference it.
   social: {
@@ -35,10 +35,10 @@ export const projects = {
   "giovani-baroni": {
     displayName: "GIOVANI BARONI",
     slug: "giovani-baroni",
-    portrait: "/images/artist/giovani-portrait-placeholder.jpg",
+    portrait: "/images/artist/giovani-portrait.jpg",
     email: "press@giovanibaroni.com",
     pressKitUrl:
-      "https://drive.google.com/drive/u/2/folders/1gtWdjgsw14YECJpDGW1LIJouy_w3nbgN",
+      "https://drive.google.com/drive/folders/1ALzbMNythoCO0gk_-h7OvrJ2KFAA2awA?usp=share_link",
     social: {
       instagram: "https://www.instagram.com/giovanibaroni/",
       spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
@@ -48,11 +48,11 @@ export const projects = {
   },
   "sukya-porno": {
     displayName: "sukya || porno",
-    slug: "sukya",
-    portrait: "/images/artist/sukya-placeholder.jpg",
+    slug: "sukyaporno",
+    portrait: "/images/artist/sukya-portrait.jpg",
     email: "press@giovanibaroni.com",
     pressKitUrl:
-      "https://drive.google.com/drive/u/2/folders/1gtWdjgsw14YECJpDGW1LIJouy_w3nbgN",
+      "https://drive.google.com/drive/folders/1ALzbMNythoCO0gk_-h7OvrJ2KFAA2awA?usp=share_link",
     social: {
       instagram: "https://www.instagram.com/sukyap/",
       spotify: "https://open.spotify.com/artist/7ndXsfZrZViNKKJB2LWXz5",

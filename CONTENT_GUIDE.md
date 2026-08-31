@@ -9,17 +9,17 @@ This guide explains exactly how to update every piece of content on the site wit
 ## Table of Contents
 
 1. [Before You Start](#before-you-start)
-2. [Change Your Name, Links, or Email](#change-your-name-links-or-email)
-3. [Add or Update a Release](#add-or-update-a-release)
-4. [Edit Your Bio (About Page)](#edit-your-bio-about-page)
-5. [Edit the bLU Album Page](#edit-the-blu-album-page)
-6. [Edit the Press Page](#edit-the-press-page)
-7. [Edit a Project Description](#edit-a-project-description)
-8. [Add a New Project](#add-a-new-project)
+2. [The site is trilingual — read this first](#the-site-is-trilingual--read-this-first)
+3. [Change Your Name, Links, or Email](#change-your-name-links-or-email)
+4. [Add or Update a Release](#add-or-update-a-release)
+5. [Edit Your Bio (About Page)](#edit-your-bio-about-page)
+6. [Edit the bLU Album Page](#edit-the-blu-album-page)
+7. [Edit the sukya || porno Page](#edit-the-sukya--porno-page)
+8. [Adding a Brand-New Flagship Page](#adding-a-brand-new-flagship-page)
 9. [Update Images and Photos](#update-images-and-photos)
-10. [Add a YouTube Video Embed](#add-a-youtube-video-embed)
+10. [Add a YouTube Video](#add-a-youtube-video)
 11. [Add a Music Player Embed](#add-a-music-player-embed)
-12. [Change the Featured Project](#change-the-featured-project)
+12. [Add a New /listen Smart-Link Page](#add-a-new-listen-smart-link-page)
 13. [Update the Press Kit Link](#update-the-press-kit-link)
 14. [After Making Changes](#after-making-changes)
 
@@ -44,26 +44,50 @@ Markdown is plain text with some simple formatting:
 
 ---
 
+## The site is trilingual — read this first
+
+Every real page shows Portuguese, English, and Spanish at the same time and hides two of them with CSS, switching instantly when someone clicks PT/EN/ES in the header. Portuguese is the default.
+
+**What this means for you:** almost every piece of text on the site exists in **three copies**. If you edit the English bio and stop there, Portuguese and Spanish visitors won't see your change. The three copies are usually one of:
+- Three separate files: `about.md` (EN), `about-pt.md` (PT), `about-es.md` (ES) — same pattern for `blu.md`, `fishyboy.md`, `mecanicadosfluidos.md`, and the `sukya-porno.md` project file.
+- Three `<span>` blocks side by side inside the same `.astro` file, labeled `lang-en`, `lang-pt`, `lang-es`.
+
+When a section below says "edit this file," check whether there are `-pt.md`/`-es.md` siblings and update all three.
+
+---
+
 ## Change Your Name, Links, or Email
 
 **File:** `src/data/site.ts`
 
-Open the file. You'll see clearly labeled fields. Update the values inside the quotes:
+This file has two parts:
+
+1. The top-level `site` object — name, description, domain, and a `social` block used by the footer and the `/listen` pages' Instagram link.
+2. The `projects` object — one entry for `giovani-baroni`, one for `sukya-porno`. Each has its **own** email, press kit link, portrait photo, and social links. The actual project pages read from here, not from the top-level fields, so when updating your email or press kit link, update it inside `projects` too.
 
 ```typescript
 export const site = {
-  name: "Giovani Baroni",           // ← Your display name
-  tagline: "Musician · Songwriter · Producer",  // ← Your tagline
-  email: "press@giovanibaroni.com",  // ← Your contact email
-
+  name: "Giovani Baroni",
+  email: "press@giovanibaroni.com",
+  pressKitUrl: "https://drive.google.com/...",
   social: {
-    instagram: "https://instagram.com/YOURHANDLE",   // ← Your Instagram URL
-    spotify: "https://open.spotify.com/artist/XXXX", // ← Your Spotify artist URL
-    youtube: "https://youtube.com/@YOURCHANNEL",     // ← Your YouTube channel
-    bandcamp: "https://YOURNAME.bandcamp.com",        // ← Your Bandcamp URL
+    instagram: "https://instagram.com/YOURHANDLE",
+    spotify: "https://open.spotify.com/artist/XXXX",
+    youtube: "https://youtube.com/@YOURCHANNEL",
   },
+};
 
-  pressKitUrl: "https://drive.google.com/YOUR_LINK",  // ← Google Drive link
+export const projects = {
+  "giovani-baroni": {
+    email: "press@giovanibaroni.com",       // ← used on /giovani-baroni, /blu, /fishyboy, /mecanicadosfluidos
+    pressKitUrl: "https://drive.google.com/...",
+    social: { instagram: "...", spotify: "...", youtube: "...", bandcamp: "..." },
+  },
+  "sukya-porno": {
+    email: "press@giovanibaroni.com",       // ← used on /sukyaporno
+    pressKitUrl: "https://drive.google.com/...",
+    social: { instagram: "...", spotify: "...", youtube: "..." },
+  },
 };
 ```
 
@@ -78,131 +102,79 @@ export const site = {
 
 **File:** `src/data/releases.ts`
 
-Each release is a block of data that looks like this:
+Each release is a block of data. The full list of fields (including newer ones used by the `/listen` pages, like `released`, `preReleaseLinks`, `preReleaseCta`) is documented in the comments directly above `export type Release = {` at the top of the file — check there first, since that's the one place this can't go out of date.
+
+A typical release looks like this:
 
 ```typescript
 {
   id: "blu-album",                    // unique ID — no spaces, no special chars
   title: "bLU",                       // release title
-  project: "blu",                     // must be: "blu", "sukya-porno", or "stop-and-go-station"
+  project: "blu",                     // must match a project value listed in the Release type comment
   projectDisplayName: "bLU",          // how the project name is shown
-  type: "album",                      // "album", "ep", "single", or "live"
+  type: "album",                      // "album", "ep", "single", "live", or "compilation"
   year: 2025,                         // release year (no quotes)
   coverImage: "/images/blu/cover.jpg", // path to the cover image
-  shortDescription: "One sentence.",  // short description for cards
+  shortDescription: "One sentence.",  // short description for cards (also shortDescriptionPt / shortDescriptionEs)
   longDescription: `Longer text.`,    // longer description (use backticks)
-  links: {
-    spotify: "https://...",
-    bandcamp: "https://...",
-    youtube: "https://...",
-  },
-  featured: true,                     // true = shown on homepage; false = not featured
-  embedCode: `<iframe ...></iframe>`, // embed code (see section below)
-  credits: [
-    "Written by Giovani Baroni",
-    "Mixed by ...",
-  ],
-  tracklist: [
-    "1. Track Name",
-    "2. Track Name",
-  ],
+  links: { spotify: "...", bandcamp: "...", youtube: "..." },
+  featured: true,                     // true = shown on homepage sections; false = not featured
+  embedCode: `<iframe ...></iframe>`, // embed code (see "Add a Music Player Embed" below)
+  credits: ["Written by Giovani Baroni", "Mixed by ..."],
+  tracklist: ["1. Track Name", "2. Track Name"],
 },
 ```
 
-**To add a new release:** Copy the entire block from `{` to `},`, paste it after the last release, and update all the fields.
+**To add a new release:** copy an existing block, paste it after the last release, update every field.
 
-**To edit an existing release:** Find it by `id` and change the field you want.
+**To edit an existing release:** find it by `id` and change the field you want.
 
 ---
 
 ## Edit Your Bio (About Page)
 
-**File:** `src/content/pages/about.md`
+**Files:** `src/content/pages/about.md` (English), `about-pt.md` (Portuguese), `about-es.md` (Spanish)
 
-Open the file. It's plain Markdown. Everything below the `---` lines at the top is editable text.
+Open all three. Below the `---` frontmatter block at the top, it's plain Markdown — edit the paragraphs directly. Keep the same meaning across all three files; they don't need to be word-for-word translations, but they should say the same things.
 
-The file has sections marked with comments like:
-```
-<!-- SHORT BIO (used in press, EPK, social bios) -->
-```
-
-Edit the text below each comment. Keep the `##` heading lines as they are (they define the structure).
-
-**Important:** The lines between `---` at the very top are called "frontmatter". Don't delete them. You can safely ignore them.
+**Important:** the lines between the `---` at the very top are "frontmatter" (title, excerpt, etc.). Don't delete them — you can safely ignore the fields you're not using.
 
 ---
 
 ## Edit the bLU Album Page
 
-**File:** `src/content/pages/blu.md`
+**Files:** `src/content/pages/blu.md` (+ `blu-pt.md`, `blu-es.md`)
 
-Same as the About page — plain Markdown below the frontmatter.
+Same idea as the About page. The two headings in the file are:
+- `## short album description` — the summary shown near the top
+- `## long album description` — the full multi-paragraph story of the record
 
-Sections include: The Concept, The Story, Themes, The Sound, Tracklist, Credits, Artwork, Videos, Press Quotes, Release Information, Notes & Lyrics.
-
-Replace every `[UPDATE: ...]` placeholder with your real content.
-
-**Note:** The tracklist and credits shown in the sidebar on the page come from `src/data/releases.ts` (the `blu-album` release object), not from this Markdown file.
+**Note:** the tracklist and credits shown in the sidebar of the `/blu` page come from `src/data/releases.ts` (the `blu-album` release object), **not** from this Markdown file. Same goes for Fishy Boy and Mecânica dos Fluidos — their `.md` files (`fishyboy.md`, `mecanicadosfluidos.md`, each with `-pt`/`-es` versions) hold the written bio/description text; the release info sidebar comes from `releases.ts`.
 
 ---
 
-## Edit the Press Page
+## Edit the sukya || porno Page
 
-**File:** `src/content/pages/press.md`
-
-Edit the bios and press quotes here. To add a press quote:
-
-```markdown
-> "This is the quote text."
-> — Publication Name, Reviewer Name
-```
-
----
-
-## Edit a Project Description
-
-**Files:** `src/content/projects/blu.md`, `src/content/projects/sukya-porno.md`, `src/content/projects/stop-and-go-station.md`
+**Files:** `src/content/projects/sukya-porno.md` (+ `sukya-porno-pt.md`, `sukya-porno-es.md`)
 
 Each file has:
-- A **frontmatter** section at the top (between `---` lines) with structured data
-- A **body** below with the project description in Markdown
+- A **frontmatter** section at the top with structured data (`tagline`, `status`, `links`, `members`)
+- A **body** below with the band description in plain Markdown
 
-**Frontmatter fields you might want to update:**
-- `tagline` — the one-line tagline shown on project cards
-- `status` — `"upcoming"`, `"released"`, `"active"`, or `"archived"`
-- `links` — streaming links for the project
-
-**Body** — write whatever you want about the project in plain Markdown.
+This is currently the only page that uses the `content/projects/` collection — bLU, Fishy Boy, and Mecânica dos Fluidos each have their own dedicated page instead (see above).
 
 ---
 
-## Add a New Project
+## Adding a Brand-New Flagship Page
 
-1. Create a new file in `src/content/projects/` — name it `your-project-name.md`
-2. Copy the frontmatter from an existing project file and update it:
+There's no generic "add a project and get a page for free" mechanism today — each flagship page (`/blu`, `/fishyboy`, `/mecanicadosfluidos`) is its own `.astro` file. To add a new one (say, for the next single after bLU):
 
-```markdown
----
-title: "New Project Name"
-slug: "new-project-name"
-tagline: "One line description"
-coverImage: "/images/projects/new-project-cover.jpg"
-status: "active"
-order: 4
-label: "Band · Description"
-links:
-  spotify: ""
-  bandcamp: ""
-seoDescription: "Description for search engines."
-featured: true
----
+1. Copy `src/pages/fishyboy.astro` to a new file, e.g. `src/pages/newsingle.astro`, and update the text/links inside to point at the new song.
+2. Copy `src/content/pages/fishyboy.md` (+ `-pt`/`-es`) to matching files for the new song, and write the real copy.
+3. Add a release entry in `src/data/releases.ts`.
+4. If it's part of the bLU family, add it to `src/data/bluWorld.ts` so the cross-navigation strip picks it up.
 
-Project description in Markdown here.
-```
-
-3. Add a cover image to `public/images/projects/`
-4. Add the project to `src/data/releases.ts` if it has releases — add `"new-project-name"` as a valid project value in the `Release` type
-5. The project will automatically appear at `/projects/new-project-name`
+This is a good one to ask Claude to do for you — just point it at an existing single page as the template.
 
 ---
 
@@ -214,14 +186,13 @@ Images live in `public/images/`. Replace the placeholder files with real ones.
 |--------|----------------|
 | `public/images/artist/` | Your artist portraits and photos |
 | `public/images/blu/` | bLU album artwork, stills, promo images |
-| `public/images/projects/` | Cover art for all projects and releases |
+| `public/images/fishyboy/`, `public/images/mecanicadosfluidos/` | Artwork/photos for each single |
+| `public/images/projects/` | Cover art for older EPs and singles |
 | `public/images/press/` | Hi-resolution press photos |
 
 **Rules:**
-- Keep the same filename as the placeholder if you want the simplest swap (e.g. replace `giovani-portrait-placeholder.jpg` with your photo, renamed to `giovani-portrait-placeholder.jpg`)
-- Or use a new filename and update the path in the relevant data file
-
-**For cover art:** Update the `coverImage` path in `src/data/releases.ts` or the project's `.md` frontmatter.
+- Keep the same filename if you want the simplest swap (replace the file, keep the name)
+- Or use a new filename and update the path in the relevant data file (`releases.ts`, or the `.md` frontmatter)
 
 **Recommended sizes:**
 - Release covers: at least 800×800px, square
@@ -231,32 +202,25 @@ Images live in `public/images/`. Replace the placeholder files with real ones.
 
 ---
 
-## Add a YouTube Video Embed
+## Add a YouTube Video
 
-To add a YouTube video to the bLU page or any release:
+There are two separate places videos show up:
 
-1. Open the YouTube video
-2. Click **Share** → **Embed**
-3. Copy the `<iframe ...>` code
-4. In `src/data/releases.ts`, find the release and set:
+**1. The "videos" section on a project/album page** (the row of embedded YouTube videos near the bottom of `/giovani-baroni`, `/sukyaporno`, `/blu`, `/fishyboy`, `/mecanicadosfluidos`):
 
+Edit **`src/data/videos.ts`**. Add an entry:
 ```typescript
-embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" ...></iframe>`,
+{
+  id: "fb-2",
+  project: "fishyboy",   // which page(s) it shows up on — see the comment at the top of the file
+  embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" ...></iframe>`,
+},
 ```
+To get the embed code: open the YouTube video → Share → Embed → copy the `<iframe>` code.
 
-For the bLU page videos section, you can add them directly in `src/content/pages/blu.md` under the `## Videos` heading:
+**2. A one-off video embed directly on a release** (rare — used for the Spotify/Bandcamp-style player at the top of a page):
 
-```markdown
-## Videos
-
-<div class="relative w-full" style="padding-bottom: 56.25%;">
-  <iframe
-    class="absolute inset-0 w-full h-full"
-    src="https://www.youtube.com/embed/VIDEO_ID"
-    allowfullscreen
-  ></iframe>
-</div>
-```
+Set `embedCode` on the release in `src/data/releases.ts` (see "Add a Music Player Embed" below).
 
 ---
 
@@ -277,27 +241,25 @@ For the bLU page videos section, you can add them directly in `src/content/pages
 
 ---
 
-## Change the Featured Project
+## Add a New /listen Smart-Link Page
 
-**File:** `src/data/site.ts`
+The `/listen/<slug>` pages (the fast, minimal "pick your platform" pages used for ads and bio links) are all generated from one template — you don't need a new file for a new one.
 
-Change this line:
-```typescript
-featuredProject: "blu",
-```
+**File:** `src/data/listenPages.ts`
 
-To any project slug:
-- `"blu"` — bLU album
-- `"sukya-porno"` — sukya || porno
-- `"stop-and-go-station"` — Stop & Go Station
+1. Make sure the song has a release entry in `src/data/releases.ts` (with an `id`).
+2. Add an entry to the `listenPages` array — copy the closest existing example (a track with no dedicated page, like `norte`, is the simplest template) and update `slug`, `releaseId`, and `relatedReleaseIds`.
+3. That's it — `src/pages/listen/[slug].astro` picks it up automatically and the new page appears at `/listen/<slug>`.
 
-The homepage hero section will update automatically.
+Streaming platform icons/colors used on these pages live in `src/data/platformIcons.ts` — you shouldn't need to touch that unless adding a brand-new platform (e.g. Tidal).
 
 ---
 
 ## Update the Press Kit Link
 
 **File:** `src/data/site.ts`
+
+Update it in **two places** — the top-level `pressKitUrl` and inside each `projects` entry (`giovani-baroni` and `sukya-porno`), since the actual pages read the project-specific one:
 
 ```typescript
 pressKitUrl: "https://drive.google.com/drive/folders/YOUR_FOLDER_ID",
@@ -308,7 +270,7 @@ How to get a shareable Google Drive link:
 2. Right-click the folder → **Share**
 3. Change access to **Anyone with the link can view**
 4. Click **Copy link**
-5. Paste it here
+5. Paste it in
 
 ---
 

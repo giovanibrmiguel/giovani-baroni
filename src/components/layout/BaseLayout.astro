@@ -24,12 +24,12 @@ interface Props {
   project?: "giovani-baroni" | "sukya-porno" | "blu";
   /**
    * Primary language of this page's content.
-   * Defaults to "pt" for artist pages (main audience is Brazil) and "en" elsewhere.
+   * Defaults to "pt" — main audience is Brazil.
    */
   lang?: "en" | "pt" | "es";
 }
 
-const { title, description, image, type, noindex, fullWidth = false, project, lang = "en" } = Astro.props;
+const { title, description, image, type, noindex, fullWidth = false, project, lang = "pt" } = Astro.props;
 ---
 
 <!doctype html>
@@ -52,7 +52,7 @@ const { title, description, image, type, noindex, fullWidth = false, project, la
   </head>
 
   <!-- Sets data-lang before paint to prevent flash of wrong language -->
-  <script>document.documentElement.setAttribute('data-lang', localStorage.getItem('lang') || (navigator.language.startsWith('pt') ? 'pt' : navigator.language.startsWith('es') ? 'es' : 'en'));</script>
+  <script>document.documentElement.setAttribute('data-lang', localStorage.getItem('lang') || (navigator.language.startsWith('es') ? 'es' : navigator.language.startsWith('en') ? 'en' : 'pt'));</script>
   <body class="bg-ocean-950 text-ocean-200 text-lg font-body min-h-screen flex flex-col">
     <!-- Grain texture overlay (decorative, no interaction) -->
     <GrainOverlay />

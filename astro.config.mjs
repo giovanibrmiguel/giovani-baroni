@@ -21,7 +21,7 @@ export default defineConfig({
           `${SITE_URL}/`,
           `${SITE_URL}/blu/`,
           `${SITE_URL}/giovani-baroni/`,
-          `${SITE_URL}/sukya/`,
+          `${SITE_URL}/sukyaporno/`,
           `${SITE_URL}/mecanicadosfluidos/`,
           `${SITE_URL}/fishyboy/`,
           `${SITE_URL}/listen/fishyboy/`,

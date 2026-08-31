@@ -10,6 +10,7 @@ import BaseLayout from "@/components/layout/BaseLayout.astro";
 import DiscographySection from "@/components/project-page/DiscographySection.astro";
 import VideosSection from "@/components/project-page/VideosSection.astro";
 import JsonLd from "@/components/shared/JsonLd.astro";
+import Win95Button from "@/components/shared/Win95Button.astro";
 import { site } from "@/data/site";
 import type { ProjectConfig, ProjectKey } from "@/data/site";
 import type { Release } from "@/data/releases";
@@ -43,7 +44,7 @@ const sukyaSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   name: "sukya || porno",
-  url: `${site.domain}/sukya`,
+  url: `${site.domain}/sukyaporno`,
   description:
     "São Paulo alt-rock band with two EPs. Dense, angular, and urban — influenced by Pavement's sloppy grit and the arrangement complexity of King Crimson.",
   genre: ["Alternative Rock", "Indie Rock", "Experimental Rock", "Progressive Rock"],
@@ -178,28 +179,11 @@ const sukyaSchema = {
             <span class="lang-es">Fotos en alta resolución, bio e información de lanzamiento.</span>
           </p>
           <div class="flex flex-wrap items-center gap-3">
-            <a
-              href={config.pressKitUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 whitespace-nowrap"
-              style="background:#c0c0c0; color:#000; font-family:'MS Sans Serif',Arial,sans-serif; font-size:0.8rem; letter-spacing:0.05em; padding:4px 10px; border-top:2px solid #fff; border-left:2px solid #fff; border-right:2px solid #808080; border-bottom:2px solid #808080; cursor:pointer; text-decoration:none; width:fit-content;"
-              aria-label="Download press kit (opens Google Drive)"
-              onmousedown="this.style.borderTop='2px solid #808080';this.style.borderLeft='2px solid #808080';this.style.borderRight='2px solid #fff';this.style.borderBottom='2px solid #fff';"
-              onmouseup="this.style.borderTop='2px solid #fff';this.style.borderLeft='2px solid #fff';this.style.borderRight='2px solid #808080';this.style.borderBottom='2px solid #808080';"
-            >
+            <Win95Button href={config.pressKitUrl} target="_blank" ariaLabel="Download press kit (opens Google Drive)">
               download press-kit
-            </a>
+            </Win95Button>
             {projectKey === "sukya-porno" && (
-              <a
-                href="/easter-egg-3"
-                class="inline-flex items-center gap-2 whitespace-nowrap"
-                style="background:#c0c0c0; color:#000; font-family:'MS Sans Serif',Arial,sans-serif; font-size:0.8rem; letter-spacing:0.05em; padding:4px 10px; border-top:2px solid #fff; border-left:2px solid #fff; border-right:2px solid #808080; border-bottom:2px solid #808080; cursor:pointer; text-decoration:none; width:fit-content;"
-                onmousedown="this.style.borderTop='2px solid #808080';this.style.borderLeft='2px solid #808080';this.style.borderRight='2px solid #fff';this.style.borderBottom='2px solid #fff';"
-                onmouseup="this.style.borderTop='2px solid #fff';this.style.borderLeft='2px solid #fff';this.style.borderRight='2px solid #808080';this.style.borderBottom='2px solid #808080';"
-              >
-                I wanna have fun
-              </a>
+              <Win95Button href="/easter-egg-3">I wanna have fun</Win95Button>
             )}
           </div>
         </div>
@@ -237,15 +221,7 @@ const sukyaSchema = {
   <!-- ── hidden easter egg ──────────────────────────────────────── -->
   {projectKey === "giovani-baroni" && (
     <div class="flex justify-center px-6 py-4">
-      <a
-        href="/easter-egg"
-        class="inline-flex items-center gap-2 whitespace-nowrap"
-        style="background:#c0c0c0; color:#000; font-family:'MS Sans Serif',Arial,sans-serif; font-size:0.75rem; letter-spacing:0.04em; padding:3px 8px; border-top:2px solid #fff; border-left:2px solid #fff; border-right:2px solid #808080; border-bottom:2px solid #808080; cursor:pointer; text-decoration:none; width:fit-content;"
-        onmousedown="this.style.borderTop='2px solid #808080';this.style.borderLeft='2px solid #808080';this.style.borderRight='2px solid #fff';this.style.borderBottom='2px solid #fff';"
-        onmouseup="this.style.borderTop='2px solid #fff';this.style.borderLeft='2px solid #fff';this.style.borderRight='2px solid #808080';this.style.borderBottom='2px solid #808080';"
-      >
-        download evil virus
-      </a>
+      <Win95Button href="/easter-egg" size="small">download evil virus</Win95Button>
     </div>
   )}
 

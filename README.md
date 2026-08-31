@@ -10,13 +10,15 @@ Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com
 
 A static artist website with:
 
-- **Home** — Hero, featured project (bLU), artist intro, latest release
-- **Music** — All releases grouped by project with streaming links and embeds
-- **Projects** — Overview of all artistic projects
-- **bLU** — Dedicated flagship page for the debut album
-- **About** — Artist biography and artistic vision
-- **Press** — Press kit, photos, streaming links, contact for media
-- **Contact** — Email and social links
+- **Home** (`/`) — Minimal portal: choose between GIOVANI BARONI and sukya || porno
+- **GIOVANI BARONI** (`/giovani-baroni`) — Bio, press kit, discography, lyrics, videos
+- **sukya || porno** (`/sukyaporno`) — Same layout as above, for the band
+- **bLU** (`/blu`) — Dedicated flagship page for the debut album
+- **Fishy Boy** / **Mecânica dos Fluidos** (`/fishyboy`, `/mecanicadosfluidos`) — Dedicated pages for the two singles released ahead of bLU
+- **Listen** (`/listen/<slug>`) — Fast, minimal smart-link landing pages for ad/social traffic, one per song
+- **Privacy** (`/privacidade`) — Explains what Umami and Meta Pixel collect
+
+Every real page is trilingual (Portuguese, English, Spanish) — see [Trilingual content](#trilingual-content) below.
 
 **Content is managed through Markdown files and TypeScript data files** — no CMS, no database, no backend.
 
@@ -97,9 +99,11 @@ Every `git push` to `main` triggers a new deployment automatically.
 > 2. `src/data/site.ts` → `domain: "https://yourdomain.com"`
 > 3. `public/robots.txt` → update the sitemap URL
 
+**Redirects:** `public/_redirects` holds real 301 redirects for old/renamed URLs (Cloudflare Pages reads this file directly). If you ever rename or remove a page, add a redirect line here so old links and search results don't 404.
+
 ### Netlify (alternative)
 
-Same process — Netlify also auto-detects Astro. Build command: `npm run build`, publish directory: `dist`.
+Same process — Netlify also auto-detects Astro. Build command: `npm run build`, publish directory: `dist`. Note: Netlify uses a different `_redirects` syntax than Cloudflare Pages, so double-check the redirect rules still work if you switch hosts.
 
 ### Vercel (alternative)
 
@@ -115,16 +119,17 @@ For a detailed content guide written for non-developers, see [CONTENT_GUIDE.md](
 
 | What to update | Where |
 |----------------|-------|
-| Name, tagline, social links | `src/data/site.ts` |
-| Add/edit a release | `src/data/releases.ts` |
-| Artist bio, influences | `src/content/pages/about.md` |
-| bLU album content | `src/content/pages/blu.md` |
-| Press bio, quotes | `src/content/pages/press.md` |
-| Project descriptions | `src/content/projects/*.md` |
-| Artist photos | `public/images/artist/` |
-| Release cover art | `public/images/projects/` or `public/images/blu/` |
-| Press photos | `public/images/press/` |
-| Featured project | `src/data/site.ts` → `featuredProject` |
+| Site name, description, socials, press kit link | `src/data/site.ts` |
+| Add/edit a release, single, or EP | `src/data/releases.ts` |
+| Artist bio (EN/PT/ES) | `src/content/pages/about.md` (+ `about-pt.md`, `about-es.md`) |
+| bLU album page copy (EN/PT/ES) | `src/content/pages/blu.md` (+ `-pt`, `-es`) |
+| Fishy Boy / Mecânica dos Fluidos page copy | `src/content/pages/fishyboy.md`, `mecanicadosfluidos.md` (+ `-pt`, `-es`) |
+| sukya || porno bio (EN/PT/ES) | `src/content/projects/sukya-porno.md` (+ `-pt`, `-es`) |
+| YouTube video embeds | `src/data/videos.ts` |
+| Lyrics/chords links (Genius, CifraClub) | `src/data/lyrics.ts` |
+| Add a new `/listen/<slug>` smart-link page | `src/data/listenPages.ts` — no new file needed |
+| Streaming platform icons/colors | `src/data/platformIcons.ts` |
+| Artist/press photos | `public/images/` |
 
 ---
 
@@ -134,51 +139,77 @@ For a detailed content guide written for non-developers, see [CONTENT_GUIDE.md](
 giovani-baroni/
 ├── public/
 │   ├── images/
-│   │   ├── artist/          ← Artist photos (replace placeholders)
+│   │   ├── artist/          ← Artist portraits
 │   │   ├── blu/             ← bLU album artwork
-│   │   ├── projects/        ← Project cover images
-│   │   └── press/           ← Hi-res press photos
+│   │   ├── fishyboy/        ← Fishy Boy artwork/photos
+│   │   ├── mecanicadosfluidos/ ← Mecânica dos Fluidos artwork/photos
+│   │   ├── projects/        ← Cover art for older EPs/singles
+│   │   ├── press/           ← Press photos
+│   │   ├── thumbs/          ← Small cover crops used in cross-navigation
+│   │   └── cursors/         ← Custom cursor images
 │   ├── favicon.svg          ← Site icon
-│   └── robots.txt           ← Search engine crawl rules
+│   ├── robots.txt           ← Search engine crawl rules
+│   └── _redirects           ← Real 301 redirects (Cloudflare Pages)
 │
 ├── src/
 │   ├── components/
-│   │   ├── layout/          ← BaseLayout, Header, Footer
-│   │   ├── home/            ← Hero, FeaturedProject, ArtistIntro, LatestRelease
-│   │   ├── music/           ← ReleaseCard, EmbedPlayer
-│   │   ├── projects/        ← ProjectCard
-│   │   └── shared/          ← SEO, GrainOverlay
+│   │   ├── layout/          ← BaseLayout, Header, Footer, EasterEggLayout
+│   │   ├── project-page/    ← ProjectPage (shared by /giovani-baroni & /sukyaporno), DiscographySection, VideosSection, BluWorldNav, BluWorldFooter
+│   │   ├── music/           ← EmbedPlayer
+│   │   ├── listen/          ← ListenPageLayout — shared markup for every /listen/<slug> page
+│   │   └── shared/          ← SEO, Analytics, MetaPixel, JsonLd, GrainOverlay, CursorPreload, LanguageSwitcher, Win95Button
 │   │
 │   ├── content/
 │   │   ├── config.ts        ← Schemas for content files (don't edit unless adding fields)
-│   │   ├── projects/        ← One .md per project (bLU, sukya, etc.)
-│   │   └── pages/           ← Long-form page content (about, bLU, press)
+│   │   ├── projects/        ← sukya-porno.md (+ -pt/-es) — bLU/Fishy Boy/Mecânica dos Fluidos each have their own dedicated page instead (see content/pages/)
+│   │   └── pages/           ← Long-form page copy: about, blu, fishyboy, mecanicadosfluidos — each in EN/PT/ES
 │   │
 │   ├── data/
-│   │   ├── site.ts          ← MAIN CONFIG: name, links, domain, featured project
-│   │   └── releases.ts      ← ALL RELEASES: titles, years, streaming links, embeds
+│   │   ├── site.ts          ← Site-wide config + per-project config (email, socials, press kit, portrait)
+│   │   ├── releases.ts      ← ALL RELEASES: titles, years, streaming links, embeds — source of truth for the discography
+│   │   ├── lyrics.ts        ← Lyrics/chords external links
+│   │   ├── videos.ts        ← YouTube video embeds per project
+│   │   ├── bluWorld.ts      ← Cross-navigation between bLU and its singles
+│   │   ├── platformIcons.ts ← Shared streaming-platform SVG icons, brand colors, labels
+│   │   └── listenPages.ts   ← Per-page config for every /listen/<slug> page
 │   │
 │   ├── pages/               ← Astro pages (routes)
-│   │   ├── index.astro      → /
-│   │   ├── music.astro      → /music
-│   │   ├── projects/
-│   │   │   ├── index.astro  → /projects
-│   │   │   └── [slug].astro → /projects/blu, /projects/sukya-porno, etc.
-│   │   ├── blu.astro        → /blu
-│   │   ├── about.astro      → /about
-│   │   ├── press.astro      → /press
-│   │   └── contact.astro    → /contact
+│   │   ├── index.astro          → /
+│   │   ├── giovani-baroni.astro → /giovani-baroni
+│   │   ├── sukyaporno.astro     → /sukyaporno
+│   │   ├── blu.astro            → /blu
+│   │   ├── fishyboy.astro       → /fishyboy
+│   │   ├── mecanicadosfluidos.astro → /mecanicadosfluidos
+│   │   ├── listen/[slug].astro  → /listen/blu, /listen/fishyboy, /listen/mecanicadosfluidos, /listen/efervescente, /listen/norte, /listen/paseolargo, /listen/peixesestranhos (config-driven — see src/data/listenPages.ts)
+│   │   ├── privacidade.astro    → /privacidade
+│   │   ├── 404.astro
+│   │   └── easter-egg*.astro, rei-pele.astro → hidden pages, not linked from navigation
 │   │
 │   └── styles/
-│       └── global.css       ← Tailwind config, grain texture, typography
+│       └── global.css       ← Tailwind layers, grain texture, EN/PT/ES visibility rules
 │
-├── astro.config.mjs          ← Astro config (update site URL)
+├── astro.config.mjs          ← Astro config (site URL, sitemap allowlist, /listen → /listen/fishyboy/ redirect)
 ├── tailwind.config.mjs       ← Color palette, fonts, typography
 ├── tsconfig.json
 ├── package.json
 ├── README.md                 ← This file
 └── CONTENT_GUIDE.md          ← Non-developer content guide
 ```
+
+**Other docs in this repo:** [ANALYTICS.md](./ANALYTICS.md) (UTM conventions, Umami/Meta Pixel setup) and [RELEASE_DAY_BLU.md](./RELEASE_DAY_BLU.md) (step-by-step for flipping the bLU album — and its four ad-only track pages — from pre-release to out-now).
+
+---
+
+## Trilingual content
+
+Every real page (not the easter eggs) renders its text in Portuguese, English, and Spanish at the same time, and shows/hides the right one with CSS:
+
+- Text is wrapped in `<span class="lang-pt">`, `<span class="lang-en">`, `<span class="lang-es">` (or full paragraphs/divs with the same classes).
+- `src/styles/global.css` hides `.lang-en` and `.lang-es` by default — **Portuguese is the default language**, since the main audience is Brazil.
+- An inline script in `BaseLayout.astro` sets a `data-lang` attribute on `<html>` based on `localStorage`, falling back to the visitor's browser language (Spanish browsers get ES, English browsers get EN, everything else — including Portuguese — gets PT).
+- The header's PT/EN/ES buttons ([LanguageSwitcher.astro](src/components/shared/LanguageSwitcher.astro)) let a visitor override that and remember the choice.
+
+**Practical consequence:** editing a page's text almost always means editing it in three places — the base `.md`/`.astro` file plus its `-pt` and `-es` counterparts (content collection pages) or three `<span class="lang-*">` blocks side by side (component markup).
 
 ---
 
@@ -191,11 +222,11 @@ Think of Astro like a build-time pipeline:
 3. **Output:** `dist/` folder — pure static HTML, CSS, minimal JS
 4. **Deploy:** Upload `dist/` to any static host (Cloudflare Pages, Netlify, S3, etc.)
 
-**Routing** is file-based — the file path becomes the URL. No server, no routing config.
+**Routing** is file-based — the file path becomes the URL, except `listen/[slug].astro`, which is a *dynamic* route: Astro calls its `getStaticPaths()` function at build time, which reads `src/data/listenPages.ts` and pre-renders one HTML page per entry. Adding a new `/listen/<slug>` page means adding a config entry, not a new file.
 
 **Content Collections** work like typed schemas for Markdown files. Define the schema once in `config.ts`, and every `.md` file is validated at build time.
 
-**Data files** (`site.ts`, `releases.ts`) are just TypeScript objects. They're imported directly into `.astro` files at build time.
+**Data files** (`site.ts`, `releases.ts`, etc.) are just TypeScript objects. They're imported directly into `.astro` files at build time.
 
 ---
 
@@ -208,7 +239,7 @@ The `SEO.astro` component automatically generates:
 - Twitter/X card tags
 - Canonical URL
 
-The sitemap is auto-generated by `@astrojs/sitemap` on every build.
+The sitemap is auto-generated by `@astrojs/sitemap` on every build, filtered to the main pages (see `astro.config.mjs`) — the `/listen/*` ads-only track pages and easter eggs are intentionally excluded and marked `noindex`.
 
 ---
 

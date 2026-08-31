@@ -1,0 +1,35 @@
+---
+/**
+ * Win95Button
+ * The retro "download press-kit" style button, reused wherever the site
+ * wants that joke — press kit links, and a couple of easter-egg links.
+ * Used to be copy-pasted (inline style + onmousedown/onmouseup JS) in
+ * every project page; now there's one definition.
+ */
+interface Props {
+  href: string;
+  size?: "normal" | "small";
+  target?: "_blank";
+  ariaLabel?: string;
+}
+
+const { href, size = "normal", target, ariaLabel } = Astro.props;
+
+const fontSize = size === "small" ? "0.75rem" : "0.8rem";
+const padding = size === "small" ? "3px 8px" : "4px 10px";
+const letterSpacing = size === "small" ? "0.04em" : "0.05em";
+const style = `background:#c0c0c0; color:#000; font-family:'MS Sans Serif',Arial,sans-serif; font-size:${fontSize}; letter-spacing:${letterSpacing}; padding:${padding}; border-top:2px solid #fff; border-left:2px solid #fff; border-right:2px solid #808080; border-bottom:2px solid #808080; cursor:pointer; text-decoration:none; width:fit-content;`;
+---
+
+<a
+  href={href}
+  target={target}
+  rel={target === "_blank" ? "noopener noreferrer" : undefined}
+  class="inline-flex items-center gap-2 whitespace-nowrap"
+  style={style}
+  aria-label={ariaLabel}
+  onmousedown="this.style.borderTop='2px solid #808080';this.style.borderLeft='2px solid #808080';this.style.borderRight='2px solid #fff';this.style.borderBottom='2px solid #fff';"
+  onmouseup="this.style.borderTop='2px solid #fff';this.style.borderLeft='2px solid #fff';this.style.borderRight='2px solid #808080';this.style.borderBottom='2px solid #808080';"
+>
+  <slot />
+</a>

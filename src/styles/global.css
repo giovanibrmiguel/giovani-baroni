@@ -168,16 +168,16 @@
 /* ─────────────────────────────────────────
    Language Switcher Visibility
    ───────────────────────────────────────── */
-/* Default: EN visible, PT and ES hidden */
-.lang-pt { display: none; }
+/* Default: PT visible, EN and ES hidden */
+.lang-en { display: none; }
 .lang-es { display: none; }
 
-/* When PT is active */
-[data-lang="pt"] .lang-en { display: none; }
-[data-lang="pt"] .lang-pt { display: block; }
+/* When EN is active */
+[data-lang="en"] .lang-pt { display: none; }
+[data-lang="en"] .lang-en { display: block; }
 
 /* When ES is active */
-[data-lang="es"] .lang-en { display: none; }
+[data-lang="es"] .lang-pt { display: none; }
 [data-lang="es"] .lang-es { display: block; }
 
 /* ─────────────────────────────────────────

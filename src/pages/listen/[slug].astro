@@ -1,0 +1,27 @@
+---
+/**
+ * /listen/<slug> — smart-link landing pages.
+ *
+ * One dynamic route replaces what used to be 7 separate, nearly-identical
+ * files (blu, fishyboy, mecanicadosfluidos, efervescente, norte, paseolargo,
+ * peixesestranhos). The actual markup lives once in
+ * src/components/listen/ListenPageLayout.astro; this file just supplies
+ * the per-page config from src/data/listenPages.ts.
+ *
+ * To add a new /listen page for a future single: add an entry to
+ * `listenPages` in src/data/listenPages.ts. No new file needed here.
+ */
+import ListenPageLayout from "@/components/listen/ListenPageLayout.astro";
+import { listenPages } from "@/data/listenPages";
+
+export function getStaticPaths() {
+  return listenPages.map((config) => ({
+    params: { slug: config.slug },
+    props: { config },
+  }));
+}
+
+const { config } = Astro.props;
+---
+
+<ListenPageLayout config={config} />
