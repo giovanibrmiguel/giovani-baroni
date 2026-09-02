@@ -73,13 +73,13 @@ export const releases: Release[] = [
     projectDisplayName: "GIOVANI BARONI",
     type: "album",
     year: 2026,
-    coverImage: "/images/blu/blu_v5_small.png",
+    coverImage: "/images/blu/blu_photo.png",
     shortDescription:
-      "Upcoming debut solo album — September 04th, 2026.",
+      "Debut solo album.",
     shortDescriptionPt:
-      "Álbum de estreia solo em breve — 04 de Setembro, 2026.",
+      "Álbum de estreia.",
     shortDescriptionEs:
-      "Álbum debut solista en camino — 04 de Septiembre, 2026.",
+      "Álbum debut solista.",
     longDescription: `bLU is Giovani Baroni's debut solo album — a conceptual, narrative record designed to be listened to as a single continuous journey, from beginning to end.
 
 The album began taking shape after Baroni moved to Mexico City, where daily life in a new language and a new continent pushed him toward a deeper introspection. Drawing from psychedelic rock, shoegaze, Brazilian indie, prog, and emo, bLU uses the ocean as both metaphor and sonic texture — fish, water, waves, and the abyss running throughout its lyrics and production.
@@ -239,7 +239,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     projectDisplayName: "GIOVANI BARONI",
     type: "single",
     year: 2026,
-    coverImage: "/images/blu/blu_v5_small.png",
+    coverImage: "/images/blu/blu_photo.png",
     shortDescription: "A track from bLU, Giovani Baroni's debut solo album.",
     shortDescriptionPt: "Uma faixa do álbum bLU, disco de estreia solo de Giovani Baroni.",
     shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
@@ -268,7 +268,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     projectDisplayName: "GIOVANI BARONI",
     type: "single",
     year: 2026,
-    coverImage: "/images/blu/blu_v5_small.png",
+    coverImage: "/images/blu/blu_photo.png",
     shortDescription: "A track from bLU, Giovani Baroni's debut solo album.",
     shortDescriptionPt: "Uma faixa do álbum bLU, disco de estreia solo de Giovani Baroni.",
     shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
@@ -297,7 +297,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     projectDisplayName: "GIOVANI BARONI",
     type: "single",
     year: 2026,
-    coverImage: "/images/blu/blu_v5_small.png",
+    coverImage: "/images/blu/blu_photo.png",
     shortDescription: "A track from bLU, Giovani Baroni's debut solo album.",
     shortDescriptionPt: "Uma faixa do álbum bLU, disco de estreia solo de Giovani Baroni.",
     shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
@@ -326,7 +326,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     projectDisplayName: "GIOVANI BARONI",
     type: "single",
     year: 2026,
-    coverImage: "/images/blu/blu_v5_small.png",
+    coverImage: "/images/blu/blu_photo.png",
     shortDescription: "A track from bLU, Giovani Baroni's debut solo album.",
     shortDescriptionPt: "Uma faixa do álbum bLU, disco de estreia solo de Giovani Baroni.",
     shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
