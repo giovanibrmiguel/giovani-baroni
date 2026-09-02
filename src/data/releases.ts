@@ -86,7 +86,7 @@ The album began taking shape after Baroni moved to Mexico City, where daily life
 
 Each track flows into the next. Themes of internal transformation, generational trauma, love, ego, eastern philosophy, and the persistence of the inner child connect the ten pieces into one immersive whole.
 
-Produced independently — vocals, guitars, and keys recorded in Mexico City; bass, mixing, and mastering by Pedro Serapicos in Berlin; drums by Bianca Predieri in São Paulo. The album also features guest vocals from Jorge Sultzer (Mexico City) and co-writing from Ricardo Baroni and Mardem Humberto.`,
+Produced independently — vocals, guitars, and keys recorded in Mexico City; bass, mixing, and mastering by Pedro Serapicos in Berlin; drums by Bianca Predieri in São Paulo. The album also features guest vocals from Jorge Sulser (Mexico City) and co-writing from Ricardo Baroni and Mardem Humberto.`,
     links: {
       spotify: "", // UPDATE: add Spotify album link when released
       bandcamp: "",
@@ -96,12 +96,16 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
     featured: true,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/PLACEHOLDER" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     credits: [
-      "Vocals, guitars, keys, writing, and production — Giovani Baroni (Mexico City)",
-      "Bass, mixing, and mastering — Pedro Serapicos (Berlin)",
-      "Drums — Bianca Predieri (São Paulo)",
-      'Guest vocals on "Efervescente" — Jorge Sultzer (Mexico City)',
-      "Video production — Léo Lopes (Recife) and Luca Tornato (The Hague)",
-      '"Fishy Boy" co-written with Ricardo Baroni (São Paulo) and Mardem Humberto (Goiânia)',
+      "Giovani Baroni (Mexico City) – Vocals, guitars, keys, writing, and production",
+      "Pedro Serapicos (Berlin) – Bass, mixing, and mastering",
+      "Bianca Predieri (São Paulo) – Drums",
+      'Jorge Sulser (Mexico City) – Guest vocals on "Efervescente"',
+      'Luca Tornato (Rotterdam) – Video production for "Peixes Estranhos"',
+      'Léo Lopes (Recife) – Video production for "Mecânica dos Fluidos"',
+      'Lira Kim (Taubaté) – Video production for visual album',
+      'Ricardo Baroni (São Paulo) – Co-writer for "Fishy Boy"',
+      'Mardem Humberto (Goiânia) – Co-writer for "Fishy Boy"',
+      'Juliana Morette (Mexico City) – Love and support',
     ],
     tracklist: [
       "1. Ambiência Aquática Nº 5",
@@ -163,10 +167,10 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     featured: false,
     embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/PLACEHOLDER" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     credits: [
-      "Vocals, guitars, keys, writing, and production — Giovani Baroni (Mexico City)",
-      "Bass, mixing, and mastering — Pedro Serapicos (Berlin)",
-      "Drums — Bianca Predieri (São Paulo)",
-      "Inspiration — Juliana Morette (Rio de Janeiro)",
+      "Giovani Baroni (Mexico City) – Vocals, guitars, keys, writing, and production",
+      "Pedro Serapicos (Berlin) – Bass, mixing, and mastering",
+      "Bianca Predieri (São Paulo) – Drums",
+      "Juliana Morette (Rio de Janeiro) – Inspiration",
     ],
     // ── /listen page: pre-release state ─────────────────────────────────────
     // Flip to released: true on release day and fill in track URLs above.
