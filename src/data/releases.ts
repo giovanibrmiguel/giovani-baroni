@@ -91,7 +91,7 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
       spotify: "https://open.spotify.com/track/3Ik7QErlIggKbd9UpS5EUh?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
       bandcamp: "",
       youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=0s",
-      appleMusic: "", // UPDATE: add Apple Music link when sent
+      appleMusic: "https://music.apple.com/us/album/blu/6797999491",
       deezer: "https://link.deezer.com/s/34iKcroYEkowJEYoF0gBi",
       youtubeMusic: "https://music.youtube.com/playlist?list=OLAK5uy_nozsPHKFKIdxCD73zkAdzUIAZ2rFiJoBo&si=b2pOgbCfL7xqrU2P",
       amazonMusic: "https://music.amazon.com.au/albums/B0HCWS9SPC?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_BcypDE1cdqlEqGTs8FSkOtYUz",
@@ -249,7 +249,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     longDescription: `"Peixes Estranhos" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
     links: {
       spotify: "https://open.spotify.com/track/7DEz5rQLxTXFk7wm0kzKrF?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
-      appleMusic: "", // UPDATE: add Apple Music link when sent
+      appleMusic: "https://music.apple.com/us/song/peixes-estranhos/6797999493",
       youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=198s",
       deezer: "https://link.deezer.com/s/34iJxMwfi6DgKuW350f1R",
       youtubeMusic: "https://music.youtube.com/watch?v=weVlpnBOZLg&si=7MQYTqXeOEVRj8Iz",
@@ -282,7 +282,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     longDescription: `"Efervescente" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
     links: {
       spotify: "https://open.spotify.com/track/5l9NXkjNG62J2mbFGVC6fv?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
-      appleMusic: "", // UPDATE: add Apple Music link when sent
+      appleMusic: "https://music.apple.com/us/song/efervescente-feat-jorge-sulser/6797999497",
       youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1038s",
       deezer: "https://link.deezer.com/s/34iJEOZ79Mvff1EP03uNr",
       youtubeMusic: "https://music.youtube.com/watch?v=5Pw3xHUKWJY&si=eh5pi11Ng6zYIeyJ",
@@ -315,7 +315,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     longDescription: `"Norte" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
     links: {
       spotify: "https://open.spotify.com/track/0xNJcJAsqOAKX0JonLlyyL?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
-      appleMusic: "", // UPDATE: add Apple Music link when sent
+      appleMusic: "https://music.apple.com/us/song/norte/6797999494",
       youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=420s",
       deezer: "https://link.deezer.com/s/34iJDRTe6PMICn8nmyYTy",
       youtubeMusic: "https://music.youtube.com/watch?v=dPDQJTyDgwc&si=F6B3ch5S9hQuHnQa",
@@ -348,7 +348,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     longDescription: `"Paseo Largo" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
     links: {
       spotify: "https://open.spotify.com/track/2mH8yr9kMHnMErGxSv9CTm?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
-      appleMusic: "", // UPDATE: add Apple Music link when sent
+      appleMusic: "https://music.apple.com/us/song/paseo-largo/6797999500",
       youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1872s",
       deezer: "https://link.deezer.com/s/34iJFZxPcppZ2Y75Zur3d",
       youtubeMusic: "https://music.youtube.com/watch?v=uf4L52bxqc0&si=NSDE47i-MY2FfMR1",
