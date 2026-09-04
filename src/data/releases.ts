@@ -130,7 +130,7 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
     // fill in `links` above instead.
     released: true,
     preReleaseCta: "follow",
-    preReleaseSubtitle: "escute",
+    preReleaseSubtitle: "mergulhe",
     preReleaseLinks: {
       spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
       appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
