@@ -180,7 +180,7 @@ const typeLabel: Record<Release["type"], string> = {
               <!-- Links -->
               <div class="flex flex-col gap-2 pt-1">
                 {release.project === "blu" && (
-                  <div>
+                  <div class="flex flex-wrap gap-2">
                     <a
                       href="/blu"
                       class="inline-block label-mono text-sm bg-crimson-700 hover:bg-crimson-500 text-foam border border-crimson-500 hover:border-crimson-400 px-4 py-2 rounded-sm transition-all duration-200"
@@ -188,6 +188,17 @@ const typeLabel: Record<Release["type"], string> = {
                       <span class="lang-en">more stuff about bLU →</span>
                       <span class="lang-pt">mais sobre bLU →</span>
                       <span class="lang-es">más sobre bLU →</span>
+                    </a>
+                    <a
+                      href="https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1.5 label-mono text-sm bg-ocean-800 hover:bg-ocean-700 text-foam border border-ocean-600 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
+                    >
+                      <span set:html={platformIconSvg("youtube", 14)} />
+                      <span class="lang-en">bLU visual album →</span>
+                      <span class="lang-pt">álbum visual de bLU →</span>
+                      <span class="lang-es">álbum visual de bLU →</span>
                     </a>
                   </div>
                 )}

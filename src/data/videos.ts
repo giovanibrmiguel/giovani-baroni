@@ -66,6 +66,14 @@ export const videos: Video[] = [
     embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/SNpif1bF4bU?si=gjqMKR2YhnFryR8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
 
+  // ── bLU — álbum visual ───────────────────────────────────────────────────
+  // Kept first in the array so it's the first video on /blu and /giovani-baroni.
+  {
+    id: "blu-visual-album",
+    project: "blu",
+    embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/rf7LfiN4aCs?list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27" title="bLU (álbum visual) — Giovani Baroni" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+  },
+
   // ── GIOVANI BARONI ───────────────────────────────────────────────────────
   {
     id: "gb-1",
@@ -100,7 +108,4 @@ export const videos: Video[] = [
     project: "fishyboy",
     embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/XV0NjFqtp3U" title="Fishy Boy — Giovani Baroni" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
-
-  // ── bLU ─────────────────────────────────────────────────────────────────
-  // Videos added here automatically appear on /giovani-baroni as well.
 ];

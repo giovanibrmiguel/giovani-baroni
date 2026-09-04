@@ -88,13 +88,16 @@ Each track flows into the next. Themes of internal transformation, generational 
 
 Produced independently — vocals, guitars, and keys recorded in Mexico City; bass, mixing, and mastering by Pedro Serapicos in Berlin; drums by Bianca Predieri in São Paulo. The album also features guest vocals from Jorge Sulser (Mexico City) and co-writing from Ricardo Baroni and Mardem Humberto.`,
     links: {
-      spotify: "", // UPDATE: add Spotify album link when released
+      spotify: "https://open.spotify.com/track/3Ik7QErlIggKbd9UpS5EUh?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
       bandcamp: "",
-      youtube: "",
-      appleMusic: "",
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=0s",
+      appleMusic: "", // UPDATE: add Apple Music link when sent
+      deezer: "https://link.deezer.com/s/34iKcroYEkowJEYoF0gBi",
+      youtubeMusic: "https://music.youtube.com/playlist?list=OLAK5uy_nozsPHKFKIdxCD73zkAdzUIAZ2rFiJoBo&si=b2pOgbCfL7xqrU2P",
+      amazonMusic: "https://music.amazon.com.au/albums/B0HCWS9SPC?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_BcypDE1cdqlEqGTs8FSkOtYUz",
     },
     featured: true,
-    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/PLACEHOLDER" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
+    embedCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1qLsIBECLUJW6XxyxWHro2" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     credits: [
       "Giovani Baroni (Mexico City) – Vocals, guitars, keys, writing, and production",
       "Pedro Serapicos (Berlin) – Bass, mixing, and mastering",
@@ -125,8 +128,9 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
     // replace preReleaseLinks.spotify below with it and set preReleaseCta to
     // "listen". On the actual album release day, flip released: true and
     // fill in `links` above instead.
+    released: true,
     preReleaseCta: "follow",
-    preReleaseSubtitle: "volta aqui dia 04 de setembro de 2026",
+    preReleaseSubtitle: "escute",
     preReleaseLinks: {
       spotify: "https://open.spotify.com/artist/6qme9zfWubX4UWQQV8pVPY",
       appleMusic: "https://music.apple.com/us/artist/giovani-baroni/1663980223",
@@ -156,10 +160,9 @@ Produced independently — vocals, guitars, and keys recorded in Mexico City; ba
 
 The title comes from a fluid mechanics class Baroni took at university, where he became interested in the way invisible forces — currents, pressure, and movement — appear not only in physics, but in ordinary life. In the song, that image becomes a way to write about love as something innocent and transformative.`,
     links: {
-      spotify: "https://open.spotify.com/track/68NGSRQ4DpsqjZ3OuZR6XX?context=spotify:playlist:4yqsuNH97ZcyvRXboOEI5e",
+      spotify: "https://open.spotify.com/track/5OJJnUvGsQjVBZQsw8NePH?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
       appleMusic: "https://music.apple.com/us/song/mec%C3%A2nica-dos-fluidos/6783129020",
-      // youtube: "https://youtu.be/iK4oo1eGhy4", // link to individual video
-      youtube: "https://www.youtube.com/watch?v=iK4oo1eGhy4&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27", // link to playlist
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=911s",
       deezer: "https://link.deezer.com/s/33MDXSb3XOFp0JZKi4XMW",
       amazonMusic: "https://music.amazon.com.au/albums/B0H6F9MY2W?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_Zsg7HKCFTlYE2TEh1oz8UoqR2",
       youtubeMusic: "https://music.youtube.com/watch?v=0vbe0cA9or8&si=LRLXR0xBs3IwokX1",
@@ -205,8 +208,8 @@ The title comes from a fluid mechanics class Baroni took at university, where he
       "El segundo sencillo de bLU: un himno de rock emo progresivo sobre nadar.",
     longDescription: `"Fishy Boy" is the second single from bLU, Giovani Baroni's debut solo album arriving in 2026. A progressive emo fish rock anthem about getting deep into your own head and somehow coming out weirder on the other side.`,
     links: {
-      spotify: "https://open.spotify.com/track/7KQZ8coDwBhnEkIIpQFfj4?context=spotify:playlist:4yqsuNH97ZcyvRXboOEI5e",
-      youtube: "https://www.youtube.com/watch?v=XV0NjFqtp3U&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&index=1",
+      spotify: "https://open.spotify.com/track/25SEJgj3G9IhptfCNIMHA4?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1571s",
       appleMusic: "https://music.apple.com/us/album/fishy-boy-single/6786827968",
       deezer: "https://link.deezer.com/s/342Z3eihl82fEyOSYDnjW",
       amazonMusic: "https://music.amazon.com.au/albums/B0H7P8YYQD?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_DeNaXVoOM2D4YazptxZCBHT2z",
@@ -245,11 +248,15 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
     longDescription: `"Peixes Estranhos" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
     links: {
-      spotify: "", // UPDATE: add track link when bLU is released
-      appleMusic: "",
-      youtube: "",
+      spotify: "https://open.spotify.com/track/7DEz5rQLxTXFk7wm0kzKrF?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
+      appleMusic: "", // UPDATE: add Apple Music link when sent
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=198s",
+      deezer: "https://link.deezer.com/s/34iJxMwfi6DgKuW350f1R",
+      youtubeMusic: "https://music.youtube.com/watch?v=weVlpnBOZLg&si=7MQYTqXeOEVRj8Iz",
+      amazonMusic: "https://music.amazon.com.au/tracks/B0HCWWGM2Z?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_EWBf8ewEPzy35dJ7HAtOzckO9",
     },
     featured: false,
+    released: true,
     preReleaseCta: "follow",
     preReleaseSubtitle: "quem vai dizer como tudo deve ser?",
     preReleaseLinks: {
@@ -274,11 +281,15 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
     longDescription: `"Efervescente" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
     links: {
-      spotify: "", // UPDATE: add track link when bLU is released
-      appleMusic: "",
-      youtube: "",
+      spotify: "https://open.spotify.com/track/5l9NXkjNG62J2mbFGVC6fv?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
+      appleMusic: "", // UPDATE: add Apple Music link when sent
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1038s",
+      deezer: "https://link.deezer.com/s/34iJEOZ79Mvff1EP03uNr",
+      youtubeMusic: "https://music.youtube.com/watch?v=5Pw3xHUKWJY&si=eh5pi11Ng6zYIeyJ",
+      amazonMusic: "https://music.amazon.com.au/tracks/B0HCXCXJGY?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_2u20ppc32tMdaaanMBzDLRD7R",
     },
     featured: false,
+    released: true,
     preReleaseCta: "follow",
     preReleaseSubtitle: "meu talismã de sangue",
     preReleaseLinks: {
@@ -303,11 +314,15 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
     longDescription: `"Norte" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
     links: {
-      spotify: "", // UPDATE: add track link when bLU is released
-      appleMusic: "",
-      youtube: "",
+      spotify: "https://open.spotify.com/track/0xNJcJAsqOAKX0JonLlyyL?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
+      appleMusic: "", // UPDATE: add Apple Music link when sent
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=420s",
+      deezer: "https://link.deezer.com/s/34iJDRTe6PMICn8nmyYTy",
+      youtubeMusic: "https://music.youtube.com/watch?v=dPDQJTyDgwc&si=F6B3ch5S9hQuHnQa",
+      amazonMusic: "https://music.amazon.com.au/tracks/B0HCXCFX5R?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_ZJ2zoc93kciiVgA1Pw9lkrPjX",
     },
     featured: false,
+    released: true,
     preReleaseCta: "follow",
     preReleaseSubtitle: "me devoooooolva o meu norte",
     preReleaseLinks: {
@@ -332,11 +347,15 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     shortDescriptionEs: "Un track del álbum bLU, disco debut solista de Giovani Baroni.",
     longDescription: `"Paseo Largo" is a track from bLU, Giovani Baroni's debut solo album, arriving September 2026.`,
     links: {
-      spotify: "", // UPDATE: add track link when bLU is released
-      appleMusic: "",
-      youtube: "",
+      spotify: "https://open.spotify.com/track/2mH8yr9kMHnMErGxSv9CTm?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
+      appleMusic: "", // UPDATE: add Apple Music link when sent
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1872s",
+      deezer: "https://link.deezer.com/s/34iJFZxPcppZ2Y75Zur3d",
+      youtubeMusic: "https://music.youtube.com/watch?v=uf4L52bxqc0&si=NSDE47i-MY2FfMR1",
+      amazonMusic: "https://music.amazon.com.au/tracks/B0HCX95VS3?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_XFYolTpQguo55BdtvkBSxgbJf",
     },
     featured: false,
+    released: true,
     preReleaseCta: "follow",
     preReleaseSubtitle: "fui por aí sentir tremores na carne",
     preReleaseLinks: {

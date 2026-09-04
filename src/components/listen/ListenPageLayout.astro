@@ -127,7 +127,8 @@ const moreAboutText =
               const url = activeLinks?.[key];
               if (!config.showAllPlatforms && !url) return null;
               const preCta = isFollowPhase ? (key === "youtube" ? "Subscribe" : "Follow") : "Play";
-              const cta = isReleased ? "Play" : preCta;
+              const releasedCta = config.slug === "blu" && key === "youtube" ? "assistir álbum visual" : "Play";
+              const cta = isReleased ? releasedCta : preCta;
               const disabled = config.showAllPlatforms && !url;
               return (
                 <a

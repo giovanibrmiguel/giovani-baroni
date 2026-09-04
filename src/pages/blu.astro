@@ -148,8 +148,8 @@ const bluSchema = {
   <!-- ── Main content area ────────────────────────────────────────── -->
   <div class="max-w-6xl mx-auto px-6 pb-24">
 
-    <!-- Listen — hidden until embedCode is set in releases.ts -->
-    {
+    <!-- Listen — Spotify embed section, disabled per request. Uncomment to bring back. -->
+    <!-- {
       hasListenEmbed && bluRelease && (
         <section class="py-12 md:py-16 border-b border-ocean-900" aria-label="Listen">
           <div class="max-w-2xl">
@@ -161,7 +161,7 @@ const bluSchema = {
           </div>
         </section>
       )
-    }
+    } -->
 
     <!-- Stream CTA — full width, prominent -->
     <section class="py-10 border-b border-ocean-900" aria-label="Stream">
@@ -176,35 +176,6 @@ const bluSchema = {
         listen now!!!
       </a>
     </section>
-
-    <!-- Streaming links -->
-    {
-      bluRelease?.links && Object.values(bluRelease.links).some((v) => v) && (
-        <section class="py-10 border-b border-ocean-900" aria-label="Streaming links">
-          <p class="label-mono text-lg text-ocean-500 mb-5">stream & download</p>
-          <div class="flex flex-wrap gap-3">
-            {Object.entries(bluRelease.links).map(([platform, url]) =>
-              url ? (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
-                >
-                  {platform === "appleMusic" ? "Apple Music" : platform.charAt(0).toUpperCase() + platform.slice(1)} →
-                </a>
-              ) : null
-            )}
-            <a
-              href="/rei-pele"
-              class="label-mono text-lg text-ocean-300 hover:text-foam border border-ocean-700 hover:border-ocean-400 px-4 py-2 rounded-sm transition-all duration-200"
-            >
-              ⚽ Pelé Music →
-            </a>
-          </div>
-        </section>
-      )
-    }
 
     <!-- Long-form content from src/content/pages/blu.md -->
     <div class="grid md:grid-cols-3 gap-12 md:gap-20 pt-8 md:pt-10 pb-16 md:pb-24">
