@@ -41,6 +41,23 @@ export type ListenPageConfig = {
   relatedReleaseIds: string[];
   /** Subset of relatedReleaseIds to render as a disabled "Em Breve" card instead of a link */
   disabledReleaseIds?: string[];
+  /**
+   * A music video link tied to the YouTube platform row.
+   * `replaceYoutube: true` swaps the normal YouTube row for this one instead
+   * of adding an extra row below it.
+   */
+  videoClip?: { url: string; label: string; replaceYoutube?: boolean };
+};
+
+const PEIXES_ESTRANHOS_CLIP_EXTRA = {
+  url: "https://www.youtube.com/watch?v=FYS3hkKnJIo",
+  label: "assistir clipe de peixes estranhos",
+};
+
+const PEIXES_ESTRANHOS_CLIP_ONLY = {
+  url: "https://www.youtube.com/watch?v=FYS3hkKnJIo",
+  label: "assistir clipe",
+  replaceYoutube: true,
 };
 
 const UTM_MORE_ABOUT = "listen_more_about";
@@ -54,6 +71,7 @@ export const listenPages: ListenPageConfig[] = [
     badgeOutText: "",
     moreAbout: { kind: "single", withUtm: false },
     relatedReleaseIds: ["fishyboy-single", "mecanicadosfluidos-single"],
+    videoClip: PEIXES_ESTRANHOS_CLIP_EXTRA,
   },
   {
     slug: "fishyboy",
@@ -112,6 +130,7 @@ export const listenPages: ListenPageConfig[] = [
     badgeOutText: "",
     moreAbout: { kind: "single", withUtm: true, textOverride: "leia mais sobre o álbum bLU" },
     relatedReleaseIds: ["fishyboy-single", "mecanicadosfluidos-single", "blu-album"],
+    videoClip: PEIXES_ESTRANHOS_CLIP_ONLY,
   },
 ];
 

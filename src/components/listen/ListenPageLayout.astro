@@ -130,25 +130,64 @@ const moreAboutText =
               const releasedCta = config.slug === "blu" && key === "youtube" ? "assistir álbum visual" : "Play";
               const cta = isReleased ? releasedCta : preCta;
               const disabled = config.showAllPlatforms && !url;
+              const replaceWithClip = key === "youtube" && config.videoClip?.replaceYoutube;
+              const extraClip = key === "youtube" && config.videoClip && !config.videoClip.replaceYoutube;
               return (
-                <a
-                  href={url ?? "#"}
-                  target={url ? "_blank" : undefined}
-                  rel={url ? "noopener noreferrer" : undefined}
-                  class={`platform-btn${key === "spotify" || key === "youtube" ? "" : " platform-btn-compact"}${disabled ? " platform-btn-disabled" : ""}`}
-                  aria-label={`${cta} on ${PLATFORM_FULL_LABEL[key]}`}
-                  aria-disabled={disabled ? "true" : undefined}
-                  onclick={disabled ? "return false;" : undefined}
-                  data-umami-event={url ? "stream_click" : undefined}
-                  data-umami-event-platform={url ? key : undefined}
-                  data-umami-event-song={url ? release?.id : undefined}
-                >
-                  <span class="platform-left">
-                    <span class="platform-icon" style={`color: ${PLATFORM_BRAND_COLOR[key]};`} set:html={platformIconSvg(key, 20)} />
-                    <span class={`platform-name${key === "spotify" || key === "youtube" ? " platform-name-bold" : ""}`}>{PLATFORM_FULL_LABEL[key]}</span>
-                  </span>
-                  <span class="platform-cta">{cta}</span>
-                </a>
+                <>
+                  {replaceWithClip ? (
+                    <a
+                      href={config.videoClip!.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="platform-btn"
+                      aria-label={config.videoClip!.label}
+                      data-umami-event="video_clip_click"
+                      data-umami-event-song={release?.id}
+                    >
+                      <span class="platform-left">
+                        <span class="platform-icon" style={`color: ${PLATFORM_BRAND_COLOR.youtube};`} set:html={platformIconSvg("youtube", 20)} />
+                        <span class="platform-name platform-name-bold">{PLATFORM_FULL_LABEL.youtube}</span>
+                      </span>
+                      <span class="platform-cta">{config.videoClip!.label}</span>
+                    </a>
+                  ) : (
+                    <a
+                      href={url ?? "#"}
+                      target={url ? "_blank" : undefined}
+                      rel={url ? "noopener noreferrer" : undefined}
+                      class={`platform-btn${key === "spotify" || key === "youtube" ? "" : " platform-btn-compact"}${disabled ? " platform-btn-disabled" : ""}`}
+                      aria-label={`${cta} on ${PLATFORM_FULL_LABEL[key]}`}
+                      aria-disabled={disabled ? "true" : undefined}
+                      onclick={disabled ? "return false;" : undefined}
+                      data-umami-event={url ? "stream_click" : undefined}
+                      data-umami-event-platform={url ? key : undefined}
+                      data-umami-event-song={url ? release?.id : undefined}
+                    >
+                      <span class="platform-left">
+                        <span class="platform-icon" style={`color: ${PLATFORM_BRAND_COLOR[key]};`} set:html={platformIconSvg(key, 20)} />
+                        <span class={`platform-name${key === "spotify" || key === "youtube" ? " platform-name-bold" : ""}`}>{PLATFORM_FULL_LABEL[key]}</span>
+                      </span>
+                      <span class="platform-cta">{cta}</span>
+                    </a>
+                  )}
+                  {extraClip && (
+                    <a
+                      href={config.videoClip!.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="platform-btn"
+                      aria-label={config.videoClip!.label}
+                      data-umami-event="video_clip_click"
+                      data-umami-event-song={release?.id}
+                    >
+                      <span class="platform-left">
+                        <span class="platform-icon" style={`color: ${PLATFORM_BRAND_COLOR.youtube};`} set:html={platformIconSvg("youtube", 20)} />
+                        <span class="platform-name platform-name-bold">{PLATFORM_FULL_LABEL.youtube}</span>
+                      </span>
+                      <span class="platform-cta platform-cta-small">{config.videoClip!.label}</span>
+                    </a>
+                  )}
+                </>
               );
             })}
           </div>
@@ -435,6 +474,11 @@ const moreAboutText =
     transition: color 0.12s;
   }
   .platform-btn:hover .platform-cta { color: #e85fa8; }
+
+  .platform-cta-small {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
 
   /* ── More about ───────────────────────────────────────────────────── */
   .more-about {
