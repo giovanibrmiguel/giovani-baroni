@@ -59,16 +59,64 @@ export const lyrics: LyricEntry[] = [
 
   // ── bLU (2026) ───────────────────────────────────────────────────────────
   {
+    title: "Ambiência Aquática Nº 5",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-ambiencia-aquatica-no5-lyrics",
+  },
+  {
+    title: "Peixes Estranhos",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-peixes-estranhos-lyrics",
+  },
+  {
+    title: "Norte",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-norte-lyrics",
+  },
+  {
+    title: "O Mundo dos Sonhos",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-o-mundo-dos-sonhos-lyrics",
+  },
+  {
     title: "Mecânica dos Fluidos",
     project: "giovani-baroni",
     release: "bLU",
     genius: "https://genius.com/Giovani-baroni-mecanica-dos-fluidos-lyrics",
   },
   {
+    title: "Efervescente",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-efervescente-lyrics",
+  },
+  {
+    title: "O Bicho que Sabia Demais",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-o-bicho-que-sabia-demais-lyrics",
+  },
+  {
     title: "Fishy Boy",
     project: "giovani-baroni",
     release: "bLU",
     genius: "https://genius.com/Giovani-baroni-fishy-boy-lyrics",
+  },
+  {
+    title: "Paseo Largo",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-paseo-largo-lyrics",
+  },
+  {
+    title: "O Rio",
+    project: "giovani-baroni",
+    release: "bLU",
+    genius: "https://genius.com/Giovani-baroni-o-rio-lyrics",
   },
 
   // ── Singles ───────────────────────────────────────────────────────────────
