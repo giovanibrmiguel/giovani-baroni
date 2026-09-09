@@ -49,13 +49,16 @@ export type ListenPageConfig = {
   videoClip?: { url: string; label: string; replaceYoutube?: boolean };
 };
 
+const PEIXES_ESTRANHOS_CLIP_URL =
+  "https://www.youtube.com/watch?v=FYS3hkKnJIo&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&index=22";
+
 const PEIXES_ESTRANHOS_CLIP_EXTRA = {
-  url: "https://www.youtube.com/watch?v=FYS3hkKnJIo",
+  url: PEIXES_ESTRANHOS_CLIP_URL,
   label: "assistir clipe de peixes estranhos",
 };
 
 const PEIXES_ESTRANHOS_CLIP_ONLY = {
-  url: "https://www.youtube.com/watch?v=FYS3hkKnJIo",
+  url: PEIXES_ESTRANHOS_CLIP_URL,
   label: "assistir clipe",
   replaceYoutube: true,
 };
