@@ -7,9 +7,12 @@
  * the page. Pixel ID comes from PUBLIC_META_PIXEL_ID (set in Cloudflare
  * Pages env vars). Renders nothing if unset, and is skipped in local dev.
  *
- * Listens for clicks on the same [data-umami-event="stream_click"] elements
- * Umami already tracks, so the two systems share one set of markup and stay
- * in sync without duplicating attributes across pages.
+ * Listens for clicks on the same [data-umami-event="stream_click"] /
+ * [data-umami-event="video_clip_click"] elements Umami already tracks (the
+ * latter covers the YouTube "assistir clipe" buttons on /listen pages that
+ * replace or supplement the normal YouTube row), so the two systems share
+ * one set of markup and stay in sync without duplicating attributes across
+ * pages.
  */
 const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
 const shouldTrack = !import.meta.env.DEV && Boolean(pixelId);
@@ -30,10 +33,10 @@ const shouldTrack = !import.meta.env.DEV && Boolean(pixelId);
       fbq('track', 'PageView');
 
       document.addEventListener('click', function (e) {
-        const el = e.target.closest('[data-umami-event="stream_click"]');
+        const el = e.target.closest('[data-umami-event="stream_click"], [data-umami-event="video_clip_click"]');
         if (!el) return;
         fbq('trackCustom', 'StreamClick', {
-          platform: el.getAttribute('data-umami-event-platform'),
+          platform: el.getAttribute('data-umami-event-platform') ?? 'youtube',
           song: el.getAttribute('data-umami-event-song'),
         });
       });
