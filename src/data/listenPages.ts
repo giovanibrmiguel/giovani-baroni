@@ -42,11 +42,13 @@ export type ListenPageConfig = {
   /** Subset of relatedReleaseIds to render as a disabled "Em Breve" card instead of a link */
   disabledReleaseIds?: string[];
   /**
-   * A music video link tied to the YouTube platform row.
-   * `replaceYoutube: true` swaps the normal YouTube row for this one instead
-   * of adding an extra row below it.
+   * Music video links tied to the YouTube platform row. An entry with
+   * `replaceYoutube: true` swaps the normal YouTube row for itself instead
+   * of appearing in the "mais clipes" strip below the platform card (only
+   * one such entry should be marked per page). `shortLabel` is the compact
+   * text shown on that strip's chips (falls back to `label`).
    */
-  videoClip?: { url: string; label: string; replaceYoutube?: boolean };
+  videoClips?: { url: string; label: string; shortLabel?: string; replaceYoutube?: boolean }[];
 };
 
 const PEIXES_ESTRANHOS_CLIP_URL =
@@ -55,10 +57,25 @@ const PEIXES_ESTRANHOS_CLIP_URL =
 const PEIXES_ESTRANHOS_CLIP_EXTRA = {
   url: PEIXES_ESTRANHOS_CLIP_URL,
   label: "assistir clipe de peixes estranhos",
+  shortLabel: "peixes estranhos",
 };
 
 const PEIXES_ESTRANHOS_CLIP_ONLY = {
   url: PEIXES_ESTRANHOS_CLIP_URL,
+  label: "assistir clipe",
+  replaceYoutube: true,
+};
+
+const MECANICADOSFLUIDOS_CLIP_URL = "https://www.youtube.com/watch?v=hbpzb_LoloU";
+
+const MECANICADOSFLUIDOS_CLIP_EXTRA = {
+  url: MECANICADOSFLUIDOS_CLIP_URL,
+  label: "assistir clipe de mecânica dos fluidos",
+  shortLabel: "mecânica dos fluidos",
+};
+
+const MECANICADOSFLUIDOS_CLIP_ONLY = {
+  url: MECANICADOSFLUIDOS_CLIP_URL,
   label: "assistir clipe",
   replaceYoutube: true,
 };
@@ -74,7 +91,7 @@ export const listenPages: ListenPageConfig[] = [
     badgeOutText: "",
     moreAbout: { kind: "single", withUtm: false },
     relatedReleaseIds: ["fishyboy-single", "mecanicadosfluidos-single"],
-    videoClip: PEIXES_ESTRANHOS_CLIP_EXTRA,
+    videoClips: [MECANICADOSFLUIDOS_CLIP_EXTRA, PEIXES_ESTRANHOS_CLIP_EXTRA],
   },
   {
     slug: "fishyboy",
@@ -93,6 +110,7 @@ export const listenPages: ListenPageConfig[] = [
     badgeOutText: "",
     moreAbout: { kind: "trackOfAlbum" },
     relatedReleaseIds: ["fishyboy-single", "blu-album"],
+    videoClips: [MECANICADOSFLUIDOS_CLIP_ONLY],
   },
   {
     slug: "efervescente",
@@ -133,7 +151,7 @@ export const listenPages: ListenPageConfig[] = [
     badgeOutText: "",
     moreAbout: { kind: "single", withUtm: true, textOverride: "leia mais sobre o álbum bLU" },
     relatedReleaseIds: ["fishyboy-single", "mecanicadosfluidos-single", "blu-album"],
-    videoClip: PEIXES_ESTRANHOS_CLIP_ONLY,
+    videoClips: [PEIXES_ESTRANHOS_CLIP_ONLY],
   },
 ];
 
