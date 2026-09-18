@@ -66,7 +66,7 @@ const PEIXES_ESTRANHOS_CLIP_ONLY = {
   replaceYoutube: true,
 };
 
-const MECANICADOSFLUIDOS_CLIP_URL = "https://www.youtube.com/watch?v=hbpzb_LoloU";
+const MECANICADOSFLUIDOS_CLIP_URL = "https://www.youtube.com/watch?v=hbpzb_LoloU&list=RDhbpzb_LoloU&start_radio=1";
 
 const MECANICADOSFLUIDOS_CLIP_EXTRA = {
   url: MECANICADOSFLUIDOS_CLIP_URL,
