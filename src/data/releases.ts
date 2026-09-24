@@ -316,7 +316,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     links: {
       spotify: "https://open.spotify.com/track/0xNJcJAsqOAKX0JonLlyyL?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
       appleMusic: "https://music.apple.com/us/song/norte/6797999494",
-      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=420s",
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=419s",
       deezer: "https://link.deezer.com/s/34iJDRTe6PMICn8nmyYTy",
       youtubeMusic: "https://music.youtube.com/watch?v=dPDQJTyDgwc&si=F6B3ch5S9hQuHnQa",
       amazonMusic: "https://music.amazon.com.au/tracks/B0HCXCFX5R?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_ZJ2zoc93kciiVgA1Pw9lkrPjX",
@@ -349,7 +349,7 @@ The title comes from a fluid mechanics class Baroni took at university, where he
     links: {
       spotify: "https://open.spotify.com/track/2mH8yr9kMHnMErGxSv9CTm?context=spotify:album:1qLsIBECLUJW6XxyxWHro2",
       appleMusic: "https://music.apple.com/us/song/paseo-largo/6797999500",
-      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1872s",
+      youtube: "https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1871s",
       deezer: "https://link.deezer.com/s/34iJFZxPcppZ2Y75Zur3d",
       youtubeMusic: "https://music.youtube.com/watch?v=uf4L52bxqc0&si=NSDE47i-MY2FfMR1",
       amazonMusic: "https://music.amazon.com.au/tracks/B0HCX95VS3?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_XFYolTpQguo55BdtvkBSxgbJf",

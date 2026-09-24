@@ -16,7 +16,7 @@ Amazon Music :  https://music.amazon.com.au/tracks/B0HCWWGM2Z?marketplaceId=A39I
 
 /listen/norte/
 Spotify : https://open.spotify.com/track/0xNJcJAsqOAKX0JonLlyyL?context=spotify:album:1qLsIBECLUJW6XxyxWHro2
-Youtube : https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=420s
+Youtube : https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=419s
 Apple Music : https://music.apple.com/us/song/norte/6797999494
 Deezer : https://link.deezer.com/s/34iJDRTe6PMICn8nmyYTy
 Youtube Music : https://music.youtube.com/watch?v=dPDQJTyDgwc&si=F6B3ch5S9hQuHnQa
@@ -33,7 +33,7 @@ Amazon Music : https://music.amazon.com.au/tracks/B0HCXCXJGY?marketplaceId=A39IB
 
 /listen/paseolargo/
 Spotify : https://open.spotify.com/track/2mH8yr9kMHnMErGxSv9CTm?context=spotify:album:1qLsIBECLUJW6XxyxWHro2
-Youtube : https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1872s
+Youtube : https://www.youtube.com/watch?v=rf7LfiN4aCs&list=PLQOQ2QTpOP7yOP7fq-XYHADFOKVjLBr27&t=1871s
 Apple Music : https://music.apple.com/us/song/paseo-largo/6797999500
 Deezer : https://link.deezer.com/s/34iJFZxPcppZ2Y75Zur3d
 Youtube Music : https://music.youtube.com/watch?v=uf4L52bxqc0&si=NSDE47i-MY2FfMR1
